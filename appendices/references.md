@@ -373,22 +373,53 @@ Citations in pattern documents use this format:
 - **Context:** Official warning presented to users about key management
 - **Relevance:** Pattern 1 (Onboarding) - Illustrates the terror of permanent account loss
 
-**[User:13]** Multiple users confused about keypair mechanics and signatures
-- **Source:** GitHub Discussion #31, nostr_console
-- **URL:** https://github.com/vishalxl/nostr_console/discussions/31
-- **Date:** December 2022
-- **Examples:**
-  - User confused: "I use same private key, but seems like, each platform generates another public key"
-  - User didn't understand: "paste the signature here (as hex)" when editing profile
-- **Relevance:** Pattern 1 (Onboarding) - Shows fundamental confusion about keys during first experience
+**[User:17]** Key management remains a blocker for adoption
+- **Source:** "Managing Nostr Keys and Signing Devices" (Substack)
+- **URL:** https://onnostr.substack.com/p/managing-nostr-keys-and-signing-devices
+- **Date:** March 2025
+- **Quote:** "A protocol based entirely on public/private key pairs being used as identities cannot gain traction and adoption if people are burning their accounts by accident or handing it over to scammers"
+- **Key findings:**
+  - Hardware signers: "Non-technical users aren't going to onboard by buying or building a device"
+  - Extension signers create friction when moving between desktop and mobile
+  - "Nostr has a very tight complexity budget when onboarding new users"
+- **Relevance:** Pattern 1 (Onboarding) - March 2025 analysis confirms key management is STILL a blocker
 
-**[User:14]** Relay configuration settings don't persist
-- **Source:** GitHub Issues, Amethyst client
-- **URLs:**
-  - Issue #35: https://github.com/vitorpamplona/amethyst/issues/35 (Jan 25, 2023)
-  - Issue #69: Relay list resets on updates (Feb 3, 2023)
-- **Quote:** "If I add my self-hosted relay, it goes up into the list of relays but then no matter how I leave that screen...when I re-enter that relays screen my relay is not there anymore."
-- **Relevance:** Pattern 1 (Onboarding), Pattern 5 (Progressive Complexity) - Relay management frustrations
+**[User:18]** Nostr Design onboarding guidance
+- **Source:** Nostr Design reference documentation
+- **URL:** https://nostrdesign.org/docs/reference-designs/onboarding/
+- **Date:** 2024 (actively maintained)
+- **Quote:** Relay selection is "high friction" that should be minimized during onboarding
+- **Guidance provided:**
+  - Defer key management for a time convenient to user rather than overwhelming upfront
+  - Customize feeds based on users' preferred interests instead of throwing into Global
+  - Segment recommendations based on chosen interests
+- **Relevance:** Pattern 1 (Onboarding), Pattern 5 (Progressive Complexity) - Ecosystem recognition of widespread onboarding problems
+
+**[User:19]** Damus onboarding improvements tracker (ACTIVE)
+- **Source:** GitHub Issue #2642, Damus repository
+- **URL:** https://github.com/damus-io/damus/issues/2642
+- **Date:** Opened November 6, 2024; Last updated February 4, 2025
+- **Status:** Open, actively maintained
+- **Problems identified:**
+  - Profile pre-caching needed to reduce loading states
+  - Cold start optimization still pending
+  - Development mode cold start listed as technical priority
+- **Relevance:** Pattern 1 (Onboarding) - Active work in Feb 2025 proves problems persist
+
+**[User:20]** Damus considering removing account creation step
+- **Source:** GitHub Issue #3207, Damus repository
+- **URL:** https://github.com/damus-io/damus/issues/3207
+- **Date:** Opened August 22, 2025
+- **Status:** Open
+- **Quote:** "Remove the 'create account' step during new app installation's onboarding sequence, based on the hypothesis that lower friction improves first-time user experience"
+- **Relevance:** Pattern 1 (Onboarding) - Aug 2025 shows account creation friction remains critical enough to consider eliminating entirely
+
+**[User:21]** Nstart standalone onboarding tool
+- **Source:** Hacker News Show HN post / https://start.njump.me
+- **URL:** https://news.ycombinator.com/item?id=43001303
+- **Date:** February 2025
+- **Description:** A standalone Nostr onboarding tool where users can be "automagically logged into the app, without needing to touch their keys/bunker"
+- **Relevance:** Pattern 1 (Onboarding) - Creation of separate onboarding service in Feb 2025 proves client-level onboarding is too complex
 
 **[User:15]** "Traditional apps win by having much better content selection"
 - **Source:** "The State of Nostr Clients" analysis

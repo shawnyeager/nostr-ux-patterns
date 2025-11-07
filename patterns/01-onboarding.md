@@ -201,7 +201,7 @@ Nostr's decentralized architecture creates unique onboarding challenges that cen
 - No context for why keys work this way
 - Immediate responsibility without understanding
 - Users screenshot private keys or store insecurely out of confusion
-- Multiple users report confusion about keypair mechanics and signature requirements [User:13 - GitHub nostr_console discussion]
+- March 2025 analysis: "A protocol based entirely on public/private key pairs cannot gain traction if people are burning their accounts by accident" [User:17 - Key Management Analysis, Mar 2025]
 
 **The tension:**
 Security vs. usability. Keys are the foundation of Nostr's censorship-resistance, but they're also the biggest UX barrier.
@@ -230,7 +230,7 @@ Security vs. usability. Keys are the foundation of Nostr's censorship-resistance
 - Asking users to choose without context for implications
 - Technical language: "wss://relay.example.com"
 - No guidance on how many relays or which ones
-- Settings don't persist reliably, causing frustration [User:14 - Amethyst Issue #35, #69]
+- Nostr Design (2024) explicitly calls relay selection "high friction" that should be minimized during onboarding [User:18 - Nostr Design Guidance, 2024]
 
 **The tension:**
 Relay selection matters for the Nostr experience, but beginners can't make informed choices. Power users need control, but new users need sensible defaults.
@@ -306,6 +306,8 @@ This portability means:
 - No personalization based on interests
 - Users report "traditional apps win by having much better content selection" [User:15 - State of Nostr analysis]
 - Even Jack Dorsey admitted "Nostr is weird and hard to use" [User:16 - May 2024 interview]
+- Damus is still actively working on onboarding improvements as of Feb 2025 [User:19 - Damus Issue #2642]
+- Damus considering removing entire "create account" step in Aug 2025 due to friction [User:20 - Damus Issue #3207]
 
 **The tension:**
 Nostr's decentralization is a feature, but content discovery suffers. Algorithmic feeds are powerful but potentially manipulative.
@@ -911,27 +913,48 @@ Interest-based follow suggestions, pre-populated feed
 [Protocol:4] NIP-65: Relay List Metadata - https://github.com/nostr-protocol/nips/blob/master/65.md
 [Protocol:7] Nostr Design community resources - https://nostrdesign.org/
 
-### User Feedback
+### User Feedback (All 2024-2025)
 [User:11] Stacker News discussion - "After 15-20 minutes of messing around, I was able to create a NOSTR account"
 - URL: https://stacker.news/items/222205
+- Date: 2024
 
 [User:12] Iris FAQ - "If you lose the private key the account is lost forever"
 - URL: https://github.com/irislib/faq
-
-[User:13] GitHub Discussion #31 (nostr_console) - Multiple users confused about keypair mechanics and signatures
-- URL: https://github.com/vishalxl/nostr_console/discussions/31
-
-[User:14] GitHub Issues - Amethyst relay configuration problems
-- Issue #35: Relay settings don't persist - https://github.com/vitorpamplona/amethyst/issues/35
-- Issue #69: Relay list resets on updates
+- Date: Current documentation
 
 [User:15] "The State of Nostr Clients" analysis
 - Quote: "Traditional apps win by having much better content selection"
 - Quantitative data: DAU stuck at 10-12k, users need 5-6 clients
+- Date: March 2024
 
 [User:16] Jack Dorsey interview (May 2024)
 - Quote: "Nostr is weird and hard to use"
 - Multiple news outlets: Washington Post, TechTimes, Engadget
+
+[User:17] "Managing Nostr Keys and Signing Devices" - Key management remains blocker
+- URL: https://onnostr.substack.com/p/managing-nostr-keys-and-signing-devices
+- Date: March 2025
+- Quote: "A protocol based entirely on public/private key pairs cannot gain traction if people are burning their accounts by accident"
+
+[User:18] Nostr Design - Onboarding guidance published
+- URL: https://nostrdesign.org/docs/reference-designs/onboarding/
+- Date: 2024
+- Quote: Relay selection is "high friction" that should be minimized during onboarding
+
+[User:19] Damus GitHub Issue #2642 - Onboarding improvements tracker
+- URL: https://github.com/damus-io/damus/issues/2642
+- Date: Opened Nov 2024, last updated Feb 2025 (ACTIVE)
+- Status: Still open, showing onboarding is ongoing problem
+
+[User:20] Damus GitHub Issue #3207 - Remove 'Create Account' step
+- URL: https://github.com/damus-io/damus/issues/3207
+- Date: August 2025
+- Quote: Account creation step being considered for removal due to friction
+
+[User:21] Nstart Onboarding Tool creation
+- URL: https://start.njump.me
+- Date: February 2025
+- Context: Standalone tool created because client-level onboarding is too complex
 
 ---
 
