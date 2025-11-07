@@ -25,11 +25,23 @@ Citations in pattern documents use this format:
 - **Date accessed:** November 2025
 - **Key findings:** 30-day retention trending to 0% for recent cohorts, DAU stable at 10,000-12,000 trusted pubkeys
 
-**[Data:2]** Nostr Network Statistics
-- **Source:** [To be filled with specific source]
-- **Data:** [Description]
-- **Date accessed:** [Date]
-- **Key findings:** [Summary]
+**[Data:2]** Nostr Content Discovery and Retention Crisis
+- **Source:** Multiple 2024-2025 analyses including nostr.band statistics
+- **Date:** 2024-2025
+- **Key findings:**
+  - Only ~36,000 weekly active users as of October 2024; less than 15,000 daily active
+  - Adoption spikes (X ban in Brazil, Reddit/TikTok events) show poor retention
+  - Post-viral-event retention failure demonstrates discovery/content problems
+- **Relevance:** Pattern 2 (Content Discovery) - Quantifies the retention impact of poor content discovery
+
+**[Data:5]** Nostr Spam Crisis
+- **Source:** Web research on spam mitigation discussions
+- **Date:** February 2024
+- **Key findings:**
+  - Nostr hit with approximately 500,000 daily spam messages in mid-February 2024
+  - Spam consisted of ads for spam services, scams, and NSFW content
+  - Global feed became unusable without filtering
+- **Relevance:** Pattern 2 (Content Discovery) - Feed quality problems at scale
 
 ### Mainstream App Benchmarks
 
@@ -111,58 +123,105 @@ Citations in pattern documents use this format:
 
 ### Content Discovery & Feed Algorithms
 
-**[Research:4]** Cold Start Problem in Recommendation Systems
-- **Citation:** [Academic paper - to be researched]
-- **Key finding:** [Summary]
-- **Relevance:** Pattern 2 (Content Discovery)
+**[Research:4]** Bluesky Starter Packs Solve Cold Start Problem
+- **Citation:** "Bootstrapping Social Networks: Lessons from Bluesky Starter Packs" - Lancaster University, TU Darmstadt, City St George's University of London
+- **URL:** https://arxiv.org/pdf/2501.11605
+- **Date:** January 2025
+- **Key findings:**
+  - Starter packs (curated lists of accounts users can follow with one click) accounted for 43% of follow actions during peak periods
+  - 20% of all follow relationships during first 6 months came from starter packs
+  - Users included in starter packs received 85% more followers and posted 60% more than similar users not included
+  - Over 335,000 starter packs were created in the first six months
+- **Relevance:** Pattern 2 (Content Discovery) - Research-backed solution to cold start problem directly applicable to Nostr
 
-**[Research:5]** Algorithmic vs Chronological Feeds: Impact on Engagement
-- **Citation:** [To be researched]
-- **Key finding:** [Summary]
-- **Relevance:** Pattern 2 (Content Discovery)
+**[Research:5]** Cold Start Problem in Recommendation Systems (Academic)
+- **Citations:**
+  - "A social importance and category enhanced cold-start user recommendation system" - Expert Systems with Applications, ScienceDirect
+    - URL: https://www.sciencedirect.com/science/article/abs/pii/S0957417425007523
+  - "Recruitment From Social Networks for the Cold Start Problem in Mobile Crowdsourcing" - IEEE Internet of Things Journal
+    - URL: https://pureportal.coventry.ac.uk/en/publications/recruitment-from-social-networks-for-the-cold-start-problem-in-mo
+- **Date:** 2024
+- **Key strategies identified:**
+  - Using social network information from existing platforms
+  - Leveraging collaborative filtering based on similar user behavior
+  - Hybrid models combining content-based and collaborative filtering
+  - Incorporating user demographics and stated preferences
+  - Using community detection to identify similar users
+- **Relevance:** Pattern 2 (Content Discovery) - Academic research backing for Web of Trust and social graph-based discovery
 
-**[Research:6]** Social Network Analysis: Content Discovery Mechanisms
-- **Citation:** [To be researched]
-- **Key finding:** [Summary]
-- **Relevance:** Pattern 2 (Content Discovery)
+**[Research:6]** Algorithmic vs Chronological Feeds: Impact on Engagement ("Better Feeds" Report)
+- **Citation:** Georgetown University Knight-Georgetown Institute. "Better Feeds: Algorithms That Put People First"
+- **URL:** https://kgi.georgetown.edu/wp-content/uploads/2025/02/Better-Feeds_-Algorithms-That-Put-People-First.pdf
+- **Date:** March 2025
+- **Key findings:**
+  - Moving users from algorithmic to reverse-chronological feeds decreased time spent on platform and user activity over 3 months
+  - Chronological feeds did NOT significantly alter levels of polarization, political knowledge, or other attitudes (contrary to common belief)
+  - Users compensated by increasing usage on other platforms: Instagram users → TikTok (+36%), YouTube (+20%); Facebook users → Reddit (+52%), YouTube (+21%)
+  - Chronological feeds may increase exposure to abuse, amplify untrustworthy content, and create recency bias
+  - Suggests false choice between engagement-optimized vs chronological feeds - algorithms can be designed for long-term user value
+- **Relevance:** Pattern 2 (Content Discovery) - Critical evidence that pure chronological feeds won't solve retention problems; users will leave for more engaging alternatives
+
+**[Research:7]** Engagement-Based Algorithms Amplify Divisive Content
+- **Citation:** "Engagement, user satisfaction, and the amplification of divisive content on social media" - PNAS Nexus, Oxford Academic
+- **URLs:**
+  - https://academic.oup.com/pnasnexus/article/4/3/pgaf062/8052060
+  - https://pmc.ncbi.nlm.nih.gov/articles/PMC11894805/
+- **Date:** 2024-2025
+- **Key findings:**
+  - Preregistered algorithmic audit of Twitter/X found engagement-based ranking amplifies emotionally charged, out-group hostile political content
+  - Users report this content makes them feel worse
+  - Users do not prefer the political tweets selected by algorithm, suggesting algorithm underperforms in satisfying stated preferences
+  - Item-level satisfaction surveys correlate with integrity metrics and can improve retention when used in ranking
+- **Relevance:** Pattern 2 (Content Discovery) - WARNING: optimizing purely for engagement (likes, replies, reposts) amplifies divisive content. Nostr algorithms should incorporate user satisfaction signals (muting, reporting, feedback) alongside engagement
+
+**[Research:8]** Social Media as Search Engine for Gen Z
+- **Citation:** Multiple 2024-2025 sources including Sked Social "Social search: How to Optimize for Discoverability on TikTok and Instagram (2025)"
+- **URL:** https://skedsocial.com/blog/social-search-how-to-optimize-for-discoverability-on-tiktok-and-instagram-2025/
+- **Date:** 2024-2025
+- **Key findings:**
+  - Two in five Americans currently use TikTok as a search engine
+  - Over 50% of Gen Z and Millennials prefer social media for product discovery, recommendations, and research over traditional search engines
+  - TikTok introduced "Creator Search Insights Tool" in 2024 to help creators optimize for search behavior
+  - Platforms are no longer just for scrolling—they're where consumers look for information
+- **Relevance:** Pattern 2 (Content Discovery) - Search functionality is now table stakes, not an afterthought. Users expect to search for topics, hashtags, and people as primary discovery mechanism
 
 ### Performance & Perceived Speed
 
-**[Research:7]** Perceived Performance vs Actual Performance
+**[Research:9]** Perceived Performance vs Actual Performance
 - **Citation:** [UX research - to be found]
 - **Key finding:** Users perceive apps as faster with skeleton screens and optimistic UI
 - **Relevance:** Pattern 4 (Performance)
 
-**[Research:8]** Mobile App Performance Budgets
+**[Research:10]** Mobile App Performance Budgets
 - **Citation:** [To be researched - Google Web Fundamentals or similar]
 - **Key finding:** [Summary]
 - **Relevance:** Pattern 4 (Performance)
 
-**[Research:9]** Optimistic UI Patterns
+**[Research:11]** Optimistic UI Patterns
 - **Citation:** [To be researched]
 - **Key finding:** [Summary]
 - **Relevance:** Pattern 3 (Core Interactions), Pattern 4 (Performance)
 
 ### Progressive Complexity & Feature Discovery
 
-**[Research:10]** The 80/20 Rule in Feature Usage
+**[Research:12]** The 80/20 Rule in Feature Usage
 - **Citation:** [Product design research - to be found]
 - **Key finding:** 80% of users use only 20% of features
 - **Relevance:** Pattern 5 (Progressive Complexity)
 
-**[Research:11]** Settings Hierarchy and Configuration Burden
+**[Research:13]** Settings Hierarchy and Configuration Burden
 - **Citation:** [UX research - to be researched]
 - **Key finding:** [Summary]
 - **Relevance:** Pattern 5 (Progressive Complexity)
 
 ### Data Consistency & Trust
 
-**[Research:12]** User Trust in Distributed Systems
+**[Research:14]** User Trust in Distributed Systems
 - **Citation:** [HCI research - to be found]
 - **Key finding:** [Summary]
 - **Relevance:** Pattern 6 (Cross-Client Consistency)
 
-**[Research:13]** Eventual Consistency and User Experience
+**[Research:15]** Eventual Consistency and User Experience
 - **Citation:** [Distributed systems + UX research]
 - **Key finding:** [Summary]
 - **Relevance:** Pattern 6 (Cross-Client Consistency)
@@ -216,41 +275,70 @@ Citations in pattern documents use this format:
 
 ### Feed Design & Discovery
 
-**[Example:4]** TikTok's For You Algorithm
-- **Source:** [Published analysis - to be found]
-- **Key pattern:** Cold start solved via aggressive recommendation
-- **Relevance:** Pattern 2 (Content Discovery)
+**[Example:4]** TikTok's For You Algorithm - Solving Cold Start Without Followers
+- **Sources:** Multiple 2024-2025 analyses including:
+  - Sprout Social: "How the TikTok Algorithm Works in 2025" - https://sproutsocial.com/insights/tiktok-algorithm/
+  - Buffer: "TikTok Algorithm Guide 2026" - https://buffer.com/resources/tiktok-algorithm/
+  - Jackson Mohsenin: "The algorithm isn't everything: TikTok's virtuous cycle" - https://jmohsenin.com/tiktok-strategy
+- **Date:** 2024-2025
+- **Key patterns:**
+  - For You Page algorithm prioritizes content relevance over creator popularity
+  - Users with zero followers can reach large audiences if content aligns with viewer interests
+  - Algorithm analyzes user interactions (watch time, likes, comments), video information (captions, hashtags, sounds), and device settings
+  - Accounts with fewer followers receive more than 75% of impressions from "For You" feed, confirming balanced content distribution
+  - Short-form video provides rich signal - users can watch many quickly, algorithm learns preferences rapidly
+  - 55% of TikTok users create content, ensuring sufficient content supply even for new users
+  - 2024 updates: Analyzes emotional tone, gives exposure to positive/supportive/"feel-good" content
+  - Community alignment: Rewards content that aligns with specific communities (#BookTok, #SportsOnTikTok)
+  - STEM feed introduced late 2024, contributing to 45% increase in #Science hashtag posts
+- **Relevance:** Pattern 2 (Content Discovery) - Demonstrates that algorithmic content discovery solves "need followers to get reach" chicken-and-egg problem. Nostr clients could implement similar "For You" feeds surfacing quality content from unknown npubs
 
-**[Example:5]** Instagram Explore Page
-- **Source:** [Product analysis]
-- **Key pattern:** [Summary]
-- **Relevance:** Pattern 2 (Content Discovery)
+**[Example:5]** Instagram Algorithm Updates (2024-2025) & Multiple Specialized Algorithms
+- **Sources:**
+  - Later: "How the Instagram Algorithm Works in 2025" - https://later.com/blog/how-instagram-algorithm-works/
+  - Sprout Social: "How the Instagram Algorithm Works [Updated 2025]" - https://sproutsocial.com/insights/instagram-algorithm/
+  - Shopify: "Instagram Algorithm: How It Works and Tips for 2025" - https://www.shopify.com/blog/instagram-algorithm
+  - Buffer: "How the Instagram Algorithm Works: Your 2025 Guide" - https://buffer.com/library/instagram-feed-algorithm/
+- **Date:** 2024-2025
+- **Key patterns:**
+  - **April 2024 update:** Rewards original content creation; heavily weights "shares per reach" (content sent via DMs) as deeper engagement than likes
+  - **December 2024:** "Trial Reels" allows creators to test content with non-followers before sharing to audience
+  - **Summer 2024:** Shift to views-focused analytics announced by Adam Mosseri
+  - **Multiple specialized algorithms:** Feed algorithm prioritizes content from close connections; Reels algorithm focuses on entertainment value and gives newcomers viral potential regardless of follower count; Explore algorithm helps users discover new content using similar signals
+  - Each algorithm optimizes for different user goals (staying connected vs discovering new content)
+- **Relevance:** Pattern 2 (Content Discovery) - Nostr should prioritize original content and deep engagement signals like zaps over simple likes. Multiple specialized algorithms for different use cases improves user experience
 
-**[Example:6]** Mastodon Discovery Mechanisms
-- **Source:** [Decentralized social comparison]
-- **Key pattern:** [Summary]
+**[Example:6]** Bluesky Starter Packs in Practice
+- **Source:** Bluesky blog announcement, June 26, 2024
+- **Key pattern:** "Personalized invites that allow you to bring friends directly into your slice of Bluesky!" - helps users joining the social network find interesting content right out of the gate. Existing users can add accounts and custom feeds to create a starter pack and share the link or QR code. Can recommend up to 150 people and up to 3 custom feeds.
+- **Research backing:** Lancaster University study (January 2025) found 43% of follows during peak periods came from starter packs
+- **Relevance:** Pattern 2 (Content Discovery) - Competitive threat showing what's possible. NIP-51 starter packs exist in Nostr but clients haven't widely implemented. Multiple sources cite Bluesky's better onboarding/discovery as why it grew bigger than Nostr
+
+**[Example:7]** Mastodon Discovery Mechanisms (Federated Timeline Model)
+- **Source:** [Decentralized social comparison - to be researched]
+- **Key pattern:** Local/Federated timeline structure provides instant content discovery; Hashtag-based discovery
 - **Relevance:** Pattern 2 (Content Discovery)
 
 ### Performance Optimization
 
-**[Example:7]** Twitter/X Performance Optimization
+**[Example:8]** Twitter/X Performance Optimization
 - **Source:** [Engineering blog - to be found]
 - **Key pattern:** [Summary]
 - **Relevance:** Pattern 4 (Performance)
 
-**[Example:8]** Facebook Mobile Performance Budgets
+**[Example:9]** Facebook Mobile Performance Budgets
 - **Source:** [Engineering blog]
 - **Key pattern:** [Summary]
 - **Relevance:** Pattern 4 (Performance)
 
 ### Progressive Disclosure
 
-**[Example:9]** Slack Settings Hierarchy
+**[Example:10]** Slack Settings Hierarchy
 - **Source:** [Product analysis]
 - **Key pattern:** [Summary]
 - **Relevance:** Pattern 5 (Progressive Complexity)
 
-**[Example:10]** Apple iOS Progressive Feature Education
+**[Example:11]** Apple iOS Progressive Feature Education
 - **Source:** [iOS design patterns]
 - **Key pattern:** [Summary]
 - **Relevance:** Pattern 5 (Progressive Complexity)
@@ -422,11 +510,88 @@ Citations in pattern documents use this format:
 - **Relevance:** Pattern 1 (Onboarding) - Creation of separate onboarding service in Feb 2025 proves client-level onboarding is too complex
 
 **[User:15]** "Traditional apps win by having much better content selection"
-- **Source:** "The State of Nostr Clients" analysis
+- **Source:** "The State of Nostr Clients" analysis by karnage
 - **URL:** https://karnage.npub.pro/post/1711761836895/
-- **Date:** March 2024
+- **Date:** March 29, 2024
+- **Full quote:** "Traditional apps win simply by having much better content selection - you get to see a variety of interesting things that Nostr simply can't match"
 - **Additional data:** DAU stuck at 10-12k trusted pubkeys, users need 5-6 different clients
-- **Relevance:** Pattern 2 (Content Discovery) - Content quality and discovery problems
+- **Relevance:** Pattern 2 (Content Discovery) - Direct comparison showing Nostr's content discovery deficit
+
+**[User:22]** "Nostr is lacking in content, which could be the primary reason people are not sticking around"
+- **Source:** Multiple user discussions, 2024
+- **Context:** Analysis of retention crisis
+- **Relevance:** Pattern 2 (Content Discovery) - Content scarcity as primary retention killer
+
+**[User:23]** "Nostr suffers from the chicken/egg problem where new users are needed to generate more content, and more content is needed to retain new users"
+- **Source:** UX retention problem discussions
+- **Date:** 2024
+- **Context:** Cold start problem where empty feeds drive users away before they contribute content
+- **Relevance:** Pattern 2 (Content Discovery) - The fundamental chicken-egg problem
+
+**[User:24]** "Nostr does not seem to have any external growth loops, such as the ability to invite people by email with a single click"
+- **Source:** "The State of Nostr Clients" by karnage
+- **Date:** March 2024
+- **Context:** No mechanisms to help users discover or invite others
+- **Relevance:** Pattern 2 (Content Discovery) - No growth loops for network effects
+
+**[User:25]** "Users are not notified when tagged, and people have to have a habit of opening the app to know if something is happening"
+- **Source:** "The State of Nostr Clients" by karnage
+- **Date:** March 2024
+- **Context:** Discovery problem - users miss interactions
+- **Relevance:** Pattern 2 (Content Discovery), Pattern 3 (Core Interactions) - Notification failures affect discovery
+
+**[User:26]** "Habit formation of using a new app is important in the early usage phase and Nostr seems to have a weak spot here"
+- **Source:** "The State of Nostr Clients" by karnage
+- **Date:** March 2024
+- **Context:** No triggers to bring users back, related to discovery
+- **Relevance:** Pattern 2 (Content Discovery) - Weak habit formation due to poor discovery
+
+**[User:27]** "The main problem of decentralized alternatives like Nostr is content discovery"
+- **Source:** General Nostr UX discussions
+- **Date:** 2024
+- **Context:** Recognized as a core architectural challenge
+- **Relevance:** Pattern 2 (Content Discovery) - Protocol-level discovery challenge acknowledged
+
+**[User:28]** "It's only possible to search on what you have seen, so search engines will always have to crawl some parts of the network they chose to and index those to enable public search"
+- **Source:** Hashtag discovery discussions
+- **Date:** 2024
+- **Context:** Search is limited by relay coverage
+- **Relevance:** Pattern 2 (Content Discovery) - Search limitations in decentralized architecture
+
+**[User:29]** Nostr spam crisis - "500,000 daily spam messages in mid-February"
+- **Source:** Spam filter discussions, web research
+- **Date:** February 2024
+- **Full quote:** "Nostr was hit with approximately 500,000 daily spam messages in mid-February, consisting of ads for spam services, scams, and NSFW content"
+- **Context:** Global feed usability severely impacted by spam
+- **Relevance:** Pattern 2 (Content Discovery) - Feed quality crisis requiring spam filtering
+
+**[User:30]** "There can't be a 'global' view of the network, as it would be full of spam, so indexers have to choose what to display"
+- **Source:** Global feed discussions
+- **Date:** 2024
+- **Context:** Architecture limitation affects discovery
+- **Relevance:** Pattern 2 (Content Discovery) - No true global discovery feed possible
+
+**[User:31]** Primal 2.0 addressing discovery problems
+- **Source:** NoBS Bitcoin announcement / Primal 2.0 launch
+- **URL:** [To be added]
+- **Date:** November 21, 2024
+- **Quote:** "Primal 2.0 was announced by miljan, founder and CEO of Primal, after the team worked for many months to reach this milestone. Primal now offers a much more comprehensive view of Nostr on its web and mobile apps, with the following additions: a Reads tab, an Explore tab, a Feed Marketplace, comprehensive Advanced Search options, and multiple performance improvements."
+- **Context:** Major discovery innovation launched late 2024
+- **Relevance:** Pattern 2 (Content Discovery) - Ecosystem response to discovery crisis
+
+**[User:32]** Nstart onboarding wizard with auto-follow
+- **Source:** Nstart announcement (https://www.nobsbitcoin.com/nstart-nostr-onboarding-wizard/)
+- **Date:** January 2025
+- **Quote:** "Nstart aims to simplify onboarding for new users to the Nostr protocol with an easy-to-use wizard that provides helpful hints about the protocol and exclusive features... Auto follow the contacts list of some old and trusted Nostr users"
+- **Context:** Solves cold start by auto-following curated lists
+- **Relevance:** Pattern 2 (Content Discovery) - Solution to empty feed problem launched January 2025
+
+**[User:33]** Derek Ross on user-controlled discovery
+- **Source:** Derek Ross Nostr post
+- **Date:** January 2025
+- **Quote:** "Content discovery on Nostr keeps improving, but I believe we still need to act as our own algorithms most of the time—and I actually prefer it that way"
+- **Context:** Philosophy on discovery vs algorithms
+- **Relevance:** Pattern 2 (Content Discovery) - Developer perspective on algorithmic vs manual discovery
 
 **[User:16]** "Nostr is weird and hard to use"
 - **Source:** Jack Dorsey interview with Mike Solana, Founders Fund
