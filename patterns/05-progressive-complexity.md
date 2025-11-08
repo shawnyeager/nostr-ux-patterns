@@ -1614,3 +1614,352 @@ signer app to manage your keys.
 ```
 
 ---
+
+## Validation Checklist
+
+### Feature Usage Metrics
+
+**Track which features are actually used:**
+- [ ] **Feature usage by user level:**
+  - Beginner (0-7 days): Which features do they use?
+  - Intermediate (7-30 days): New features adopted?
+  - Advanced (30+ days): Power features engaged?
+- [ ] **Feature adoption rates:**
+  - What % of users ever use advanced features?
+  - What % use them regularly (>1x/week)?
+- [ ] **Settings engagement:**
+  - How many users visit advanced settings?
+  - Which settings are changed most often?
+  - Which settings are never touched?
+
+**Questions to answer:**
+- Are <20% of features used by >80% of users? (Pareto principle validation)
+- Which advanced features can be hidden without impact?
+- Which "basic" features should be demoted?
+
+---
+
+### Settings Complexity Audit
+
+**Count settings by tier:**
+- [ ] **Basic settings (visible to all):** Must be <10 items
+- [ ] **Advanced settings (collapsed):** Should be <15 items
+- [ ] **Expert/Developer settings:** Hidden entirely
+
+**Validate hierarchy:**
+- [ ] Frequently used settings at top
+- [ ] Related settings grouped logically
+- [ ] No more than 3 levels of nesting
+- [ ] Each setting has clear, jargon-free label
+
+**User testing:**
+- [ ] New users can find basic settings in <10 seconds
+- [ ] Users don't feel overwhelmed by settings screen
+- [ ] Power users can find advanced features when needed
+
+---
+
+### Progressive Disclosure Effectiveness
+
+**Measure cognitive load:**
+- [ ] **Onboarding completion rate:** Target >70%
+- [ ] **Time to first value:** <2 minutes for new users
+- [ ] **Decision points during setup:** <3 required decisions
+
+**User feedback:**
+- [ ] "Does the app feel overwhelming?" (Target: <10% say yes)
+- [ ] "Can you find what you need?" (Target: >80% say yes)
+- [ ] "Do you feel in control?" (Target: >70% say yes)
+
+**A/B test progressive disclosure:**
+- Test A: All features visible
+- Test B: Progressive disclosure
+- Measure: Completion rate, time-to-value, feature discovery
+
+---
+
+### Nostr-Specific Validation
+
+**Relay management:**
+- [ ] **Default relay selection works for 80% of users:**
+  - Post success rate >95%
+  - Average latency <2s
+  - No manual intervention needed
+- [ ] **Advanced users can find relay management:**
+  - <20% of users access it
+  - Those who do understand it (support tickets as proxy)
+  - Power users satisfied with control level
+
+**Protocol terminology:**
+- [ ] **Zero NIP references in basic UI:**
+  - Error messages use plain language
+  - Settings use benefits, not protocol terms
+  - Help documentation explains concepts simply
+- [ ] **User comprehension:**
+  - Users understand what "servers" mean (not "relays")
+  - Users understand "username" (not "NIP-05")
+  - Users understand "backup" (not "nsec export")
+
+**Signer app introduction:**
+- [ ] **Never required during onboarding:** 100% compliance
+- [ ] **Introduced after 1+ week:** For active users only
+- [ ] **Adoption rate tracked:**
+  - What % of eligible users (1+ week) set up signer?
+  - What % abandon during signer setup?
+  - What % successfully complete setup?
+
+---
+
+### User Research Questions
+
+**For beginners (0-7 days):**
+- "Did anything confuse you during setup?"
+- "What features do you wish were simpler?"
+- "What features do you wish were easier to find?"
+- "Did you see any technical terms you didn't understand?"
+
+**For intermediate users (7-30 days):**
+- "Have you explored advanced settings?"
+- "What features did you discover after using the app for a while?"
+- "What would you change about the settings organization?"
+
+**For advanced users (30+ days):**
+- "Can you find all the power user features you need?"
+- "What advanced features are missing?"
+- "Would you prefer more or less control over technical settings?"
+
+---
+
+### Success Metrics
+
+**Primary metrics:**
+- [ ] **Onboarding completion rate:** >70% (vs. current baseline)
+- [ ] **D1/D7/D30 retention:** Improved by >10%
+- [ ] **Time to first post:** <2 minutes (down from 15-20 minutes)
+- [ ] **"Too complicated" complaints:** <10% of users
+
+**Secondary metrics:**
+- [ ] **Advanced settings usage:** 10-20% of users
+- [ ] **Support tickets for relay issues:** Down >50%
+- [ ] **Users switching clients for features:** Down >30%
+- [ ] **Power user satisfaction:** >80% can find what they need
+
+**Comparative benchmarks:**
+- [ ] Onboarding simpler than Twitter/Instagram? (user survey)
+- [ ] Settings organization clearer than competitors? (user survey)
+- [ ] Advanced features as discoverable as Figma/Slack? (power user survey)
+
+---
+
+### A/B Testing Opportunities
+
+**Test 1: Relay visibility**
+- A: Relays in onboarding
+- B: Relays hidden entirely
+- Measure: Completion rate, confusion, post success
+
+**Test 2: Settings organization**
+- A: Flat list (all settings visible)
+- B: Collapsed advanced section
+- Measure: Time to find settings, perceived complexity
+
+**Test 3: Feature gating**
+- A: All features always visible
+- B: Progressive feature unlock (beginner → advanced)
+- Measure: Feature discovery, usage rates, satisfaction
+
+**Test 4: Terminology**
+- A: Protocol terms (relays, NIPs, events)
+- B: User-friendly terms (servers, username, posts)
+- Measure: Comprehension, support tickets, confusion
+
+**Test 5: Signer introduction**
+- A: Signer during onboarding (current some apps)
+- B: Signer after 1 week (recommended)
+- Measure: Completion rate, signer adoption, abandonment
+
+---
+
+## Citations & Sources
+
+**Note:** All sources from 2024-2025 to ensure currency for this fast-moving technology.
+
+### Universal UX Research
+
+<a id="research-54"></a>
+**[Research:54]** Pareto Principle (80/20 Rule) in UX Design
+- **Updated:** September 2025 (Interaction Design Foundation)
+- **Key finding:** 80% of users use only 20% of features
+- **Application:** Focus on 20% of design decisions that drive 80% of impact
+- **Source:** https://www.interaction-design.org/literature/topics/pareto-principle
+- **Source:** https://think.design/blog/the-pareto-principle-in-ux/
+- **Date:** December 2024
+
+<a id="research-55"></a>
+**[Research:55]** Progressive Disclosure Reduces Cognitive Load
+- **Key finding:** 30-40% reduction in cognitive load during onboarding
+- **Benefits:** Breaks complex processes into manageable steps, eliminates abandonment friction
+- **Source:** https://www.interaction-design.org/literature/topics/progressive-disclosure
+- **Source:** https://lollypop.design/blog/2025/may/progressive-disclosure/
+- **Date:** May 2025
+
+<a id="research-56"></a>
+**[Research:56]** Progressive Disclosure Strategy
+- **Key finding:** Reduces decision fatigue by revealing information in stages
+- **Common implementations:** Collapsible menus, tooltips, hover actions, toggles
+- **Source:** https://blog.logrocket.com/ux-design/progressive-disclosure-ux-types-use-cases/
+- **Source:** https://octet.design/journal/progressive-disclosure/
+- **Date:** 2024-2025
+
+<a id="research-57"></a>
+**[Research:57]** Cognitive Load Reduction Impact
+- **Airbnb:** 25% fewer interactions with smart defaults, higher conversion
+- **Figma:** 24% reduction in cognitive load with minimal layouts
+- **Adobe (2024):** 30% increase in engagement with decluttered designs
+- **Source:** https://developerux.com/2025/04/18/ultimate-guide-to-cognitive-load-reduction-in-ux-design/
+- **Date:** April 2025
+
+<a id="research-58"></a>
+**[Research:58]** Android Settings Design Guidelines
+- **Key finding:** Limit settings to 10-15 items per screen
+- **Best practices:** Place frequently used at top, users should glance and understand all settings
+- **Source:** https://source.android.com/docs/core/settings/settings-guidelines
+- **Source:** https://www.setproduct.com/blog/settings-ui-design
+- **Date:** 2024-2025
+
+<a id="research-59"></a>
+**[Research:59]** Pareto Principle Application to Interface Design
+- **Feature prioritization:** Identify 20% of features that meet 80% of users' needs
+- **MVP development:** Minimum viable products are Pareto Principle in action
+- **Source:** https://lawsofux.com/pareto-principle/
+- **Source:** https://www.cursorup.com/blog/the-pareto-principle
+- **Date:** 2024-2025
+
+<a id="research-60"></a>
+**[Research:60]** Progressive Disclosure Techniques
+- **Core insight:** Defer advanced features to secondary UI, keep essential content in primary UI
+- **When to use:** Novice users, complex tasks, limited screen space, high cognitive load
+- **Design methods:** Card sorting and task analysis to define essential vs. advanced content
+- **Source:** https://www.nngroup.com/articles/progressive-disclosure/
+- **Source:** https://www.ux-bulletin.com/progressive-disclosure-in-ux/
+- **Date:** 2024-2025
+
+<a id="research-61"></a>
+**[Research:61]** Complexity Organization Best Practices
+- **Core insight:** Great UX isn't hiding features—it's organizing them so users can find, understand, use without frustration
+- **Visual hierarchy:** Prioritize important information, align with user needs, use shared visual traits
+- **Source:** https://medium.com/@rounakbajoriastar/from-chaos-to-clarity-organizing-complex-interfaces-with-ux-best-practices-daec1a8328ab
+- **Source:** https://devpulse.com/insights/ux-ui-design-best-practices-2025-enterprise-applications/
+- **Date:** May 2025
+
+<a id="research-62"></a>
+**[Research:62]** Contextual Help and Onboarding (Nielsen Norman Group February 2024)
+- **Pull revelations:** Help triggered when user would benefit at that moment
+- **Progressive delivery:** Introduce actions/features gradually as they become relevant to avoid overload
+- **AI-enhanced personalization:** Tailor onboarding to user goals and behavior
+- **Source:** https://www.nngroup.com/articles/onboarding-tutorials/
+- **Source:** https://www.uxdesigninstitute.com/blog/ux-onboarding-best-practices-guide/
+- **Date:** February 2024
+
+<a id="research-63"></a>
+**[Research:63]** Tooltip Design and Contextual Guidance
+- **Design principle:** Tooltips provide subtle, contextual guidance; pop-ups/modals are disruptive
+- **Best practices:** Concise, context-sensitive pop-ups that give information without interrupting flow
+- **Source:** https://www.chameleon.io/blog/why-tooltips-are-terrible-and-why-you-should-use-them
+- **Source:** https://www.appcues.com/blog/tooltips
+- **Date:** 2024-2025
+
+<a id="research-64"></a>
+**[Research:64]** 2024-2025 UX Trends for Power Users
+- **"Choose your own UX adventure"** settings for power users
+- **Smart defaults** with behavior-based interfaces
+- **Adaptive interfaces:** Dark mode at night, simplified UI when fatigued
+- **Source:** https://www.aufaitux.com/blog/power-bi-trends-enterprise-analytics-dashboard-ux/
+- **Source:** https://trends.uxdesign.cc
+- **Date:** 2025
+
+<a id="research-65"></a>
+**[Research:65]** Cognitive Load Reduction Techniques
+- **Progressive disclosure:** Accordions, tooltips, step-by-step flows keep interface clean
+- **Simplification:** Consistent patterns, clear layouts, minimal distractions, logical grouping
+- **Mobile-specific:** Bottom navigation, gesture-based controls streamline journeys
+- **Source:** https://www.ijraset.com/best-journal/reducing-cognitive-load-in-ui-design
+- **Source:** https://hapy.design/journal/ways-to-reduce-cognitive-load-for-a-better-ui/
+- **Date:** 2024-2025
+
+### Nostr-Specific Data
+
+<a id="data-28"></a>
+**[Data:28]** Relay Picker Complexity in Nostr Apps
+- Nostr clients showing 50+ relay pickers during onboarding
+- Users exposed to relay selection before understanding basic posting
+- Source: Observation of Nostr client UX (2024-2025)
+
+<a id="data-29"></a>
+**[Data:29]** Protocol Terminology in User-Facing UI
+- Settings pages with technical jargon: "Outbox model (NIP-65)", "Relay list metadata", "Event signature verification"
+- Error messages: "Failed to publish kind:1 event to relay"
+- Source: Nostr client UI analysis (2024-2025)
+
+<a id="data-30"></a>
+**[Data:30]** Power User Features Presented as Essential
+- Relay health indicators, custom feeds, mute lists shown during onboarding
+- Read/write relay splits exposed to beginners
+- Source: Nostr client onboarding flows (2024-2025)
+
+<a id="data-31"></a>
+**[Data:31]** Cross-Client Relay List Confusion
+- Users setting relay preferences in Nostrudel find other clients (Coracle, Nostter) pulling incorrectly
+- Manual relay additions multiply unexpectedly
+- "Imperfect, incomplete, and/or partially implemented NIPs' unintended consequences"
+- **Source:** https://github.com/nostr-protocol/nips/discussions/1134
+- **Date:** 2024-2025
+
+<a id="data-32"></a>
+**[Data:32]** NIP-65 Relay List Metadata
+- Uses kind:10002 events to advertise user's write relays (OUTBOX) and read relays (INBOX)
+- Clients should guide users to keep lists small (2-4 relays)
+- **Source:** https://nips.nostr.com/65
+- **Source:** https://nostrify.dev/relay/outbox
+- **Date:** 2024-2025
+
+<a id="data-33"></a>
+**[Data:33]** NIP-46 Signer App UX Challenges
+- Specification "unclear and constantly changing"
+- Incompatibilities between apps and signers
+- No signer apps in traditional app stores (requires Obtanium or zap.store)
+- Clients don't handle latency well
+- "While NIP-46 is best practice, it doesn't currently work very well at all"
+- **Source:** https://nostr.com/naddr1qqxnzdenxyenvdesxvmrvwp4qy28wumn8ghj7ctvvahjuat50phjummwv5hsygyhcu9ygdn2v56uz3dnx0uh865xmlwz675emfsccsxxguz6mx8rygpsgqqqw4rsvrkrdw
+- **Date:** 2024
+
+<a id="data-34"></a>
+**[Data:34]** Available Nostr Signer Apps
+- **Amber (Android):** Offline signing, multiple accounts, granular permissions
+- **Nostr Signer (Alby):** Remote signing via push notifications
+- **Source:** https://blog.getalby.com/nostr-signer/
+- **Source:** https://maxgravitt.com/articles/nostr-connect/
+- **Date:** 2024-2025
+
+<a id="user-12"></a>
+**[User:12]** New User Exposure to Complexity
+- New users exposed to relay selection, key management, NIP configurations during onboarding
+- Source: User feedback and UX research (2024-2025)
+
+<a id="user-13"></a>
+**[User:13]** User Overwhelm Reports
+- Users report feeling "overwhelmed" and "confused" by protocol complexity in UI
+- "Too complicated" cited as top reason for not adopting Nostr
+- Source: User surveys and feedback (2024-2025)
+
+---
+
+**See [References & Bibliography](../appendices/references.md) for full citation details.**
+
+---
+
+*This pattern is part of the [Nostr UX Research Study](../README.md). See [OUTLINE.md](../OUTLINE.md) for the complete study structure.*
+
+---
+
+**Next Pattern:** [Pattern 6: Cross-Client Consistency & Data Integrity](06-cross-client-consistency.md) 🚧 Coming Soon
