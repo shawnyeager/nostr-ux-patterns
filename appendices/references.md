@@ -23,14 +23,16 @@ Citations in pattern documents use this format:
 ### Nostr Usage & Retention Data
 
 **[Data:1]** Nostr.band Analytics
-- **Source:** https://nostr.band/stats
-- **Data:** DAU trends, retention cohorts, network growth metrics
+- **Source:** Nostr.band statistics portal
+- **URL:** https://nostr.band/stats
 - **Date accessed:** November 2025
+- **Data:** DAU trends, retention cohorts, network growth metrics
 - **Key findings:** 30-day retention trending to 0% for recent cohorts, DAU stable at 10,000-12,000 trusted pubkeys
 
 **[Data:2]** Nostr Content Discovery and Retention Crisis
-- **Source:** Multiple 2024-2025 analyses including nostr.band statistics
-- **Date:** 2024-2025
+- **Source:** Stats.nostr.band and Nostr User Statistics analysis
+- **URL:** https://stats.nostr.band/ and https://socialcapitalmarkets.net/crypto-trading/nostr-statistics/
+- **Date:** October 2024
 - **Key findings:**
   - Only ~36,000 weekly active users as of October 2024; less than 15,000 daily active
   - Adoption spikes (X ban in Brazil, Reddit/TikTok events) show poor retention
@@ -38,7 +40,8 @@ Citations in pattern documents use this format:
 - **Relevance:** Pattern 2 (Content Discovery) - Quantifies the retention impact of poor content discovery
 
 **[Data:5]** Nostr Spam Crisis
-- **Source:** Web research on spam mitigation discussions
+- **Source:** Nostr.band spam filter and web research
+- **URL:** https://spam.nostr.band/
 - **Date:** February 2024
 - **Key findings:**
   - Nostr hit with approximately 500,000 daily spam messages in mid-February 2024
@@ -134,48 +137,70 @@ Citations in pattern documents use this format:
 ### Pattern 4: Performance & Perceived Speed Data
 
 **[Data:19]** User complaints - Nostr apps "slow and clunky"
-- **Source:** Community feedback on Nostr performance (2024-2025)
-- **Key findings:** Apps described as "slow and clunky" compared to Twitter, with "clients blasting entire message history" causing inefficiency
+- **Source:** Stacker News Nostr client discussions
+- **URL:** https://stacker.news/items/126156
+- **Date:** 2024
+- **Key findings:** Apps described as "slow and clunky" compared to Twitter, with "clients blasting entire message history" causing inefficiency. Multiple users reported clients being "slow" or "buggy"
 - **Relevance:** Pattern 4 - User perception of performance problems
 
 **[Data:20]** Crash reports across Nostr clients
-- **Sources:** GitHub issues from major Nostr clients (2024-2025)
-- **Key findings:** Primal Android crashes (September & October 2025), Amethyst community join/leave crashes and permission crashes, Nostur iOS crashes and slow loading, Damus Issue #3163 (July 2025)
+- **Sources:** GitHub issues from major Nostr clients
+- **URLs:**
+  - https://github.com/PrimalHQ/primal-android-app/issues
+  - https://github.com/damus-io/damus/issues/3163
+  - https://github.com/vitorpamplona/amethyst/releases
+  - https://github.com/nostur-com/nostur-ios-public/releases
+- **Date:** 2024-2025
+- **Key findings:** Primal Android crashes (September & October 2025), Amethyst community join/leave crashes, Nostur iOS crashes and slow loading fixed in v1.19.2 and v1.24.3, Damus Issue #3163 (July 31, 2025)
 - **Relevance:** Pattern 4 - Stability and performance issues driving abandonment
 
 **[Data:21]** Database performance bottleneck
-- **Source:** Nostr developer discussions (2024-2025)
+- **Source:** Stacker News developer discussions
+- **URL:** https://stacker.news/items/126156
+- **Date:** 2024
 - **Key findings:** Users identify database as "core bottleneck" for slow feed loading. Comparison to Twitter's Redis architecture shows gap
 - **Relevance:** Pattern 4 - Technical root cause of performance problems
 
 **[Data:22]** Amethyst battery drain issues
-- **Source:** Amethyst GitHub issues (2024-2025)
+- **Source:** Amethyst GitHub and release notes
+- **URL:** https://github.com/vitorpamplona/amethyst/releases
+- **Date:** 2024-2025
 - **Key findings:** Background video playback silently draining battery on loop, multi-relay connections (up to 100 relays) causing resource consumption, improper WebSocket connection management when app backgrounds
 - **Relevance:** Pattern 4 - Mobile performance problems affecting user experience
 
 **[Data:23]** Relay infrastructure statistics
-- **Source:** Nostr relay monitoring (2024-2025)
+- **Source:** "Improving the Availability and Reliability of the Relay Network"
+- **URL:** https://research.dorahacks.io/2024/04/30/nostr-relay-incentive/
+- **Date:** April 23, 2024
 - **Key findings:** Only 639 relays online globally (80% in North America & Europe), default nostr-relay config: ~100 requests/second, default SQLite backend has "worst performance", free relays have higher latency and less reliability
 - **Relevance:** Pattern 4 - Infrastructure limitations affecting performance
 
 **[Data:24]** Multi-relay coordination overhead
-- **Source:** Nostr protocol analysis (2024-2025)
+- **Source:** Nostr protocol implementation analysis and client documentation
+- **URL:** https://github.com/nostr-protocol/nips
+- **Date:** 2024-2025
 - **Key findings:** Clients can open "hundreds of WebSocket connections simultaneously", each relay gets one WebSocket connection for all communication
 - **Relevance:** Pattern 4 - Architecture creating performance bottlenecks
 
 **[Data:25]** Black Hat USA 2025: "Not Sealed: Practical Attacks on Nostr"
-- **Source:** Black Hat USA 2025 security research
+- **Source:** Black Hat USA 2025 presentation and academic paper
+- **URL:** https://crypto-sec-n.github.io/
+- **Date:** August 2025
 - **Key findings:** Several clients (Damus, Iris, FreeFrom, Plebstr past versions) omit signature verification entirely to improve speed. Trade-off: Performance improvement vs security vulnerability. Recommendation: Enforce mandatory signature verification in NIP-01
 - **Relevance:** Pattern 4 - Critical security vs performance trade-off
 
 **[Data:26]** nostrdb optimization
-- **Source:** nostrdb documentation (2024-2025)
+- **Source:** nostrdb GitHub repository
+- **URL:** https://github.com/damus-io/nostrdb
+- **Date:** 2024-2025
 - **Key findings:** "Unfairly fast" embedded database with zero-copy, O(1) access patterns, memory-mapped LMDB design (copied from strfry)
 - **Relevance:** Pattern 4 - Example of performance optimization solution
 
 **[Data:27]** Primal Caching Service
-- **Source:** Primal project (2024-2025)
-- **Key findings:** Server-side caching for Nostr events, open sourced, archived December 2024
+- **Source:** Primal caching service repository (archived December 14, 2024)
+- **URL:** https://github.com/PrimalHQ/primal-caching-service
+- **Date:** Archived December 2024
+- **Key findings:** Server-side caching for Nostr events, open sourced under MIT license, development moved to primal-server
 - **Relevance:** Pattern 4 - Relay-level caching strategy
 
 ---
@@ -821,65 +846,7 @@ Citations in pattern documents use this format:
 
 ## 5. User Feedback & Quotes
 
-### Onboarding Pain Points
-
-**[User:1]** "15-20 minute setup process overwhelms new users"
-- **Source:** [User feedback - to be specifically cited]
-- **Context:** [Where this was observed]
-- **Relevance:** Pattern 1 (Onboarding)
-
-**[User:2]** "Key management is terrifying - losing nsec = losing identity forever"
-- **Source:** [User feedback - to be cited]
-- **Context:** [Where this was observed]
-- **Relevance:** Pattern 1 (Onboarding)
-
-**[User:3]** "Empty feed after signup - no idea what to do"
-- **Source:** [User feedback - to be cited]
-- **Context:** [Where this was observed]
-- **Relevance:** Pattern 1 (Onboarding), Pattern 2 (Content Discovery)
-
-### Reliability & Core Interactions
-
-**[User:4]** "Posts disappear seconds after posting"
-- **Source:** [User complaint - to be cited]
-- **Context:** [Client and circumstances]
-- **Relevance:** Pattern 3 (Core Interactions), Pattern 6 (Cross-Client Consistency)
-
-**[User:5]** "Notifications are missing or delayed"
-- **Source:** [User feedback]
-- **Context:** [Where this was observed]
-- **Relevance:** Pattern 3 (Core Interactions)
-
-### Content Discovery Issues
-
-**[User:6]** "Traditional apps win by having much better content selection"
-- **Source:** [User observation - to be cited]
-- **Context:** [Discussion context]
-- **Relevance:** Pattern 2 (Content Discovery)
-
-**[User:7]** "Need 5-6 different clients to work around bugs"
-- **Source:** [User feedback - to be cited]
-- **Context:** [Where this was observed]
-- **Relevance:** All patterns (systemic UX failure)
-
-### Cross-Client Consistency
-
-**[User:8]** "Lost all followers when switching from Primal → Damus → Snort"
-- **Source:** [User complaint - to be cited with GitHub issue or Nostr post]
-- **Context:** [Specific circumstances]
-- **Relevance:** Pattern 6 (Cross-Client Consistency)
-
-**[User:9]** "Profile changes don't sync across apps"
-- **Source:** [User feedback - to be cited]
-- **Context:** [Where observed]
-- **Relevance:** Pattern 6 (Cross-Client Consistency)
-
-### Performance & Reliability
-
-**[User:10]** "Apps hang/buffer constantly"
-- **Source:** [User complaint - to be cited]
-- **Context:** [Client and device]
-- **Relevance:** Pattern 4 (Performance)
+### Onboarding & First-Run Experience
 
 **[User:11]** "After 15-20 minutes of messing around, I was able to create a NOSTR account"
 - **Source:** Stacker News discussion thread #222205
@@ -951,76 +918,88 @@ Citations in pattern documents use this format:
 - **Relevance:** Pattern 2 (Content Discovery) - Direct comparison showing Nostr's content discovery deficit
 
 **[User:22]** "Nostr is lacking in content, which could be the primary reason people are not sticking around"
-- **Source:** Multiple user discussions, 2024
-- **Context:** Analysis of retention crisis
+- **Source:** "The State of Nostr Clients" by karnage
+- **URL:** https://karnage.npub.pro/post/1711761836895/
+- **Date:** March 29, 2024
+- **Context:** Analysis of retention crisis based on nostr.band data
 - **Relevance:** Pattern 2 (Content Discovery) - Content scarcity as primary retention killer
 
 **[User:23]** "Nostr suffers from the chicken/egg problem where new users are needed to generate more content, and more content is needed to retain new users"
-- **Source:** UX retention problem discussions
-- **Date:** 2024
+- **Source:** "The State of Nostr Clients" by karnage
+- **URL:** https://karnage.npub.pro/post/1711761836895/
+- **Date:** March 29, 2024
 - **Context:** Cold start problem where empty feeds drive users away before they contribute content
 - **Relevance:** Pattern 2 (Content Discovery) - The fundamental chicken-egg problem
 
 **[User:24]** "Nostr does not seem to have any external growth loops, such as the ability to invite people by email with a single click"
 - **Source:** "The State of Nostr Clients" by karnage
-- **Date:** March 2024
+- **URL:** https://karnage.npub.pro/post/1711761836895/
+- **Date:** March 29, 2024
 - **Context:** No mechanisms to help users discover or invite others
 - **Relevance:** Pattern 2 (Content Discovery) - No growth loops for network effects
 
 **[User:25]** "Users are not notified when tagged, and people have to have a habit of opening the app to know if something is happening"
 - **Source:** "The State of Nostr Clients" by karnage
-- **Date:** March 2024
+- **URL:** https://karnage.npub.pro/post/1711761836895/
+- **Date:** March 29, 2024
 - **Context:** Discovery problem - users miss interactions
 - **Relevance:** Pattern 2 (Content Discovery), Pattern 3 (Core Interactions) - Notification failures affect discovery
 
 **[User:26]** "Habit formation of using a new app is important in the early usage phase and Nostr seems to have a weak spot here"
 - **Source:** "The State of Nostr Clients" by karnage
-- **Date:** March 2024
+- **URL:** https://karnage.npub.pro/post/1711761836895/
+- **Date:** March 29, 2024
 - **Context:** No triggers to bring users back, related to discovery
 - **Relevance:** Pattern 2 (Content Discovery) - Weak habit formation due to poor discovery
 
 **[User:27]** "The main problem of decentralized alternatives like Nostr is content discovery"
-- **Source:** General Nostr UX discussions
+- **Source:** "A vision for content discovery and relay usage" by fiatjaf
+- **URL:** https://fiatjaf.com/3f106d31.html
 - **Date:** 2024
-- **Context:** Recognized as a core architectural challenge
+- **Context:** Recognized as a core architectural challenge in Nostr's decentralized design
 - **Relevance:** Pattern 2 (Content Discovery) - Protocol-level discovery challenge acknowledged
 
 **[User:28]** "It's only possible to search on what you have seen, so search engines will always have to crawl some parts of the network they chose to and index those to enable public search"
-- **Source:** Hashtag discovery discussions
+- **Source:** Nostr FAQ - "How can I search for content or users?"
+- **URL:** https://nostr.com/
 - **Date:** 2024
-- **Context:** Search is limited by relay coverage
+- **Context:** Search is limited by relay coverage and local content
 - **Relevance:** Pattern 2 (Content Discovery) - Search limitations in decentralized architecture
 
 **[User:29]** Nostr spam crisis - "500,000 daily spam messages in mid-February"
-- **Source:** Spam filter discussions, web research
+- **Source:** Nostr.band spam filter documentation and web research
+- **URL:** https://spam.nostr.band/
 - **Date:** February 2024
 - **Full quote:** "Nostr was hit with approximately 500,000 daily spam messages in mid-February, consisting of ads for spam services, scams, and NSFW content"
 - **Context:** Global feed usability severely impacted by spam
 - **Relevance:** Pattern 2 (Content Discovery) - Feed quality crisis requiring spam filtering
 
 **[User:30]** "There can't be a 'global' view of the network, as it would be full of spam, so indexers have to choose what to display"
-- **Source:** Global feed discussions
+- **Source:** Nostr FAQ - "If content is spread across multiple relays how can I be sure I'm seeing everything?"
+- **URL:** https://nostr.com/
 - **Date:** 2024
 - **Context:** Architecture limitation affects discovery
 - **Relevance:** Pattern 2 (Content Discovery) - No true global discovery feed possible
 
 **[User:31]** Primal 2.0 addressing discovery problems
 - **Source:** NoBS Bitcoin announcement / Primal 2.0 launch
-- **URL:** [To be added]
+- **URL:** https://www.nobsbitcoin.com/primal-v2-0/
 - **Date:** November 21, 2024
 - **Quote:** "Primal 2.0 was announced by miljan, founder and CEO of Primal, after the team worked for many months to reach this milestone. Primal now offers a much more comprehensive view of Nostr on its web and mobile apps, with the following additions: a Reads tab, an Explore tab, a Feed Marketplace, comprehensive Advanced Search options, and multiple performance improvements."
 - **Context:** Major discovery innovation launched late 2024
 - **Relevance:** Pattern 2 (Content Discovery) - Ecosystem response to discovery crisis
 
 **[User:32]** Nstart onboarding wizard with auto-follow
-- **Source:** Nstart announcement (https://www.nobsbitcoin.com/nstart-nostr-onboarding-wizard/)
+- **Source:** NoBS Bitcoin - Nstart announcement
+- **URL:** https://www.nobsbitcoin.com/nstart-nostr-onboarding-wizard/
 - **Date:** January 2025
 - **Quote:** "Nstart aims to simplify onboarding for new users to the Nostr protocol with an easy-to-use wizard that provides helpful hints about the protocol and exclusive features... Auto follow the contacts list of some old and trusted Nostr users"
 - **Context:** Solves cold start by auto-following curated lists
 - **Relevance:** Pattern 2 (Content Discovery) - Solution to empty feed problem launched January 2025
 
 **[User:33]** Derek Ross on user-controlled discovery
-- **Source:** Derek Ross Nostr post
+- **Source:** Derek Ross Nostr post via NoBS Bitcoin coverage
+- **URL:** https://www.nobsbitcoin.com/
 - **Date:** January 2025
 - **Quote:** "Content discovery on Nostr keeps improving, but I believe we still need to act as our own algorithms most of the time—and I actually prefer it that way"
 - **Context:** Philosophy on discovery vs algorithms
@@ -1028,6 +1007,7 @@ Citations in pattern documents use this format:
 
 **[User:16]** "Nostr is weird and hard to use"
 - **Source:** Jack Dorsey interview with Mike Solana, Founders Fund
+- **URL:** https://www.washingtonpost.com/technology/2024/05/21/jack-dorsey-twitter-bluesky-nostr/
 - **Date:** May 2024
 - **Coverage:** Washington Post, TechTimes, Engadget
 - **Full context:** Dorsey emphasized "those who truly believe in censorship resistance and free speech need to use technologies that enable those values" but admitted UX is "rough around the edges"
