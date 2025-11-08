@@ -13,19 +13,3 @@
   --primary-saturation: 85%;
   --primary-lightness: 70%;
 }
-
-/* Consistent spacing for headings */
-.hx\:prose h3 {
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-}
-
-.hx\:prose h2 {
-  margin-top: 3rem;
-  margin-bottom: 1.5rem;
-}
-
-/* Ensure first heading after another has proper spacing */
-.hx\:prose h2 + h3 {
-  margin-top: 1.5rem;
-}
