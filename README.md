@@ -4,18 +4,18 @@
 
 ---
 
-## The Opportunity
+## The Problem
 
-Nostr has the technical foundation for censorship-resistant social media. The protocol works. What needs improvement is the user experience.
+Nostr has a working, censorship-resistant protocol. The critical problem is user experience.
 
-**Current metrics show room for growth:**
-- 30-day retention trending to 0% for recent cohorts
-- Daily active users at 10,000-12,000 despite viral adoption spikes
-- Users often need multiple clients to access different features
+**Current metrics:**
+- **30-day retention trending to 0%** for recent cohorts
+- **Daily active users stuck at 10,000-12,000** despite viral adoption spikes
+- Users often need **multiple clients** to access different features
 
-**The good news:** These are solvable UX challenges. Traditional social apps achieved better retention not through centralization, but through better content discovery, reliable core interactions, and streamlined onboarding.
+This is a retention crisis. But it's also **solvable**. Traditional social apps achieve better retention not through centralization, but through better content discovery, reliable core interactions, and streamlined onboarding—all implementable on Nostr.
 
-This research study provides evidence-based patterns to close that gap.
+This research study provides evidence-based patterns to fix these critical UX problems.
 
 ---
 
@@ -43,7 +43,7 @@ Each pattern includes:
 ## Quick Start: Choose Your Path
 
 ### 🚀 First Time Here?
-→ Read **[Introduction](introduction.md)** (5 minutes) - understand the challenge, the framework, the 6 patterns
+→ Read **[Introduction](introduction.md)** (5 minutes) - understand the problem, the framework, the 6 patterns
 
 ### 🏃 Short on Time?
 → **[Quick Reference Guide](quick-reference.md)** (10 minutes) - one-page summaries of all 6 patterns

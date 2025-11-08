@@ -1,18 +1,20 @@
 # Introduction: Improving UX for Nostr Clients
 
-## The Challenge and Opportunity
+## The Problem
 
-Nostr has achieved something remarkable: a working, censorship-resistant social protocol. The technical foundation is solid. Now the challenge is user experience.
+Nostr has achieved something remarkable: a working, censorship-resistant social protocol. But there's a critical problem: **user retention is failing**.
 
-**Current metrics reveal opportunities for improvement:**
-- 30-day retention trending to 0% for recent cohorts
-- Daily active users at 10,000-12,000
-- Users often need multiple clients to access different features
-- Viral adoption spikes (Brazil's Twitter ban, Reddit controversies) haven't translated to sustained growth
+**Current metrics:**
+- **30-day retention trending to 0%** for recent cohorts
+- **Daily active users stuck at 10,000-12,000**
+- Users often need **multiple clients** to access different features
+- Viral adoption spikes (Brazil's Twitter ban, Reddit controversies) **haven't translated to sustained growth**
 
-**The insight:** This is a solvable UX challenge, not a protocol limitation. Traditional social apps achieve better retention through better content discovery, reliable core interactions, and streamlined onboarding—all implementable on Nostr.
+This is a retention crisis. The protocol works, but the user experience doesn't.
 
-This research study provides evidence-based patterns to help Nostr clients reach their potential.
+**The good news:** This is solvable. Traditional social apps achieve better retention not through centralization, but through better content discovery, reliable core interactions, and streamlined onboarding—all implementable on Nostr.
+
+This research study provides evidence-based patterns to fix these critical UX problems.
 
 ---
 
