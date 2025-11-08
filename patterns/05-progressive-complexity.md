@@ -1245,3 +1245,372 @@ function AdvancedNetworkSettings() {
 ```
 
 ---
+
+## Anti-Patterns: What Not To Do
+
+### Anti-Pattern 1: Relay Picker in Onboarding
+
+**What it looks like:**
+```
+Welcome to Nostr!
+Step 1: Choose your relays (required)
+
+[ ] wss://relay.damus.io
+[ ] wss://nos.lol
+[ ] wss://relay.nostr.band
+... (47 more relays)
+
+ℹ️ Relays are servers that store your events. Choose at least 3.
+Learn more about NIP-01 relay specification →
+
+[Continue]
+```
+
+**Why it fails:**
+- New users have no idea what relays are
+- Overwhelming choice before understanding the platform
+- Technical jargon ("events", "NIP-01") scares users away
+- Creates decision paralysis
+- Users abandon before reaching value
+
+**What to do instead:**
+- Zero relay configuration during onboarding
+- App chooses optimal relays automatically (2-3 well-connected ones)
+- Defer relay management to advanced settings
+- Only show to power users who request it
+
+**Good example:**
+```
+Welcome to Nostr!
+
+[Create account]  [Sign in]
+
+(No relay selection—handled automatically)
+```
+
+---
+
+### Anti-Pattern 2: NIP Jargon in User-Facing UI
+
+**What it looks like:**
+```
+Settings
+☑ Enable NIP-01 Event Verification
+☑ Support NIP-05 Identifiers
+☑ Use NIP-46 Remote Signers
+☑ Implement NIP-65 Outbox Model
+☐ Enable NIP-42 Relay Authentication
+
+⚠️ Failed to publish kind:1 event to wss://relay.example.com
+NIP-01 signature verification failed on event:
+a3f82...
+```
+
+**Why it fails:**
+- Users don't know what NIPs are (nor should they)
+- Technical protocol references confuse mainstream users
+- Error messages expose implementation details
+- Makes app feel like developer tool, not consumer product
+
+**What to do instead:**
+- Translate protocol terms to user benefits
+- Hide NIP numbers completely
+- Use human-readable error messages
+- Reference NIPs only in developer documentation
+
+**Good example:**
+```
+Settings
+☑ Verify post authenticity (recommended)
+☑ Get a username
+☑ Use external key manager
+☑ Optimize network performance
+☐ Connect to private servers
+
+⚠️ Couldn't post right now
+We'll try again automatically
+[Retry] [Cancel]
+```
+
+---
+
+### Anti-Pattern 3: All Features Visible to All Users
+
+**What it looks like:**
+```
+Composer Toolbar:
+[B] [I] [U] [Link] [Image] [Video] [Poll] [Article]
+[Code] [Quote] [Spoiler] [Table] [Embed] [LaTeX]
+[Choose Relays] [Set Expiration] [Edit Raw Event]
+[Add Hashtags] [Mention] [Emoji] [GIF] [Location]
+```
+
+**Why it fails:**
+- 20+ buttons overwhelming beginners
+- Most users only need 3-4 core features
+- Power features clutter interface
+- Paradox of choice: more options = less usage
+
+**What to do instead:**
+- Show 5-7 core features by default
+- Progressive disclosure for advanced features
+- Feature gating based on user level
+- Overflow menu for less-used actions
+
+**Good example:**
+```
+Composer Toolbar:
+[B] [I] [Link] [Image] [⋯ More]
+
+More menu (contextual):
+→ Code block
+→ Quote
+→ Poll
+→ Advanced options (power users only)
+```
+
+---
+
+### Anti-Pattern 4: No Smart Defaults
+
+**What it looks like:**
+```
+First Launch
+Before you can use this app, please configure:
+
+1. Select your relays (0 selected)
+2. Choose read/write relay split
+3. Set up relay authentication
+4. Configure event cache duration
+5. Set network optimization preferences
+6. Choose signature verification level
+
+[Start Configuration]
+```
+
+**Why it fails:**
+- Requires decisions before user understands platform
+- No "just works" experience
+- Users abandon rather than configure
+- Assumes technical knowledge
+
+**What to do instead:**
+- App works perfectly with zero configuration
+- Smart defaults for 80% of users
+- Defer customization to advanced settings
+- One-click "Optimize automatically" option
+
+**Good example:**
+```
+Welcome to Nostr!
+
+[Create account]  [Sign in]
+
+(Everything configured automatically)
+```
+
+---
+
+### Anti-Pattern 5: Settings Overload
+
+**What it looks like:**
+```
+Settings (67 items on one screen)
+
+Profile
+Notifications
+Display
+Privacy
+Security
+Network
+  - Relay 1 URL
+  - Relay 1 Read/Write
+  - Relay 2 URL
+  - Relay 2 Read/Write
+  ... (10 relays, 20 settings)
+Performance
+Cache
+Storage
+Advanced
+Developer
+Experimental
+...
+(endless scrolling)
+```
+
+**Why it fails:**
+- Overwhelming cognitive load
+- Violates 10-15 items limit
+- Users can't find what they need
+- Everything looks equally important
+- Poor visual hierarchy
+
+**What to do instead:**
+- Basic settings: <10 items
+- Group related settings logically
+- Collapse advanced sections by default
+- Use search for finding settings
+- Hide developer options completely
+
+**Good example:**
+```
+Settings
+
+Profile & Account
+Notifications
+Display
+Security
+
+Advanced ▼ (8 items)
+
+(Developer options: hidden)
+```
+
+---
+
+### Anti-Pattern 6: Upfront Tutorial Overload
+
+**What it looks like:**
+```
+Welcome to Nostr! Let's get you started.
+
+Tutorial (12 steps):
+1. What are relays?
+2. Understanding events and kinds
+3. Public and private keys (nsec/npub)
+4. NIPs and protocol extensions
+5. How to choose relays
+6. Read vs Write relays
+7. Outbox model (NIP-65)
+8. Relay authentication (NIP-42)
+9. Remote signers (NIP-46)
+10. Web of Trust
+11. Zaps and Lightning
+12. Data portability
+
+[Start Tutorial] [Skip]
+
+(Users hit Skip, never learn anything)
+```
+
+**Why it fails:**
+- Information overload before usage
+- Users skip and never return
+- Teaches protocol, not usage
+- No context for why it matters
+
+**What to do instead:**
+- Contextual help when features are encountered
+- "Pull" education (user-triggered) not "push" (forced)
+- Short, focused tooltips at point of use
+- Progressive education as users grow
+
+**Good example:**
+```
+Welcome to Nostr!
+
+[Create account]  [Sign in]
+
+(No upfront tutorial)
+
+Later, when user first encounters relay settings:
+💡 Servers (Relays)
+Nostr uses multiple servers to store posts.
+We've chosen the best ones for you.
+[Got it]
+```
+
+---
+
+### Anti-Pattern 7: Power User Features in Main Navigation
+
+**What it looks like:**
+```
+Main Navigation:
+🏠 Home
+🔔 Notifications
+💬 Messages
+👤 Profile
+🔧 Relay Manager
+📊 Event Inspector
+🔑 Key Management
+⚙️ NIP Feature Flags
+🐛 Debug Console
+```
+
+**Why it fails:**
+- Developer tools mixed with user features
+- Beginners confused by technical options
+- Poor information architecture
+- Visual clutter
+
+**What to do instead:**
+- Main navigation: core user features only
+- Advanced features in settings
+- Developer tools hidden (gesture/code to unlock)
+- Clear separation of concerns
+
+**Good example:**
+```
+Main Navigation:
+🏠 Home
+🔔 Notifications
+💬 Messages
+👤 Profile
+⚙️ Settings
+  → Advanced
+      → Developer Options (if enabled)
+```
+
+---
+
+### Anti-Pattern 8: Immediate Signer App Requirement
+
+**What it looks like:**
+```
+Create Account
+
+For maximum security, you need a remote signer app.
+
+Step 1: Install Amber (Android) or Nostr Signer (iOS)
+Step 2: Generate keys in signer app
+Step 3: Connect this app to your signer
+Step 4: Approve connection via NIP-46
+
+[Install Signer App]
+
+Note: Signer apps are not available in app stores.
+You'll need to install Obtanium first...
+```
+
+**Why it fails:**
+- Massive friction before value
+- Requires installing 2-3 apps before using one
+- Signer apps not in official stores
+- NIP-46 has poor UX and compatibility issues
+- 99% of users will abandon
+
+**What to do instead:**
+- Simple in-app key storage by default
+- Optional passphrase/biometric protection
+- Introduce signer apps AFTER user is active (1+ weeks)
+- Clear explanation of benefits
+- Make it optional, not required
+
+**Good example:**
+```
+Create Account
+
+Your account is secured with a private key,
+safely stored on your device.
+
+[Create account]
+
+Later (after 1 week):
+💡 Extra Security
+Want even more protection? Use a dedicated
+signer app to manage your keys.
+[Learn more] [Not now]
+```
+
+---
