@@ -1,0 +1,8 @@
+/* Nostr Purple Theme */
+/* Using #8e30eb from Damus.io official gradient */
+
+:root {
+  --primary-hue: 270deg;
+  --primary-saturation: 83%;
+  --primary-lightness: 56%;
+}
