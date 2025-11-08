@@ -180,6 +180,6 @@ Based on this research, Nostr content discovery should:
 
 ---
 
-**Document compiled:** November 7, 2025
+**Document compiled:** November 7, 2024
 **For use in:** Pattern 2 - Content Discovery & Feed Quality
 **Project:** nostr-ux-research
