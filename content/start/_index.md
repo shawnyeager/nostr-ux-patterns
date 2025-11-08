@@ -65,32 +65,38 @@ If you can't answer "yes" to all three, reconsider whether this feature should b
 
 Here are high-impact, low-effort improvements you can ship this week:
 
-**Onboarding:**
+### Onboarding
+
 - Add guest/browse mode (see content before account creation)
 - Reduce required fields to just username
 - Auto-select relays, don't make users choose
 
-**Content Discovery:**
+### Content Discovery
+
 - Show trending/popular content on empty feeds
 - Add basic search functionality
 - Create starter packs of accounts to follow
 
-**Core Interactions:**
+### Core Interactions
+
 - Implement optimistic UI for likes/reposts
 - Show clear error messages (not relay URLs)
 - Add retry logic for failed actions
 
-**Performance:**
+### Performance
+
 - Add skeleton screens while loading
 - Cache profile data locally
 - Lazy load images
 
-**Progressive Complexity:**
+### Progressive Complexity
+
 - Move relay settings to Advanced
 - Hide signer setup from onboarding
 - Use plain language, not protocol jargon
 
-**Cross-Client Consistency:**
+### Cross-Client Consistency
+
 - Write to 3+ relays for critical data
 - Verify successful writes before confirming
 - Add sync status indicators
