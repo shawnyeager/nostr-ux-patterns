@@ -1,3 +1,9 @@
+<!-- Twitter Card -->
+{{- with site.Params.social.twitter -}}
+<meta name="twitter:site" content="@{{ . }}">
+<meta name="twitter:creator" content="@{{ . }}">
+{{- end -}}
+
 {{- with site.Params.analytics.plausible.siteId -}}
 <!-- Privacy-friendly analytics by Plausible -->
 <script async src="https://plausible.io/js/{{ . }}.js"></script>

@@ -25,6 +25,9 @@ theme = 'hextra'
   description = 'Design patterns for building consumer Nostr applications with great UX'
   images = ['/images/og-image.png']
 
+  [params.social]
+    twitter = "shawnyeager"
+
   # Plausible.io analytics (custom script in layouts/partials/custom/head-end.html)
   [params.analytics.plausible]
     domain = "nostr-ux.com"
