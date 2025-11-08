@@ -967,11 +967,10 @@ Interest-based follow suggestions, pre-populated feed
 
 ## Next Steps
 
-1. **Fill citation gaps:** Conduct targeted research for [To be added] placeholders
-2. **User testing:** Test these patterns with real users
-3. **A/B experiments:** Validate which patterns have highest impact
-4. **Developer feedback:** Get input from Nostr client builders
-5. **Iterate:** Refine based on data and feedback
+1. **User testing:** Test these patterns with real users
+2. **A/B experiments:** Validate which patterns have highest impact
+3. **Developer feedback:** Get input from Nostr client builders
+4. **Iterate:** Refine based on data and feedback
 
 ---
 

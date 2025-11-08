@@ -196,15 +196,19 @@ A central theme woven throughout all patterns to address "features without valid
 ```
 nostr-ux-research/
 ├── CLAUDE.md              # This file
-├── OUTLINE.md             # Complete structure (created)
-├── README.md              # Public-facing intro (to create)
-├── patterns/
+├── OUTLINE.md             # Complete structure
+├── README.md              # Public-facing introduction
+├── patterns/              # 6 complete pattern documents (900-1900 lines each)
 │   ├── 01-onboarding.md
 │   ├── 02-content-discovery.md
 │   ├── 03-core-interactions.md
 │   ├── 04-performance.md
 │   ├── 05-progressive-complexity.md
 │   └── 06-cross-client-consistency.md
+├── research/              # Evidence files with verified citations (URL-only policy)
+│   ├── content-discovery-evidence-2024-2025.md    # Nostr-specific problems
+│   ├── content-discovery-mainstream-lessons.md    # Mainstream platform research
+│   └── pattern-4-performance-evidence.md          # Performance research
 ├── validation-framework.md
 ├── implementation-guide.md
 └── appendices/
@@ -214,15 +218,20 @@ nostr-ux-research/
     └── methodology.md
 ```
 
-### Next Steps (Where We Left Off)
-1. ✅ Created OUTLINE.md with full structure
-2. ✅ Committed to local repo
-3. ⏳ **PENDING:** Push to GitHub (waiting for explicit permission per git rules)
-4. **TODO:** Get feedback on outline from Shawn
-5. **TODO:** Create README.md (public-facing introduction)
-6. **TODO:** Begin detailed pattern documentation (start with Pattern 1: Onboarding)
-7. **TODO:** Gather examples and case studies
-8. **TODO:** Iterative refinement based on feedback
+### Project Status
+
+**Completed:**
+1. ✅ All 6 pattern documents complete (900-1900 lines each)
+2. ✅ Research evidence files with verified citations (URL-only policy enforced)
+3. ✅ README.md created
+4. ✅ OUTLINE.md with full structure
+5. ✅ All files committed and pushed to GitHub
+
+**Current Phase: Cleanup & Organization**
+- Refining citation quality across all documents
+- Auditing relationship between pattern files and research files
+- Reviewing file organization and naming for clarity
+- Closing citation gaps or removing placeholders
 
 ### Git Workflow
 - **Branch:** master (or main, depending on repo setup)
@@ -340,20 +349,25 @@ Based on CLAUDE.md patterns from other repos:
 
 ## Current State Summary
 
-**Files Created:**
-- OUTLINE.md - Complete structure and outline (committed locally, not pushed)
-- CLAUDE.md - This file (not yet committed)
+**Major Milestones Completed:**
+- 6 complete pattern documents (01-06, ranging from 900-1900 lines each)
+- 3 research evidence files with verified URL-only citations
+- README.md, OUTLINE.md, CLAUDE.md all complete
+- All appendices and supporting documentation created
+- Multiple rounds of citation verification and cleanup
 
-**Status:**
-- Structure validated ✓
-- Ready for Shawn's feedback on outline
-- Ready to begin pattern documentation once approved
-- Waiting for push permission
+**Recent Work (November 2025):**
+- Citation audit: Verified all sources have URLs, removed unverifiable claims
+- Fixed date errors across research files
+- Moved and renamed files for clarity (content-discovery-mainstream-lessons.md)
+- Removed 30+ unverifiable findings, restored accidentally removed verified sources
+- Enforced strict URL-only citation policy across all research documents
 
-**Last Context:**
-- User asked if we should start a new chat with the repo selected to avoid working directory issues
-- Decision: Create this CLAUDE.md so we can start fresh without losing context
-- This file enables Claude to pick up exactly where we left off
+**Current Focus:**
+- Final cleanup and organization refinement
+- Resolving citation gaps in pattern documents
+- Clarifying relationship between pattern files (definitive) and research files (supporting)
+- File naming and organization audit for consistency
 
 ---
 
@@ -362,17 +376,17 @@ Based on CLAUDE.md patterns from other repos:
 When continuing this project in a new session:
 
 1. **Read this file first** to understand the full context
-2. **Read OUTLINE.md** to see the complete structure
+2. **Check "Current State Summary"** to see what's been completed recently
 3. **Check git status** to see what's been committed/pushed
-4. **Ask Shawn** what phase we're in:
-   - Still refining outline?
-   - Ready to build pattern documentation?
-   - Gathering examples and case studies?
-   - Editing and refining existing content?
+4. **Current phase:** Cleanup and organization refinement
+   - All 6 pattern documents are complete
+   - All research evidence files have verified citations
+   - Focus is on polishing, consistency, and resolving gaps
 5. **Use the TodoWrite tool** to track progress on multi-step work
 6. **Reference the Validation Framework** when making UX recommendations
-7. **Remember:** Never push without explicit permission
+7. **Citation policy:** All claims must have verifiable URLs or be removed
+8. **Remember:** Never push without explicit permission
 
 ---
 
-Last updated: November 7, 2025
+Last updated: November 8, 2025
