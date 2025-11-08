@@ -729,9 +729,9 @@ Challenge: Nostr has no central push notification server.
 ### Metrics to Track
 
 **Engagement Metrics:**
-- [ ] **Session length:** Average time spent per session (target: [BENCHMARK NEEDED])
+- [ ] **Session length:** Average time spent per session
 - [ ] **Posts viewed per session:** How much content do users consume? (target: >20 in first session)
-- [ ] **Sessions per day:** How often do users return? (target: [BENCHMARK NEEDED])
+- [ ] **Sessions per day:** How often do users return?
 - [ ] **Feed diversity:** What % of content is from new accounts vs followed?
 
 **Discovery Effectiveness:**

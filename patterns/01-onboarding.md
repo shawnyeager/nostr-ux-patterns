@@ -680,7 +680,6 @@ Create your profile:
 **Primary:**
 - [ ] **Time-to-first-post:** Measure median time from app open to first successful post
   - Target: <2 minutes for new users
-  - Benchmark: [Research: Mainstream app data - to be cited]
 
 - [ ] **Signup completion rate:** % of users who start signup and finish
   - Target: >80%
