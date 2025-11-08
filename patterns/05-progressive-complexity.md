@@ -276,3 +276,326 @@ Bottom navigation bars and gesture-based controls streamline user journeys. [[Re
 Great UX isn't about hiding features—it's about organizing them so users can find, understand, and use without frustration.
 
 ---
+
+## Nostr-Specific Considerations (30%)
+
+### Challenge 1: Relay Management Complexity
+
+**The problem:** Nostr's multi-relay architecture is powerful but overwhelming for new users.
+
+**Current failures:**
+- [[Data:28]](#data-28) Apps showing 50+ relay pickers during onboarding
+- [[Data:31]](#data-31) Users setting relay preferences in one client (Nostrudel) find other clients (Coracle, Nostter) pulling relay lists incorrectly
+- [[Data:31]](#data-31) Manual relay additions multiply unexpectedly, causing confusion
+- Read/write relay splits exposed to beginners who don't understand the concept
+- No explanation of what relays are or why they matter
+
+**NIP-65 (Relay List Metadata) challenges:** [[Data:32]](#data-32)
+- Uses kind:10002 events to advertise user's write relays (OUTBOX) and read relays (INBOX)
+- Clients should guide users to keep lists small (2-4 relays) [[Data:32]](#data-32)
+- Users switching clients experience relay list confusion due to incomplete NIP implementations [[Data:31]](#data-31)
+
+**What 80% of users need:**
+- App works perfectly with zero relay configuration
+- Smart default relays chosen based on:
+  - Geographic location (latency)
+  - Reliability metrics
+  - Community recommendations
+- No relay UI during onboarding
+
+**What 20% of power users need:**
+- Relay health indicators (uptime, latency, event coverage)
+- Custom relay management
+- Read/write relay separation
+- Relay analytics and debugging tools
+
+**Progressive disclosure approach:**
+
+**Level 1: Invisible (Default)**
+```
+No relay UI at all. App chooses optimal relays automatically:
+- 2-3 well-connected, reliable relays
+- Geographic proximity for low latency
+- Automatic failover if relay goes down
+```
+
+**Level 2: Basic (Settings → Advanced)**
+```
+"Network Settings" (not "Relay Management")
+- [✓] Automatic relay selection (recommended)
+- [ ] Custom relay configuration
+
+Tooltip: "Nostr uses multiple servers (relays) to store your posts.
+Automatic mode works great for most people."
+```
+
+**Level 3: Power User (Settings → Advanced → Relay Management)**
+```
+Full relay management interface:
+- Add/remove relays manually
+- Read/write relay separation
+- Relay health monitoring
+- NIP-65 outbox model controls
+- Import/export relay lists
+```
+
+**Implementation example:**
+```typescript
+// Smart default relays based on user location
+function getDefaultRelays(userLocation: string): string[] {
+  const globalRelays = [
+    'wss://relay.damus.io',
+    'wss://nos.lol',
+    'wss://relay.nostr.band'
+  ]
+
+  const regionalRelays = {
+    'NA': ['wss://nostr.mom', 'wss://relay.current.fyi'],
+    'EU': ['wss://nostr.wine', 'wss://relay.orangepill.dev'],
+    'APAC': ['wss://relay.nostr.wirednet.jp']
+  }
+
+  // Combine 2 global + 1-2 regional for optimal coverage
+  return [...globalRelays.slice(0, 2), ...regionalRelays[userLocation].slice(0, 2)]
+}
+
+// Only show relay UI if user explicitly requests it
+function shouldShowRelayUI(user: User): boolean {
+  return user.settings.advancedMode === true || user.relayOverrides.length > 0
+}
+```
+
+### Challenge 2: Key Signer Apps (NIP-46) Complexity
+
+**The problem:** Remote signers enhance security but add significant complexity.
+
+**Current state:** [[Data:33]](#data-33)
+- NIP-46 specification unclear and constantly changing
+- Incompatibilities between apps and signers
+- No signer apps in traditional app stores (requires Obtanium or zap.store)
+- Clients don't handle latency well (need better loading states, debouncing, optimistic updates)
+- Push notification support incomplete
+
+**Available signers:** [[Data:34]](#data-34)
+- **Amber (Android):** Offline signing, multiple accounts, granular permissions
+- **Nostr Signer (Alby):** Remote signing via push notifications
+
+**User experience challenges:** [[Data:33]](#data-33)
+While NIP-46 is best practice for key security, "it doesn't currently work very well at all" due to spec instability and poor UX.
+
+**What 80% of users need:**
+- Simple, secure key storage in-app
+- Optional passphrase/biometric protection
+- Clear backup instructions
+
+**What 20% of power users need:**
+- Remote signer integration (NIP-46)
+- Hardware wallet support
+- Multiple key/identity management
+- Granular permission controls
+
+**Progressive disclosure approach:**
+
+**Level 1: Simple & Secure (Default)**
+```
+Onboarding:
+"Your account is secured with a private key, safely stored on your device"
+- Biometric unlock (Face ID/Touch ID)
+- Optional passphrase
+- Clear backup flow (12-word seed phrase or encrypted file)
+
+NO mention of:
+- nsec/npub distinction
+- Remote signers
+- NIP-46
+- Cryptographic details
+```
+
+**Level 2: Backup Awareness (After 1 week or first post)**
+```
+Non-intrusive reminder:
+"💡 Secure your account with a backup"
+[Set up backup] [Later]
+
+Backup flow:
+"Save your recovery phrase. You'll need it if you switch devices."
+[Show 12 words] → [Confirm] → [✓ Backed up]
+```
+
+**Level 3: Advanced Security (Settings → Security → Advanced)**
+```
+"Advanced Key Management"
+- [ ] Use remote signer app (NIP-46)
+  ℹ️ Store keys in a separate app for extra security
+  [Connect Signer App]
+
+- [ ] Export private key (nsec)
+  ⚠️ Only do this if you know what you're doing
+  [Show Private Key]
+```
+
+**When to introduce signer apps:**
+- NEVER during onboarding
+- Only in advanced security settings
+- With clear explanation of benefits
+- After user has successfully used app for 1+ week
+
+### Challenge 3: Protocol Terminology in UI
+
+**The problem:** Nostr-specific jargon (NIPs, relays, events, kinds) exposed in user-facing UI.
+
+**Current failures:** [[Data:29]](#data-29)
+- Error messages: "Failed to publish kind:1 event to relay"
+- Settings: "Enable NIP-65 Outbox Model"
+- Features: "Import NIP-05 identifier"
+- Help text: "This is defined in NIP-46"
+
+**Translation guide for user-facing UI:**
+
+| Technical Term | User-Facing Label | Context |
+|----------------|-------------------|---------|
+| Relay | Server, Network | "Your posts are stored on multiple servers" |
+| Event | Post, Message, Update | "Your post was published successfully" |
+| Kind:1 | Post | Never mention kind numbers |
+| Kind:3 | Following list | "Your following list" |
+| NIP-05 | Username, Verified name | "Get a username like alice@example.com" |
+| NIP-46 | Remote signer | "Use a separate app to manage your keys" |
+| NIP-65 | Network preferences | "Choose your preferred servers" |
+| nsec/npub | Private key/Public key | Only in advanced settings |
+| Outbox model | (no direct equivalent) | Feature should be invisible |
+
+**Pattern: Hide protocol, show benefit**
+
+**Bad:**
+```
+⚠️ Failed to publish kind:1 event to wss://relay.example.com
+NIP-01 signature verification failed
+```
+
+**Good:**
+```
+⚠️ Couldn't post right now
+We'll try again automatically, or you can retry
+[Retry] [Cancel]
+```
+
+**Bad:**
+```
+Settings
+☐ Enable NIP-65 Outbox Model
+☐ Verify NIP-01 Signatures
+☐ Support NIP-46 Remote Signers
+```
+
+**Good:**
+```
+Settings
+☐ Optimize network performance (recommended)
+☐ Verify post authenticity (recommended)
+
+Advanced →
+  ☐ Use external key manager
+```
+
+### Challenge 4: When to Introduce Advanced Nostr Features
+
+**The progressive rollout:**
+
+**Week 1: Core social experience**
+- Post, read, like, reply
+- Follow/unfollow
+- Profile editing
+- Notifications
+- Zero Nostr-specific concepts
+
+**Week 2-4: Light customization**
+- Mute/block users (no "Web of Trust" jargon)
+- Notification preferences
+- Display preferences
+- Content filters
+
+**Month 2+: Power user features (opt-in)**
+- Network settings (relay management)
+- Advanced security (remote signers)
+- Data portability (export/import)
+- Custom feeds
+- Zap configuration
+
+**Power user detection signals:**
+- User explores settings multiple times
+- User asks support about advanced features
+- User follows >100 accounts
+- User posts >10 times/week
+- User has been active >30 days
+
+**Contextual feature discovery:**
+```typescript
+// Show power user hints based on behavior
+if (user.daysActive > 30 && user.postsCount > 50) {
+  showContextualHint(
+    "💡 Did you know?",
+    "You can optimize your network settings for better performance",
+    "Settings → Advanced → Network"
+  )
+}
+
+// Only show once, never intrusive
+```
+
+### Challenge 5: Settings Organization for Nostr Apps
+
+**Applying 10-15 items limit to Nostr settings:** [[Research:58]](#research-58)
+
+**Basic Settings (Visible to all, <10 items)**
+```
+Profile & Account
+  • Edit profile
+  • Username (NIP-05)
+  • Privacy settings
+
+Notifications
+  • Enable notifications
+  • Sound & badges
+
+Display
+  • Theme (Light/Dark/Auto)
+  • Text size
+
+Security
+  • Require biometric unlock
+  • Backup account
+```
+
+**Advanced Settings (Collapsed by default)**
+```
+Advanced →
+  Network
+    • Network optimization (auto/manual)
+    • Connection status
+
+  Security
+    • Key management
+    • Remote signer setup
+
+  Data & Storage
+    • Cache management
+    • Import/export
+
+  Experimental
+    • Beta features
+    • Debug mode
+```
+
+**Developer/Debug (Hidden, requires code/gesture)**
+```
+Hold settings icon for 3 seconds →
+
+Developer Options
+  • Relay management (full control)
+  • Event inspector
+  • NIP feature flags
+  • Performance monitoring
+  • Protocol diagnostics
+```
+
+---
