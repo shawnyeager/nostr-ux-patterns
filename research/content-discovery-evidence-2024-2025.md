@@ -124,7 +124,7 @@ Research findings on content discovery problems in Nostr apps, compiled November
 
 ---
 
-**Research completed:** November 7, 2024
-**Cleaned:** November 8, 2024
+**Research completed:** November 7, 2025
+**Cleaned:** November 8, 2025
 **Methodology:** Removed all findings without verifiable URLs. Consolidated findings from the same source where appropriate.
 **Total findings with verified sources:** 8 findings from 4 distinct sources
