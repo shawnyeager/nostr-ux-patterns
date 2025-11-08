@@ -2,18 +2,21 @@
   <!-- Background -->
   <rect width="1200" height="630" fill="#8e30eb"/>
 
-  <!-- Logo squircle - centered at 600, 315 -->
-  <rect x="450" y="165" width="300" height="300" rx="60" fill="rgba(255,255,255,0.15)"/>
+  <!-- Logo squircle - centered at 600, 265 -->
+  <rect x="450" y="115" width="300" height="300" rx="60" fill="rgba(255,255,255,0.15)"/>
 
   <!-- N - properly centered in the squircle -->
-  <!-- Original logo: 40x40 with N from 12,10 to 28,30 (16x20 with margins) -->
-  <!-- Scaled 6x: 96x120, centered in 300x300 square -->
-  <g transform="translate(600, 315)">
+  <g transform="translate(600, 265)">
     <path d="M-48,-60 h24 l48,84 V-60 h24 v120 h-24 l-48,-84 v84 h-24 V-60 z" fill="white"/>
   </g>
 
-  <!-- Site name - positioned safely for center crop -->
-  <text x="600" y="510" font-family="system-ui, -apple-system, sans-serif" font-size="36" font-weight="700" fill="white" text-anchor="middle">
-    nostr-ux.com
+  <!-- Title - safe from center crop -->
+  <text x="600" y="460" font-family="system-ui, -apple-system, sans-serif" font-size="44" font-weight="700" fill="white" text-anchor="middle">
+    Design Patterns for Nostr UX
+  </text>
+
+  <!-- Tagline - safe from center crop -->
+  <text x="600" y="510" font-family="system-ui, -apple-system, sans-serif" font-size="26" fill="rgba(255,255,255,0.9)" text-anchor="middle">
+    Evidence-based patterns for building clients people actually use
   </text>
 </svg>
