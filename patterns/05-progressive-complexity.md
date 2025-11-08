@@ -599,3 +599,649 @@ Developer Options
 ```
 
 ---
+
+## Pattern Library: Concrete Solutions
+
+### Pattern A: Collapsible Advanced Settings
+
+**Problem:** Settings page with 30+ options overwhelming users.
+
+**Solution:** Group related settings, collapse advanced sections by default.
+
+**Implementation:**
+
+```tsx
+function SettingsScreen() {
+  const [showAdvanced, setShowAdvanced] = useState(false)
+  const [showDeveloper, setShowDeveloper] = useState(false)
+
+  return (
+    <div className="settings">
+      {/* Basic Settings - Always Visible */}
+      <Section title="Profile & Account">
+        <Setting label="Edit profile" onClick={editProfile} />
+        <Setting label="Username" value={user.nip05} />
+        <Setting label="Privacy settings" onClick={showPrivacy} />
+      </Section>
+
+      <Section title="Notifications">
+        <Toggle label="Enable notifications" checked={notificationsEnabled} />
+        <Toggle label="Sound & badges" checked={soundEnabled} />
+      </Section>
+
+      <Section title="Display">
+        <Select label="Theme" options={['Light', 'Dark', 'Auto']} value={theme} />
+        <Slider label="Text size" value={textSize} min={12} max={24} />
+      </Section>
+
+      <Section title="Security">
+        <Toggle label="Require biometric unlock" checked={biometricEnabled} />
+        <Setting label="Backup account" onClick={showBackup} />
+      </Section>
+
+      {/* Advanced Settings - Collapsed by Default */}
+      <CollapsibleSection
+        title="Advanced"
+        isOpen={showAdvanced}
+        onToggle={() => setShowAdvanced(!showAdvanced)}
+        itemCount={8}
+      >
+        <Subsection title="Network">
+          <Toggle label="Network optimization" checked={autoNetwork} />
+          <Setting label="Connection status" onClick={showNetworkStatus} />
+        </Subsection>
+
+        <Subsection title="Security">
+          <Setting label="Key management" onClick={showKeyManagement} />
+          <Setting label="Remote signer setup" onClick={showSignerSetup} />
+        </Subsection>
+
+        <Subsection title="Data & Storage">
+          <Setting label="Cache management" onClick={showCacheSettings} />
+          <Setting label="Import/export" onClick={showDataPortability} />
+        </Subsection>
+
+        <Subsection title="Experimental">
+          <Toggle label="Beta features" checked={betaEnabled} />
+          <Setting label="Debug mode" onClick={enableDebugMode} />
+        </Subsection>
+      </CollapsibleSection>
+
+      {/* Developer Settings - Hidden */}
+      {showDeveloper && (
+        <CollapsibleSection title="Developer Options" isDangerous>
+          <Setting label="Relay management" onClick={showRelayManager} />
+          <Setting label="Event inspector" onClick={showEventInspector} />
+          <Setting label="NIP feature flags" onClick={showNIPFlags} />
+        </CollapsibleSection>
+      )}
+    </div>
+  )
+}
+
+// Collapsible section component
+function CollapsibleSection({ title, isOpen, onToggle, itemCount, isDangerous, children }) {
+  return (
+    <div className={`collapsible-section ${isDangerous ? 'dangerous' : ''}`}>
+      <button onClick={onToggle} className="section-header">
+        <span>{title}</span>
+        {!isOpen && itemCount && <span className="badge">{itemCount}</span>}
+        <ChevronIcon direction={isOpen ? 'up' : 'down'} />
+      </button>
+      {isOpen && <div className="section-content">{children}</div>}
+    </div>
+  )
+}
+```
+
+**Validation:**
+- Basic settings: 8 items (under 10 limit)
+- Advanced settings: 8 items (collapsed by default)
+- Clear visual hierarchy
+- Item count badge shows what's hidden
+
+---
+
+### Pattern B: Contextual Feature Introduction
+
+**Problem:** Users don't know about advanced features that could help them.
+
+**Solution:** Show contextual hints based on user behavior, never intrusive.
+
+**Implementation:**
+
+```typescript
+// Track user behavior to detect power user patterns
+interface UserBehaviorTracker {
+  daysActive: number
+  postsCount: number
+  followingCount: number
+  settingsVisits: number
+  hasSeenHint: Set<string>
+}
+
+function shouldShowHint(
+  hintId: string,
+  user: UserBehaviorTracker,
+  condition: () => boolean
+): boolean {
+  // Never show same hint twice
+  if (user.hasSeenHint.has(hintId)) return false
+
+  // Check condition
+  return condition()
+}
+
+// Contextual hint system
+function useContextualHints(user: UserBehaviorTracker) {
+  const [currentHint, setCurrentHint] = useState<ContextualHint | null>(null)
+
+  useEffect(() => {
+    // Power user detection: Show relay optimization hint
+    if (shouldShowHint('relay-optimization', user, () =>
+      user.daysActive > 30 && user.postsCount > 50
+    )) {
+      setCurrentHint({
+        id: 'relay-optimization',
+        title: '💡 Did you know?',
+        message: 'You can optimize your network settings for better performance',
+        action: {
+          label: 'Learn more',
+          onClick: () => navigate('/settings/advanced/network')
+        }
+      })
+    }
+
+    // Frequent poster: Show backup reminder
+    if (shouldShowHint('backup-reminder', user, () =>
+      user.postsCount > 10 && !user.hasBackup
+    )) {
+      setCurrentHint({
+        id: 'backup-reminder',
+        title: '🔒 Secure your account',
+        message: 'You\'ve posted 10 times! Consider backing up your account',
+        action: {
+          label: 'Set up backup',
+          onClick: () => navigate('/settings/security/backup')
+        }
+      })
+    }
+
+    // Heavy follower: Show custom feed hint
+    if (shouldShowHint('custom-feeds', user, () =>
+      user.followingCount > 100
+    )) {
+      setCurrentHint({
+        id: 'custom-feeds',
+        title: '📋 Organize your feed',
+        message: 'You follow 100+ people. Try creating custom feeds to organize content',
+        action: {
+          label: 'Create feed',
+          onClick: () => navigate('/feeds/create')
+        }
+      })
+    }
+  }, [user])
+
+  const dismissHint = (hintId: string) => {
+    user.hasSeenHint.add(hintId)
+    setCurrentHint(null)
+    // Persist to storage
+    saveDismissedHints(user.hasSeenHint)
+  }
+
+  return { currentHint, dismissHint }
+}
+
+// UI Component
+function ContextualHintBanner({ hint, onDismiss }) {
+  if (!hint) return null
+
+  return (
+    <div className="contextual-hint">
+      <div className="hint-content">
+        <h4>{hint.title}</h4>
+        <p>{hint.message}</p>
+      </div>
+      <div className="hint-actions">
+        <button onClick={hint.action.onClick} className="primary">
+          {hint.action.label}
+        </button>
+        <button onClick={() => onDismiss(hint.id)} className="secondary">
+          Dismiss
+        </button>
+      </div>
+    </div>
+  )
+}
+```
+
+---
+
+### Pattern C: Progressive Relay Configuration
+
+**Problem:** Relay selection too complex for beginners, but essential for power users.
+
+**Solution:** Three-tier progressive disclosure (invisible → basic → advanced).
+
+**Implementation:**
+
+```typescript
+// Level 1: Automatic relay selection (invisible to user)
+class AutomaticRelayManager {
+  private userLocation: string
+  private relayStats: Map<string, RelayStats>
+
+  async getOptimalRelays(): Promise<string[]> {
+    const location = await this.getUserLocation()
+    const defaults = this.getDefaultRelays(location)
+    const tested = await this.testRelayLatency(defaults)
+
+    // Return 3-4 fastest, most reliable relays
+    return tested
+      .sort((a, b) => a.latency - b.latency)
+      .slice(0, 4)
+      .map(r => r.url)
+  }
+
+  private getDefaultRelays(location: string): string[] {
+    const globalRelays = [
+      'wss://relay.damus.io',
+      'wss://nos.lol',
+      'wss://relay.nostr.band'
+    ]
+
+    const regionalRelays = {
+      'NA': ['wss://nostr.mom', 'wss://relay.current.fyi'],
+      'EU': ['wss://nostr.wine', 'wss://relay.orangepill.dev'],
+      'APAC': ['wss://relay.nostr.wirednet.jp', 'wss://relay.nostr.moctane.com']
+    }
+
+    return [...globalRelays, ...(regionalRelays[location] || [])]
+  }
+
+  private async testRelayLatency(relays: string[]): Promise<RelayTestResult[]> {
+    const results = await Promise.all(
+      relays.map(async url => {
+        const start = Date.now()
+        try {
+          await this.pingRelay(url)
+          return { url, latency: Date.now() - start, online: true }
+        } catch {
+          return { url, latency: Infinity, online: false }
+        }
+      })
+    )
+    return results.filter(r => r.online)
+  }
+}
+
+// Level 2: Basic toggle (Settings → Advanced)
+function NetworkSettings() {
+  const [mode, setMode] = useState<'auto' | 'custom'>('auto')
+  const [customRelays, setCustomRelays] = useState<string[]>([])
+
+  return (
+    <div>
+      <h2>Network Settings</h2>
+
+      <RadioGroup value={mode} onChange={setMode}>
+        <Radio value="auto">
+          <strong>Automatic (Recommended)</strong>
+          <p>We'll choose the best servers for you</p>
+          <Tooltip>
+            Nostr uses multiple servers (relays) to store your posts.
+            Automatic mode works great for most people.
+          </Tooltip>
+        </Radio>
+
+        <Radio value="custom">
+          <strong>Custom configuration</strong>
+          <p>Manually choose your servers</p>
+        </Radio>
+      </RadioGroup>
+
+      {mode === 'custom' && (
+        <button onClick={() => navigate('/settings/advanced/relays')}>
+          Manage relays →
+        </button>
+      )}
+    </div>
+  )
+}
+
+// Level 3: Full relay management (Settings → Advanced → Relay Management)
+function RelayManagementScreen() {
+  const [relays, setRelays] = useState<Relay[]>([])
+  const [showAddRelay, setShowAddRelay] = useState(false)
+
+  return (
+    <div className="relay-manager">
+      <h2>Relay Management</h2>
+      <p className="description">
+        Advanced users: Customize which servers store and relay your posts
+      </p>
+
+      {/* Relay List */}
+      <div className="relay-list">
+        {relays.map(relay => (
+          <RelayCard
+            key={relay.url}
+            relay={relay}
+            onRemove={() => removeRelay(relay.url)}
+            onToggleRead={() => toggleRelayRead(relay.url)}
+            onToggleWrite={() => toggleRelayWrite(relay.url)}
+          />
+        ))}
+      </div>
+
+      {/* Add Relay */}
+      <button onClick={() => setShowAddRelay(true)}>
+        + Add relay
+      </button>
+
+      {/* Advanced Options */}
+      <CollapsibleSection title="Advanced Options">
+        <Toggle
+          label="Enable NIP-65 Outbox Model"
+          tooltip="Use your relay preferences when others fetch your posts"
+          checked={nip65Enabled}
+          onChange={setNip65Enabled}
+        />
+        <Setting
+          label="Import relay list"
+          onClick={importRelayList}
+        />
+        <Setting
+          label="Export relay list"
+          onClick={exportRelayList}
+        />
+      </CollapsibleSection>
+
+      {/* Relay Health Monitoring */}
+      <Section title="Relay Health">
+        <RelayHealthDashboard relays={relays} />
+      </Section>
+    </div>
+  )
+}
+
+function RelayCard({ relay, onRemove, onToggleRead, onToggleWrite }) {
+  return (
+    <div className="relay-card">
+      <div className="relay-info">
+        <StatusIndicator status={relay.status} />
+        <span className="relay-url">{relay.url}</span>
+        <span className="relay-latency">{relay.latency}ms</span>
+      </div>
+
+      <div className="relay-controls">
+        <Toggle
+          label="Read"
+          size="small"
+          checked={relay.read}
+          onChange={onToggleRead}
+        />
+        <Toggle
+          label="Write"
+          size="small"
+          checked={relay.write}
+          onChange={onToggleWrite}
+        />
+        <button onClick={onRemove} className="icon-button">
+          <TrashIcon />
+        </button>
+      </div>
+    </div>
+  )
+}
+```
+
+---
+
+### Pattern D: Smart Feature Gating
+
+**Problem:** Advanced features visible to all users, causing confusion.
+
+**Solution:** Gate features based on user proficiency level, with clear upgrade path.
+
+**Implementation:**
+
+```typescript
+// User proficiency detection
+enum UserLevel {
+  BEGINNER = 'beginner',      // 0-7 days, <10 posts
+  INTERMEDIATE = 'intermediate', // 7-30 days, 10-50 posts
+  ADVANCED = 'advanced',        // 30+ days, 50+ posts
+  POWER_USER = 'power_user'     // Explicitly enabled advanced mode
+}
+
+function getUserLevel(user: User): UserLevel {
+  // Explicit power user mode
+  if (user.settings.advancedMode) {
+    return UserLevel.POWER_USER
+  }
+
+  // Based on activity
+  const { daysActive, postsCount, followingCount } = user.stats
+
+  if (daysActive > 30 && postsCount > 50) {
+    return UserLevel.ADVANCED
+  }
+
+  if (daysActive > 7 && postsCount > 10) {
+    return UserLevel.INTERMEDIATE
+  }
+
+  return UserLevel.BEGINNER
+}
+
+// Feature gating component
+function FeatureGate({
+  requiredLevel,
+  feature,
+  fallback,
+  children
+}: {
+  requiredLevel: UserLevel
+  feature: string
+  fallback?: React.ReactNode
+  children: React.ReactNode
+}) {
+  const user = useUser()
+  const userLevel = getUserLevel(user)
+
+  const levels = [
+    UserLevel.BEGINNER,
+    UserLevel.INTERMEDIATE,
+    UserLevel.ADVANCED,
+    UserLevel.POWER_USER
+  ]
+
+  const hasAccess = levels.indexOf(userLevel) >= levels.indexOf(requiredLevel)
+
+  if (hasAccess) {
+    return <>{children}</>
+  }
+
+  // Show upgrade prompt for intermediate/advanced users
+  if (userLevel >= UserLevel.INTERMEDIATE && fallback) {
+    return <>{fallback}</>
+  }
+
+  // Hide completely for beginners
+  return null
+}
+
+// Usage examples
+function ComposerToolbar() {
+  return (
+    <div className="composer-toolbar">
+      {/* Always visible */}
+      <button>Bold</button>
+      <button>Italic</button>
+      <button>Link</button>
+
+      {/* Intermediate+ */}
+      <FeatureGate requiredLevel={UserLevel.INTERMEDIATE} feature="markdown">
+        <button>Code</button>
+        <button>Quote</button>
+      </FeatureGate>
+
+      {/* Advanced+ */}
+      <FeatureGate
+        requiredLevel={UserLevel.ADVANCED}
+        feature="custom-relays"
+        fallback={
+          <Tooltip>
+            Unlock custom relay selection after 30 days of activity
+          </Tooltip>
+        }
+      >
+        <button onClick={openRelaySelector}>
+          Choose relays for this post
+        </button>
+      </FeatureGate>
+
+      {/* Power users only */}
+      <FeatureGate requiredLevel={UserLevel.POWER_USER} feature="raw-event">
+        <button onClick={editRawEvent}>Edit raw event</button>
+      </FeatureGate>
+    </div>
+  )
+}
+
+function SettingsMenu() {
+  const userLevel = getUserLevel(useUser())
+
+  return (
+    <div>
+      {/* Basic settings - always visible */}
+      <MenuItem to="/settings/profile">Profile</MenuItem>
+      <MenuItem to="/settings/notifications">Notifications</MenuItem>
+      <MenuItem to="/settings/display">Display</MenuItem>
+
+      {/* Advanced settings - gated */}
+      <FeatureGate requiredLevel={UserLevel.INTERMEDIATE} feature="advanced-settings">
+        <MenuItem to="/settings/advanced">Advanced</MenuItem>
+      </FeatureGate>
+
+      {/* Power user prompt */}
+      {userLevel === UserLevel.ADVANCED && (
+        <MenuItem onClick={enablePowerUserMode}>
+          <span>Enable Power User Mode</span>
+          <Badge>Unlock all features</Badge>
+        </MenuItem>
+      )}
+    </div>
+  )
+}
+```
+
+---
+
+### Pattern E: In-App Feature Education
+
+**Problem:** Users don't understand what advanced features do or when to use them.
+
+**Solution:** Contextual tooltips and progressive education.
+
+**Implementation:**
+
+```tsx
+// Educational tooltip system
+function EducationalTooltip({
+  feature,
+  title,
+  description,
+  learnMoreUrl,
+  children
+}: {
+  feature: string
+  title: string
+  description: string
+  learnMoreUrl?: string
+  children: React.ReactNode
+}) {
+  const [hasSeenTooltip, setHasSeenTooltip] = useState(
+    () => localStorage.getItem(`tooltip-seen-${feature}`) === 'true'
+  )
+  const [isOpen, setIsOpen] = useState(false)
+
+  const markAsSeen = () => {
+    localStorage.setItem(`tooltip-seen-${feature}`, 'true')
+    setHasSeenTooltip(true)
+    setIsOpen(false)
+  }
+
+  return (
+    <Tooltip
+      isOpen={isOpen}
+      onOpenChange={setIsOpen}
+      content={
+        <div className="educational-tooltip">
+          <h4>{title}</h4>
+          <p>{description}</p>
+          <div className="tooltip-actions">
+            {learnMoreUrl && (
+              <a href={learnMoreUrl} target="_blank">
+                Learn more →
+              </a>
+            )}
+            <button onClick={markAsSeen}>Got it</button>
+          </div>
+        </div>
+      }
+      badge={!hasSeenTooltip ? '!' : undefined}
+    >
+      {children}
+    </Tooltip>
+  )
+}
+
+// Usage in advanced settings
+function AdvancedNetworkSettings() {
+  return (
+    <div>
+      <EducationalTooltip
+        feature="relay-read-write-split"
+        title="Read/Write Relay Split"
+        description="Choose different servers for reading posts (read) and publishing your posts (write). This can improve performance and privacy."
+      >
+        <Toggle
+          label="Separate read and write relays"
+          checked={splitRelays}
+          onChange={setSplitRelays}
+        />
+      </EducationalTooltip>
+
+      <EducationalTooltip
+        feature="outbox-model"
+        title="Outbox Model (NIP-65)"
+        description="Tell other users which servers to check for your posts. This helps your posts reach more people reliably."
+        learnMoreUrl="https://github.com/nostr-protocol/nips/blob/master/65.md"
+      >
+        <Toggle
+          label="Enable outbox model"
+          checked={outboxEnabled}
+          onChange={setOutboxEnabled}
+        />
+      </EducationalTooltip>
+
+      <EducationalTooltip
+        feature="relay-auth"
+        title="Relay Authentication"
+        description="Some relays require authentication to prevent spam. This lets you connect to authenticated relays."
+      >
+        <Toggle
+          label="Allow relay authentication (NIP-42)"
+          checked={authEnabled}
+          onChange={setAuthEnabled}
+        />
+      </EducationalTooltip>
+    </div>
+  )
+}
+```
+
+---
