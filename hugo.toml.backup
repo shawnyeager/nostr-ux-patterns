@@ -1,10 +1,13 @@
 baseURL = 'https://shawnyeager.github.io/nostr-ux-research/'
 languageCode = 'en-us'
 title = 'Nostr UX Research Study'
-theme = 'hextra'
 
-# Mount existing content
+# Enable Hugo modules
 [module]
+  [[module.imports]]
+    path = "github.com/imfing/hextra"
+
+  # Mount existing content
   [[module.mounts]]
     source = "content"
     target = "content"
@@ -30,24 +33,11 @@ theme = 'hextra'
 
   navbar.displayTitle = true
   navbar.displayLogo = false
-  navbar.width = "wide"
 
   page.width = "wide"
 
   footer.displayCopyright = true
   footer.displayPoweredBy = false
-
-[[menu.main]]
-  name = "Documentation"
-  pageRef = "/docs"
-  weight = 1
-
-[[menu.main]]
-  name = "GitHub"
-  url = "https://github.com/shawnyeager/nostr-ux-research"
-  weight = 6
-  [menu.main.params]
-    icon = "github"
 
 [markup]
   [markup.highlight]
