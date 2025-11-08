@@ -1,4 +1,4 @@
-# Nostr UX Research Study
+# Nostr UX Research
 
 **Evidence-based design patterns for building Nostr clients that people actually use.**
 
