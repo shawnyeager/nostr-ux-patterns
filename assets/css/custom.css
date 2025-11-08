@@ -1,8 +1,15 @@
 /* Nostr Purple Theme */
-/* Using #8e30eb from Damus.io official gradient */
+/* Light mode: #8e30eb from Damus.io official gradient */
+/* Dark mode: Lighter purple for better contrast */
 
 :root {
   --primary-hue: 270deg;
   --primary-saturation: 83%;
   --primary-lightness: 56%;
+}
+
+.dark {
+  --primary-hue: 270deg;
+  --primary-saturation: 85%;
+  --primary-lightness: 70%;
 }
