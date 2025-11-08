@@ -1,4 +1,7 @@
-# Introduction: Improving UX for Nostr Clients
+---
+title: "Introduction: Improving UX for Nostr Clients"
+description: "Why this research exists and how to use it"
+---
 
 ## The Problem
 

@@ -1,6 +1,7 @@
-# Onboarding UX Research Sources
-
-Research findings for Pattern 1: Onboarding & First-Run Experience
+---
+title: "Onboarding UX Research Sources"
+description: "Research findings for Pattern 1: Onboarding & First-Run Experience"
+---
 
 This document contains credible sources backing the core UX principles in Pattern 1, organized by topic.
 

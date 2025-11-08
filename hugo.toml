@@ -66,6 +66,14 @@ theme = 'nostr-ux'
     target = "content/resources"
 
   [[module.mounts]]
+    source = "quick-reference.md"
+    target = "content/quick-reference.md"
+
+  [[module.mounts]]
+    source = "introduction.md"
+    target = "content/introduction.md"
+
+  [[module.mounts]]
     source = "static"
     target = "static"
 
