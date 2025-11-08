@@ -13,6 +13,7 @@ weight: 1
 Onboarding is the critical gate between curiosity and engagement. If users can't reach value quickly, they abandon - and in Nostr's case, they're abandoning in droves.
 
 **Current State:**
+
 - Nostr clients require 15-20 minutes of setup before users can post [[User:11]](#user-11)
 - New users face overwhelming decisions: relay selection, key management, profile setup
 - The complexity of keypair cryptography is exposed immediately without context
@@ -43,12 +44,14 @@ These principles apply to any social application, not just Nostr.
 **Principle:** Users should reach their first moment of value within 2 minutes of opening your app.
 
 **Why it works:**
+
 - Attention spans are short; every second of setup is friction
 - Users judge apps in the first few interactions
 - Value must precede commitment
 - The faster users experience value, the more likely they'll tolerate setup later
 
 **What "value" means for social apps:**
+
 - See interesting content (even without posting)
 - Understand what the app does and who uses it
 - Experience the core interaction loop
@@ -57,6 +60,7 @@ These principles apply to any social application, not just Nostr.
 **Research backing:** Time-to-first-value (TTFV) measures how long it takes for users to experience their first meaningful benefit. Research shows 40% of users abandon products after their first interaction if the experience isn't seamless [[Research:1]](#research-1). Samuel Hulick, leading onboarding expert, emphasizes: "The single biggest mistake is not focusing on delivering value to users" [[Example:2]](#example-2).
 
 **Examples from mainstream apps:**
+
 - **TikTok:** Opens directly to For You feed, no signup required. Value (entertaining videos) is immediate - contrast with Instagram's minimum 8 clicks before viewing first content [[Example:1]](#example-1)
 - **Instagram:** Can browse limited content before signup, demonstrates value upfront
 - **Discord:** Can join servers and read channels before creating account
@@ -78,12 +82,14 @@ Highest:         Advanced configuration (power user features)
 ```
 
 **Why it works:**
+
 - Reduces cognitive load for new users
 - Prevents decision paralysis
 - Allows users to invest effort after they've experienced value
 - Users who see value are willing to provide more information
 
 **What to defer in social apps:**
+
 - Profile photo/bio (can add later)
 - Friend invites (do this after seeing value)
 - Notification preferences (sensible defaults)
@@ -104,6 +110,7 @@ Highest:         Advanced configuration (power user features)
 5. **Full investment:** Power user features, integrations
 
 **Why it works:**
+
 - Humans are loss-averse; asking for commitment before value feels risky
 - Small commitments lead to larger ones (consistency principle)
 - Sunk cost fallacy works in your favor once users invest effort
@@ -118,6 +125,7 @@ Highest:         Advanced configuration (power user features)
 **Principle:** Demonstrate that real people use this app and create value before asking users to invest effort.
 
 **Forms of social proof:**
+
 - Active user counts
 - Recent posts/activity
 - Notable users or communities
@@ -125,12 +133,14 @@ Highest:         Advanced configuration (power user features)
 - Popular content
 
 **Why it works:**
+
 - Reduces perceived risk ("Others use this, so it's probably worth my time")
 - Sets expectations for what the experience will be
 - Provides motivation to complete setup
 - Answers the question: "Is this place alive?"
 
 **Examples:**
+
 - TikTok: Shows viral videos immediately (proof of entertaining content)
 - Discord: Shows server member counts and recent activity
 - Mastodon: Shows federated timeline to demonstrate active community
@@ -142,6 +152,7 @@ Highest:         Advanced configuration (power user features)
 **Principle:** Engineer an early success moment that feels meaningful and rewarding.
 
 **For social apps, this means:**
+
 - First post goes smoothly
 - Immediate feedback (likes, replies, visibility)
 - Onboarding checklist with satisfying completion
@@ -149,12 +160,14 @@ Highest:         Advanced configuration (power user features)
 - Clear progress indicators
 
 **Why it works:**
+
 - Success breeds engagement
 - Positive reinforcement creates habit loops
 - Reduces anxiety about "doing it wrong"
 - Gives users confidence to continue
 
 **Examples:**
+
 - Twitter: Prompts first tweet and shows it prominently in your timeline
 - LinkedIn: Celebrates profile completion milestones
 - Duolingo: First lesson is easy and rewarding
@@ -166,6 +179,7 @@ Highest:         Advanced configuration (power user features)
 **Principle:** Users need to learn your app's mental model, but education should be contextual and just-in-time.
 
 **Good education:**
+
 - Contextual tooltips (show help when relevant)
 - Progressive feature introduction (not all at once)
 - Clear labels and microcopy
@@ -173,12 +187,14 @@ Highest:         Advanced configuration (power user features)
 - Undo/redo to encourage experimentation
 
 **Bad education:**
+
 - Long tutorial walls before usage
 - Feature tours that overwhelm
 - Jargon without explanation
 - Help docs as primary onboarding
 
 **Why it works:**
+
 - People learn by doing, not by reading
 - Context makes information relevant and memorable
 - Just-in-time education is more effective than upfront dumps
@@ -195,12 +211,14 @@ Nostr's decentralized architecture creates unique onboarding challenges that cen
 ### Challenge 1: Key Management Without Password Recovery
 
 **The Problem:**
+
 - Nostr uses public/private keypairs (npub/nsec)
 - No "forgot password" flow - lose your nsec, lose your identity permanently
 - This is terrifying for mainstream users accustomed to password resets
 - Private keys are long hexadecimal strings (or bech32-encoded)
 
 **Current failures:**
+
 - Showing nsec on signup with "NEVER SHARE THIS, DON'T LOSE IT" [[User:12]](#user-12)
 - No context for why keys work this way
 - Immediate responsibility without understanding
@@ -211,6 +229,7 @@ Nostr's decentralized architecture creates unique onboarding challenges that cen
 Security vs. usability. Keys are the foundation of Nostr's censorship-resistance, but they're also the biggest UX barrier.
 
 **Solutions (see Pattern Library):**
+
 - Defer key exposure until users understand why they matter
 - Use temporary/burner keys for initial exploration
 - Provide multiple backup options with clear guidance
@@ -218,18 +237,21 @@ Security vs. usability. Keys are the foundation of Nostr's censorship-resistance
 - Progressive education about key security
 
 **Related NIPs:**
+
 - NIP-07: Browser extension signing (abstracts key management)
 - NIP-46: Nostr Connect / remote signers (separates keys from client)
 
 ### Challenge 2: Relay Selection Is Too Complex for Beginners
 
 **The Problem:**
+
 - Nostr has no central server; users connect to multiple relays
 - Different relays have different content and policies
 - Relay selection affects: content visibility, post reach, performance, censorship-resistance
 - New users have no mental model for how relays work
 
 **Current failures:**
+
 - Showing relay picker with 50+ options during signup
 - Asking users to choose without context for implications
 - Technical language: "wss://relay.example.com"
@@ -240,6 +262,7 @@ Security vs. usability. Keys are the foundation of Nostr's censorship-resistance
 Relay selection matters for the Nostr experience, but beginners can't make informed choices. Power users need control, but new users need sensible defaults.
 
 **Solutions (see Pattern Library):**
+
 - Smart defaults: Connect to popular, well-maintained relays automatically
 - Defer relay configuration until users understand what relays do
 - Use relay health indicators to guide selection later
@@ -247,6 +270,7 @@ Relay selection matters for the Nostr experience, but beginners can't make infor
 - Allow advanced users to customize after onboarding
 
 **Related NIPs:**
+
 - NIP-65: Relay List Metadata (user's preferred relays)
 - NIP-42: Authentication for private relays
 
@@ -263,6 +287,7 @@ This portability means:
 - First-time users don't appreciate portability until they experience lock-in elsewhere
 
 **How to leverage this:**
+
 - Explain identity portability as a benefit (not a burden)
 - Show examples: "Your account works in Damus, Amethyst, Primal, Snort..."
 - For users coming from other Nostr apps: seamless import flow
@@ -271,39 +296,46 @@ This portability means:
 ### Challenge 4: Signer Apps Add Complexity
 
 **The Problem:**
+
 - NIP-46 signer apps (like Nostr Signer, Amber) separate key management from clients
 - This is great for security, but terrible for first-time UX
 - Requires installing two apps and connecting them
 - Confusing flow: "Open signer app, approve connection, return to main app"
 
 **When signers make sense:**
+
 - Power users who want security
 - Users managing multiple identities
 - Advanced use cases (bots, integrations)
 
 **When signers are harmful:**
+
 - First-time onboarding (too much complexity)
 - Casual users who just want to post
 - Mobile users unfamiliar with cross-app workflows
 
 **Solutions (see Pattern Library):**
+
 - Don't require signers for onboarding
 - Allow in-app key management initially
 - Introduce signers as optional security upgrade later
 - Provide clear migration path when users are ready
 
 **Related NIPs:**
+
 - NIP-46: Nostr Connect protocol for remote signing
 
 ### Challenge 5: Cold Start Problem Is Worse Without Algorithms
 
 **The Problem:**
+
 - Centralized apps use algorithms to show new users interesting content
 - Nostr has no central recommendation engine
 - New users with zero follows get empty feeds
 - Web-of-trust requires a graph to work, but new users have no connections
 
 **Current failures:**
+
 - Signup → empty feed → "Follow people to see content"
 - No guidance on who to follow or why
 - Global feed is often spam-filled
@@ -317,6 +349,7 @@ This portability means:
 Nostr's decentralization is a feature, but content discovery suffers. Algorithmic feeds are powerful but potentially manipulative.
 
 **Solutions (see Pattern Library):**
+
 - Default follows: Pre-populate feed with high-quality accounts (opt-out, not opt-in)
 - Interest-based discovery: "What are you interested in?" → relevant follows
 - Trending/popular content (without centralization): Relay-based or WoT-filtered
@@ -333,28 +366,33 @@ Nostr's decentralization is a feature, but content discovery suffers. Algorithmi
 **Description:** Allow users to explore content without creating an account.
 
 **Implementation:**
+
 - Open app → show curated feed immediately (no signup wall)
 - Allow browsing profiles, reading posts, viewing threads
 - Prompt account creation only when user wants to interact (post, like, follow)
 - Use temporary read-only relay connections
 
 **Benefits:**
+
 - Zero friction to first value
 - Users see what the app is about before committing
 - Natural conversion point: "Want to reply? Create account"
 - Reduces abandonment from complex signup
 
 **Examples in mainstream apps:**
+
 - TikTok: Full browse experience without account
 - Reddit: Can browse all content, requires account to vote/comment
 - Medium: Limited article reading without account
 
 **Nostr considerations:**
+
 - No keypair needed for read-only access
 - Connect to public relays for content
 - Handle transition to account creation smoothly
 
 **Code implications:**
+
 - Separate read-only mode from authenticated mode
 - Defer key generation until needed
 - Cache browsed content so it's available after signup
@@ -383,6 +421,7 @@ Nostr's decentralization is a feature, but content discovery suffers. Algorithmi
 ```
 
 **Key principles:**
+
 - Don't expose nsec until users understand what it is
 - Explain WHY keys matter (portability, security) before showing them
 - Frame as benefit, not burden: "Your account works everywhere"
@@ -390,11 +429,13 @@ Nostr's decentralization is a feature, but content discovery suffers. Algorithmi
 - Verify backup completion (ask user to re-enter part of key)
 
 **Educational touchpoints:**
+
 - First mention: "Your account is portable"
 - Second mention: "Let's back up your account"
 - Third mention: "Advanced: View your private key"
 
 **Nostr considerations:**
+
 - Store nsec securely on device until user backs up
 - Consider NIP-07 browser extensions for web clients
 - Offer signer app migration path later
@@ -404,18 +445,21 @@ Nostr's decentralization is a feature, but content discovery suffers. Algorithmi
 **Description:** Connect new users to well-maintained, popular relays automatically. Defer relay selection.
 
 **Implementation:**
+
 - Ship with 5-10 curated default relays
 - Criteria: uptime, speed, content quality, moderation
 - Don't show relay picker during onboarding
 - Add "Advanced: Manage Relays" in settings later
 
 **Benefits:**
+
 - Users get working experience immediately
 - No decision paralysis
 - Can change later if needed
 - Most users will never need to configure relays
 
 **Default relay selection criteria:**
+
 - High uptime (>95%)
 - Low latency
 - Large user base (content availability)
@@ -423,12 +467,14 @@ Nostr's decentralization is a feature, but content discovery suffers. Algorithmi
 - Geographic diversity (global coverage)
 
 **When to introduce relay management:**
+
 - After user has been active for a week
 - When user reports performance issues
 - In advanced settings, not onboarding
 - With contextual education: "Relays are like servers that store posts"
 
 **Nostr considerations:**
+
 - Use NIP-65 relay list metadata for portability
 - Write user's posts to multiple relays for redundancy
 - Read from aggregated relay set for feed
@@ -448,23 +494,27 @@ Nostr's decentralization is a feature, but content discovery suffers. Algorithmi
 ```
 
 **Benefits:**
+
 - No empty feed problem
 - Users see relevant content immediately
 - Demonstrates value of following
 - Can unfollow later if not interested
 
 **Criteria for suggested accounts:**
+
 - Active posters (not dormant)
 - High-quality content (manual curation or WoT-based)
 - Diverse perspectives within topic
 - No spam or low-effort accounts
 
 **Opt-out, not opt-in:**
+
 - Pre-populate follows based on interests
 - Allow users to unfollow during onboarding
 - Better to have too much content than none
 
 **Nostr considerations:**
+
 - Maintain curated lists by topic (update regularly)
 - Use NIP-51 (lists) for topic-based recommendations
 - Consider WoT scores from trusted curators
@@ -484,12 +534,14 @@ Nostr's decentralization is a feature, but content discovery suffers. Algorithmi
 ```
 
 **Benefits:**
+
 - Creates positive first experience
 - Demonstrates core interaction works
 - Builds confidence
 - Satisfying completion
 
 **Design details:**
+
 - Keep composition simple (no overwhelming options)
 - Show character count (if relevant)
 - Preview before posting
@@ -497,6 +549,7 @@ Nostr's decentralization is a feature, but content discovery suffers. Algorithmi
 - Show post in context (feed, profile)
 
 **Nostr considerations:**
+
 - Use optimistic UI (show post immediately)
 - Publish to multiple relays in background
 - Handle failure gracefully (retry, show error if needed)
@@ -516,12 +569,14 @@ Getting Started (3/5 completed)
 ```
 
 **Benefits:**
+
 - Clear expectations
 - Sense of progress
 - Satisfying completion
 - Guides users through critical steps
 
 **Principles:**
+
 - Keep list short (5-7 items max)
 - Make first items easy (quick wins)
 - Don't block usage on checklist completion
@@ -529,11 +584,13 @@ Getting Started (3/5 completed)
 - Celebrate completion
 
 **What to include:**
+
 - Essential: Create account, first post, backup key
 - Important: Follow people, customize profile
 - Optional: Enable notifications, invite friends
 
 **Nostr considerations:**
+
 - Include "Back up your key" as critical item
 - Don't require relay configuration
 - Highlight portable identity benefit
@@ -552,6 +609,7 @@ Your private key: nsec1qpzqgr3qg7v6p...
 ```
 
 **Why it's bad:**
+
 - Terrifying for new users
 - No context for why keys work this way
 - Responsibility without understanding
@@ -572,6 +630,7 @@ Choose your relays:
 ```
 
 **Why it's bad:**
+
 - Decision paralysis for beginners
 - No mental model for choosing
 - Technical jargon (wss://)
@@ -588,6 +647,7 @@ Choose your relays:
 ```
 
 **Why it's bad:**
+
 - No value demonstrated
 - Cold start problem unsolved
 - User must work before seeing benefit
@@ -608,6 +668,7 @@ Choose your relays:
 ```
 
 **Why it's bad:**
+
 - Too many steps before value
 - Requires installing two apps
 - Confusing cross-app flow
@@ -629,6 +690,7 @@ Screen 5: Now you're ready!
 ```
 
 **Why it's bad:**
+
 - Users don't retain information without context
 - Delays reaching value
 - Most users skip these entirely
@@ -651,6 +713,7 @@ Create your profile:
 ```
 
 **Why it's bad:**
+
 - Too much friction before value
 - Not all fields are necessary
 - Users might not know what to put
@@ -668,6 +731,7 @@ Create your profile:
 ```
 
 **Why it's bad:**
+
 - Alienates non-technical users
 - Creates confusion and anxiety
 - No benefit to exposing implementation details
@@ -682,6 +746,7 @@ Create your profile:
 ### Quantitative Metrics
 
 **Primary:**
+
 - [ ] **Time-to-first-post:** Measure median time from app open to first successful post
   - Target: <2 minutes for new users
 
@@ -702,6 +767,7 @@ Create your profile:
   - Note: Even AppsFlyer's lower benchmark (3.11%) exceeds Nostr's performance [[Data:4]](#data-4)
 
 **Secondary:**
+
 - [ ] **Onboarding completion rate:** % who finish onboarding checklist
 - [ ] **First post success rate:** % of attempted posts that publish successfully
 - [ ] **Key backup completion rate:** % who complete backup flow
@@ -710,12 +776,14 @@ Create your profile:
 ### Qualitative Feedback
 
 **User Research:**
+
 - [ ] User interviews: "Describe your first experience with the app"
 - [ ] Usability testing: Watch new users go through onboarding (where do they struggle?)
 - [ ] Surveys: "How easy was it to get started?" (1-5 scale)
 - [ ] Support tickets: Common questions/issues during onboarding
 
 **Questions to ask:**
+
 - "What was confusing about getting started?"
 - "Did you feel overwhelmed at any point? When?"
 - "How long did it take before you felt like you 'got it'?"
@@ -725,6 +793,7 @@ Create your profile:
 ### A/B Testing Opportunities
 
 **High-impact tests:**
+
 - Guest mode (browse first) vs. immediate signup
 - Default follows (pre-populated) vs. empty feed with suggestions
 - Key exposure timing (immediate vs. deferred)
@@ -732,6 +801,7 @@ Create your profile:
 - Onboarding checklist vs. no checklist
 
 **How to run tests:**
+
 - Split new users 50/50
 - Measure retention (D1/D7/D30) as primary metric
 - Track secondary metrics (time-to-first-post, completion rates)
@@ -740,6 +810,7 @@ Create your profile:
 ### Competitive Benchmarking
 
 **Compare against:**
+
 - Mainstream social apps (Twitter, Instagram, TikTok)
   - What's their time-to-first-post?
   - What's their D1/D7/D30 retention?
@@ -756,6 +827,7 @@ Create your profile:
 ### Success Criteria
 
 **You'll know onboarding is working when:**
+
 - [ ] D30 retention is >10% (vs. current 0%)
 - [ ] Users post within 2 minutes of signup
 - [ ] Drop-off rate at each onboarding step is <10%
@@ -807,6 +879,7 @@ Create your profile:
 ### Example 1: TikTok's Onboarding
 
 **What they do:**
+
 - No signup required
 - Opens directly to For You feed
 - Algorithm shows engaging content immediately
@@ -815,6 +888,7 @@ Create your profile:
 **Time to value:** <5 seconds
 
 **Why it works:**
+
 - Value first, commitment later
 - Demonstrates what the app does
 - Social proof (millions of videos)
@@ -828,6 +902,7 @@ Guest mode with curated feed, signup prompt after engagement
 ### Example 2: Discord's Server Onboarding
 
 **What they do:**
+
 - Can join servers without account (limited)
 - Quick signup: username + email
 - Immediately in server with populated chat
@@ -836,6 +911,7 @@ Guest mode with curated feed, signup prompt after engagement
 **Time to value:** <1 minute
 
 **Why it works:**
+
 - Minimal friction
 - Immediate social context
 - Learn by participating
@@ -849,6 +925,7 @@ Quick signup with default follows, immediate feed, deferred complexity
 ### Example 3: Instagram's Onboarding
 
 **What they do:**
+
 - Interest selection during signup
 - Immediate follow suggestions based on interests
 - Populated feed from day 1
@@ -857,6 +934,7 @@ Quick signup with default follows, immediate feed, deferred complexity
 **Time to value:** ~2-3 minutes
 
 **Why it works:**
+
 - Solves cold start
 - Content relevant to interests
 - No empty feed problem

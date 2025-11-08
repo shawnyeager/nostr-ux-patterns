@@ -27,6 +27,7 @@ researchCurrency: "All sources from 2024-2025"
 ### Current State
 
 **Performance issues killing retention:**
+
 - [[Data:19]](#data-19) Apps described as "slow and clunky" compared to Twitter, with "clients blasting entire message history"
 - [[Data:20]](#data-20) Multiple crash reports: Primal Android crashes (Sept & Oct 2025), Amethyst community crashes, Nostur iOS crashes
 - [[Data:21]](#data-21) Database performance identified as "core bottleneck" causing slow feed loading
@@ -41,6 +42,7 @@ Nostr apps may not be objectively slower than centralized alternatives, but they
 - Lack of optimistic UI patterns
 
 **The retention impact:**
+
 - Users compare to Twitter/Instagram's polished performance
 - "Slow" apps perceived as low-quality or alpha-state
 - Performance issues compound trust problems from unreliable core interactions
@@ -79,12 +81,14 @@ These principles apply to any application prioritizing performance and user expe
 **Core insight:** How fast an app *feels* matters more than benchmark speeds. A 500ms operation with great feedback feels faster than a 200ms operation with no indication. [[Research:34]](#research-34) Users perceive skeleton screens as **30% faster** than spinners for identical wait times.
 
 **Key strategies:**
+
 - **Skeleton screens** for 2-10 second loads [[Research:35]](#research-35)
 - **Progressive loading** (show something immediately, refine later)
 - **Optimistic UI** (assume success, update immediately) [[Research:36]](#research-36)
 - **Instant feedback** (respond within 100ms, even if processing continues) [[Research:31]](#research-31)
 
 **Examples from mainstream apps:**
+
 - **Twitter/X:** [[Example:11]](#example-11) Algorithm runs 5 billion times/day, completes each execution in <1.5 seconds on average
 - **Instagram:** [[Example:12]](#example-12) AI ranks 500 posts per user by engagement predictions, emphasizes "engage in first 3 seconds"
 - **TikTok:** [[Example:13]](#example-13) Watch time prioritized—content that "stops scrolls cold" with grabber upfront
@@ -95,16 +99,19 @@ These principles apply to any application prioritizing performance and user expe
 **Research backing:** [[Research:31]](#research-31) Nielsen Norman Group response time thresholds (Updated January 2024)
 
 **The thresholds:**
+
 - **<100ms:** Feels instantaneous - user perceives direct manipulation
 - **<1 second:** Maintains flow of thought - no interruption to mental process
 - **<10 seconds (now <5s):** Keeps attention - Nielsen updated in 2024: "probably safe to say the upper limit of 10 seconds is now 5 seconds or even less" [[Research:31]](#research-31)
 
 **Application to social apps:**
+
 - Button clicks must respond <100ms (disable, show spinner, change color)
 - Feed refresh should show first content <1s
 - Full feed load acceptable up to 5s if progressive (was 10s in 1993 research)
 
 **What to do for each:**
+
 - **0-100ms:** Show immediate UI change (button press, loading indicator)
 - **100ms-1s:** Use optimistic UI, show skeleton screens
 - **1-5s:** Progressive loading, show percentage/status, allow cancellation
@@ -115,6 +122,7 @@ These principles apply to any application prioritizing performance and user expe
 **Research backing:** [[Research:34]](#research-34) [[Research:35]](#research-35)
 
 **Why skeleton screens:**
+
 - **Users perceive skeleton screens as 30% faster** than identical sites with spinners [[Research:34]](#research-34)
 - **Skeleton screens feel 20% faster** than spinners for identical wait times [[Research:34]](#research-34)
 - Set expectations for content structure [[Research:35]](#research-35)
@@ -146,6 +154,7 @@ These principles apply to any application prioritizing performance and user expe
 **Performance benefit:** Eliminates perceived latency for high-success-rate operations. Essential for social media: "seeing a comment appear the moment it's clicked" [[Research:36]](#research-36).
 
 **Apply to:**
+
 - Likes/reactions (instant visual change) - Facebook's like button immediately turns blue [[Research:38]](#research-38)
 - Follow/unfollow (immediate button state)
 - Post drafts (save locally, sync in background)
@@ -169,11 +178,13 @@ These principles apply to any application prioritizing performance and user expe
 - **2024 HTTP Archive data:** Nearly 45% of high-rated installable PWAs use hybrid approach [[Research:40]](#research-40)
 
 **Cache invalidation strategies:**
+
 - Time-based expiry (profiles: 1 hour, posts: until user refreshes)
 - Event-based (new post = invalidate feed cache)
 - User-triggered (pull-to-refresh)
 
 **Offline-first benefits:**
+
 - App works instantly on return visits
 - Read cached content while new content loads
 - Progressive enhancement as network becomes available
@@ -185,6 +196,7 @@ These principles apply to any application prioritizing performance and user expe
 **The problem:** Large JavaScript bundles delay time-to-interactive.
 
 **Optimization strategies:**
+
 - **Code splitting:** Load only what's needed for current route. Dynamic `import()` expressions [[Research:41]](#research-41)
 - **Tree shaking:** Remove unused code - can reduce bundle sizes by **20-50%** [[Research:41]](#research-41)
 - **Lazy loading:** Defer non-critical components
@@ -205,6 +217,7 @@ These principles apply to any application prioritizing performance and user expe
 **The problem:** Rendering 1000+ items in DOM kills performance.
 
 **Solutions:**
+
 - **Virtual scrolling:** Only render visible items + small buffer [[Research:45]](#research-45) [[Research:46]](#research-46)
 - **Significantly reduces:** DOM updates, memory usage, render time [[Research:46]](#research-46)
 - **TanStack Virtual** most popular library as of Nov 2024 [[Research:47]](#research-47)
@@ -236,6 +249,7 @@ These principles apply to any application prioritizing performance and user expe
 **The problem:** Querying 10 relays in parallel means waiting for the slowest one. [[Data:23]](#data-23) Only 639 relays online globally, with varying performance.
 
 **Current failures:**
+
 - App waits for all relays before showing any content
 - One slow/dead relay blocks entire feed load
 - No progressive display as results arrive
@@ -301,6 +315,7 @@ const sortedRelays = relays.sort((a, b) =>
 **Current approach:** Verify every event signature synchronously on arrival.
 
 **Performance impact:**
+
 - Blocks UI thread
 - ~1-5ms per event verification
 - 100 events = 100-500ms of blocking
@@ -359,6 +374,7 @@ if (trustedPubkeys.includes(event.pubkey)) {
 - **Strfry performance tuning:** queryTimesliceBudgetMicroseconds = 5000
 
 **What to cache:**
+
 - **Profiles (kind 0):** High reuse, change infrequently
 - **Contact lists (kind 3):** Moderate reuse
 - **Recent posts (kind 1):** High volume, user expects fresh content
@@ -392,6 +408,7 @@ async function getProfile(pubkey: string): Promise<Profile> {
 **The problem:** Nostr feeds mix content from multiple relays with duplicate events.
 
 **Performance challenges:**
+
 - Deduplication overhead (comparing 1000s of event IDs)
 - Sorting by timestamp (O(n log n))
 - Re-rendering entire list on new events
@@ -445,6 +462,7 @@ import { FixedSizeList } from 'react-window'
 **The problem:** Large images slow down feed scrolling.
 
 **Nostr-specific considerations:**
+
 - Images hosted on external servers (varying speeds)
 - No CDN control
 - Users may post massive unoptimized images
@@ -562,6 +580,7 @@ function Feed() {
 ```
 
 **Validation:**
+
 - Time to first content: <1 second
 - Time to full content: <3 seconds
 - User sees progress, not blank screen
@@ -766,11 +785,13 @@ function loadFeed() {
 ```
 
 **Why it fails:**
+
 - UI completely frozen during load
 - No way to cancel or show progress
 - User can't interact with app
 
 **What to do instead:**
+
 - Async/await with Promise.all()
 - Progressive rendering as results arrive
 - Show skeleton screen, not spinner
@@ -780,17 +801,20 @@ function loadFeed() {
 ### Anti-Pattern 2: No Loading States
 
 **What it looks like:**
+
 - User taps "Refresh"
 - Nothing happens for 3 seconds
 - Feed suddenly updates
 - User confused, taps multiple times
 
 **Why it fails:**
+
 - User doesn't know if action registered
 - No perceived progress
 - Leads to duplicate requests
 
 **What to do instead:**
+
 - Immediate visual feedback (<100ms)
 - Loading indicator (spinner, skeleton, progress)
 - Disable button during load
@@ -809,11 +833,13 @@ renderFeed(results.flat())
 ```
 
 **Why it fails:**
+
 - Slowest relay determines perceived speed
 - One dead relay = 30s timeout
 - User sees blank screen entire time
 
 **What to do instead:**
+
 - Show results as they arrive (Promise.race)
 - Timeout slow relays (1-5s)
 - Cache previous content while refreshing
@@ -823,17 +849,20 @@ renderFeed(results.flat())
 ### Anti-Pattern 4: No Caching Strategy
 
 **What it looks like:**
+
 - User navigates away and back
 - Feed reloads from scratch
 - Same profile images re-downloaded 100 times
 - Wastes bandwidth and time
 
 **Why it fails:**
+
 - Unnecessary network requests
 - Slow perceived performance
 - Poor offline experience
 
 **What to do instead:**
+
 - Cache profiles, posts, static assets
 - Use stale-while-revalidate pattern
 - Persist cache across sessions
@@ -851,11 +880,13 @@ function onNewPost(newPost) {
 ```
 
 **Why it fails:**
+
 - Massive performance hit
 - Scroll position jumps
 - Janky user experience
 
 **What to do instead:**
+
 - Virtual scrolling (only render visible)
 - Incremental updates (insert single item)
 - React.memo / key optimization
@@ -877,6 +908,7 @@ function onNewPost(newPost) {
 **Note:** FID (First Input Delay) was officially deprecated and removed from Google Search Console in March 2024. [[Research:49]](#research-49)
 
 **Custom Metrics:**
+
 - [ ] **Time to First Content:** <1 second (cached) or <3 seconds (cold start)
 - [ ] **Feed Load Time:** <3 seconds for 50 posts
 - [ ] **Profile Load Time:** <500ms (cached) or <2 seconds (network)
@@ -886,12 +918,14 @@ function onNewPost(newPost) {
 ### User Experience Metrics
 
 **Perceived Performance:**
+
 - [ ] Users rate app as "fast" or "very fast" (survey)
 - [ ] <5% of users complain about speed
 - [ ] Skeleton screens shown for all >1s operations
 - [ ] No "frozen UI" moments (>500ms blocking)
 
 **Comparison to Mainstream:**
+
 - [ ] Feed loads as fast or faster than Twitter/Instagram
 - [ ] Scrolling smoothness comparable to native apps (60fps target [[Research:51]](#research-51))
 - [ ] Image loading doesn't block interaction
@@ -904,17 +938,20 @@ function onNewPost(newPost) {
 ### Technical Metrics
 
 **Relay Performance:**
+
 - [ ] Average query time: <2 seconds per relay
 - [ ] Relay timeout enforced: 5 seconds max
 - [ ] Fast relay identified and prioritized
 - [ ] Dead relays removed from rotation
 
 **Caching Effectiveness:**
+
 - [ ] Profile cache hit rate: >80%
 - [ ] Post cache hit rate: >50% (returning users)
 - [ ] Cache size: <100MB storage used
 
 **Rendering Performance:**
+
 - [ ] Feed renders: <16ms per frame (60fps)
 - [ ] Virtual scrolling implemented for >100 items
 - [ ] No unnecessary re-renders (React DevTools)
@@ -922,16 +959,19 @@ function onNewPost(newPost) {
 ### User Research Questions
 
 **Performance Perception:**
+
 - "Does the app feel fast?"
 - "Do you notice delays or lag?"
 - "How does speed compare to Twitter/Instagram?"
 
 **Loading Feedback:**
+
 - "Is it clear when content is loading?"
 - "Can you tell if the app is working or frozen?"
 - "Do you feel informed about progress?"
 
 **Problem Areas:**
+
 - "What parts of the app feel slow?"
 - "When do you experience lag or stuttering?"
 - "Have you abandoned actions due to slowness?"
@@ -946,6 +986,7 @@ Test different approaches:
 - Virtual scrolling threshold (100 items vs 500 items)
 
 **Measure impact on:**
+
 - Perceived speed ratings
 - Bounce rate (leave before first content)
 - Session duration

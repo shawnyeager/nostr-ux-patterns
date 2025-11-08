@@ -5,6 +5,7 @@
 Nostr has achieved something remarkable: a working, censorship-resistant social protocol. But there's a critical problem: **user retention is failing**.
 
 **Current metrics:**
+
 - **30-day retention trending to 0%** for recent cohorts
 - **Daily active users stuck at 10,000-12,000**
 - Users often need **multiple clients** to access different features
@@ -28,6 +29,7 @@ Based on analysis of:
 - Synthesis of what works in successful social apps (TikTok, Instagram, Bluesky) and what doesn't work in Nostr
 
 **You'll find:**
+
 - **6 critical UX patterns** that directly address retention failures
 - **The Validation Framework** - a decision-making filter to prevent feature bloat
 - **Evidence-based recommendations** backed by research, not opinions
@@ -170,16 +172,19 @@ The 6 patterns in this study build that gateway. Reliable posting, engaging feed
 ## What Success Looks Like
 
 **Short-term (0-3 months):**
+
 - Developers reference this study in changelogs and design discussions
 - Cross-client coordination on core UX patterns emerges
 - The Validation Framework becomes standard practice
 
 **Medium-term (3-6 months):**
+
 - Measurable improvements in D1/D7/D30 retention across Nostr clients
 - New clients launch with immediate time-to-value onboarding, working discovery mechanisms
 - User feedback shifts from fundamental UX issues to feature enhancement requests
 
 **Long-term (6-12 months):**
+
 - Nostr retention metrics reach "OK" benchmarks (D30: 20%+)
 - DAU grows beyond the 10-12k ceiling
 - Mainstream developers start building on Nostr because UX is competitive

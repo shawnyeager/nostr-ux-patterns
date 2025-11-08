@@ -27,6 +27,7 @@ researchCurrency: "All sources from 2024-2025"
 ### Current State
 
 **Data loss destroying user trust:**
+
 - Users losing all their follows when switching between clients (Primal → Damus → Snort) [[Data:14]](#data-14)
 - [[Data:15]](#data-15) Race conditions in kind:3 events causing catastrophic follow list destruction when clients sync
 - Profile changes (display name, bio, avatar) not appearing across all apps
@@ -35,6 +36,7 @@ researchCurrency: "All sources from 2024-2025"
 - No visibility into what data is synced vs. out-of-sync
 
 **The trust problem:**
+
 - [[Research:66]](#research-66) 85% of consumers deleted a mobile app due to privacy/data concerns (2025 Digital Trust Index)
 - [[Research:67]](#research-67) Over 80% of businesses saw boost in customer loyalty after focusing on data integrity
 - [[Research:68]](#research-68) Distributed systems face "scams are everywhere" problem—UX equals trust
@@ -42,6 +44,7 @@ researchCurrency: "All sources from 2024-2025"
 - "It just works" expectation from mainstream apps not met
 
 **The user experience impact:**
+
 - Users need 5-6 different clients to work around data sync bugs
 - Constant anxiety about data loss
 - Manual verification required (checking if posts/follows synced)
@@ -89,6 +92,7 @@ These principles apply to any distributed system managing user data across multi
 2. **External consistency**: Following established industry conventions
 
 **Application to Nostr clients:**
+
 - **Internal:** User's data should be identical across all their own client instances
 - **External:** Follow conventions from mainstream social apps (Twitter, Instagram) for how data syncs
 
@@ -102,6 +106,7 @@ These principles apply to any distributed system managing user data across multi
 **Research backing:** [[Research:70]](#research-70) [[Research:72]](#research-72) [[Research:76]](#research-76)
 
 **User expectations (2024-2025 studies):**
+
 - [[Research:70]](#research-70) **72% of users expect instant reflection** of changes in financial data
 - [[Research:72]](#research-72) **45% expect content to display correctly** across different devices
 - [[Research:76]](#research-76) **69% appreciate quick reply times**, 59% expect chatbot response within 5 seconds
@@ -219,6 +224,7 @@ Replaceable events (kind:3 contact lists) use "last event wins" logic, but witho
 > "Each new contact list event is a replaceable event that supersedes previous ones. Must contain ALL pubkeys the user is following, as event replaces previous list entirely."
 
 **The solution pattern:**
+
 - **Block follow/unfollow during initial sync**
 - Show "Syncing your follows... X of Y relays" progress indicator
 - Only enable follow button once kind:3 fully loaded from majority of relays
@@ -259,6 +265,7 @@ function followUser(pubkey) {
 Similar to kind:3, kind:0 (profile metadata) is replaceable and suffers from the same race conditions.
 
 **User experience:**
+
 - Update profile picture in Damus
 - Open Primal → old avatar shows
 - Update bio in Primal
@@ -284,6 +291,7 @@ Similar to kind:3, kind:0 (profile metadata) is replaceable and suffers from the
 > "When the Damus relay was taken down for upgrades, users' content was potentially wiped and gone... content stored on that relay was reduced to remaining on one less relay."
 
 **User experience:**
+
 - Post from phone → published to 5 relays
 - 2 relays go offline
 - Open desktop client → only connects to 3 relays still online
@@ -291,6 +299,7 @@ Similar to kind:3, kind:0 (profile metadata) is replaceable and suffers from the
 - User: "Did I imagine posting this?"
 
 **Solution pattern:**
+
 - **Multi-relay redundancy**: Always publish to ≥5 relays
 - **Relay health monitoring**: Track which relays are responsive
 - **Retry failed publishes**: Queue and retry events that failed to publish
@@ -303,6 +312,7 @@ Similar to kind:3, kind:0 (profile metadata) is replaceable and suffers from the
 Kind:10002 events advertise user's write relays (OUTBOX) and read relays (INBOX). Other clients use this to discover where to find your content and where to send you mentions.
 
 **The problem:**
+
 - User sets relay preferences in Client A
 - Client B doesn't implement NIP-65 properly
 - Client C reads wrong relays from outdated kind:10002
@@ -376,6 +386,7 @@ function SyncStatusBadge({ syncState }) {
 ```
 
 **Where to show:**
+
 - Settings screen (persistent)
 - Profile edit screen (while saving)
 - Follow/unfollow actions (transient)
@@ -507,6 +518,7 @@ function resolveConflict(strategy) {
 ```
 
 **When to show:**
+
 - Follow list conflicts (different follows on different relays)
 - Profile metadata conflicts (different bio/avatar)
 - Kind:10002 relay list conflicts
@@ -591,6 +603,7 @@ function publishPost(content) {
 ```
 
 **User experience:**
+
 - Offline: "Offline. Will sync when connected." 
 - Connection returns: Auto-sync queued events
 - Partial failure: Automatic retry with exponential backoff
@@ -708,12 +721,14 @@ User follows 50 people
 ```
 
 **Why it fails:**
+
 - Destroys user trust immediately
 - Users assume THEY did something wrong
 - No path to recovery
 - Makes switching clients terrifying
 
 **What to do instead:**
+
 - Validate data on every client launch
 - "We found 50 follows on relays but 0 locally. Sync now?"
 - Show sync progress and completion
@@ -732,12 +747,14 @@ Client silently picks one, user never knows conflict exists
 ```
 
 **Why it fails:**
+
 - User makes changes that randomly get overwritten
 - No understanding of why data keeps reverting
 - Can't fix what they can't see
 - Feels like the app is "broken" or "buggy"
 
 **What to do instead:**
+
 - Detect conflicts during sync
 - Show conflict resolution UI: "We found 2 versions of your profile. Which should we keep?"
 - Log conflicts for debugging
@@ -755,12 +772,14 @@ function followUser(pubkey) {
 ```
 
 **Why it fails:**
+
 - No validation that publish succeeded
 - User sees "Following" but event never reached relays
 - False sense of completion
 - Data loss discovered later
 
 **What to do instead:**
+
 - Wait for relay confirmations
 - Validate minimum threshold reached (e.g., 3/5 relays)
 - Rollback optimistic update on failure
@@ -776,6 +795,7 @@ EVENT rejected: duplicate pubkey in tags
 ```
 
 **Why it fails:**
+
 - Users don't understand protocol terminology
 - Technical jargon creates anxiety
 - No actionable next step
@@ -804,12 +824,14 @@ User on airplane
 ```
 
 **Why it fails:**
+
 - Users expect offline functionality (it's 2025)
 - Mainstream apps work offline (Twitter, Instagram, etc.)
 - Lost opportunity for engagement
 - Users switch to apps that work offline
 
 **What to do instead:**
+
 - Cache content for offline reading
 - Allow composing posts offline
 - Queue events for publish when online
@@ -828,6 +850,7 @@ User on airplane
 ```
 
 **Why it fails:**
+
 - Catastrophic data loss
 - No way to recover (event is overwritten on relays)
 - User loses ALL follows with one action
@@ -859,12 +882,14 @@ User's posts disappear with no explanation
 ```
 
 **Why it fails:**
+
 - User has no control or visibility
 - Can't troubleshoot when things break
 - Violates Nostr's principle of user control
 - Creates support burden ("why are my posts missing?")
 
 **What to do instead:**
+
 - Show which relays are being used
 - Allow ADVANCED users to customize (but smart defaults)
 - Indicate relay health status
@@ -877,6 +902,7 @@ User's posts disappear with no explanation
 ### Data Integrity Metrics
 
 **Track data loss incidents:**
+
 - [ ] **Follow list preservation rate:** % of users who maintain their follows across client switches
   - Target: >99%
   - Track: Follows before switch vs. after switch
@@ -896,6 +922,7 @@ User's posts disappear with no explanation
 ### Sync Performance Metrics
 
 **Measure sync speed:**
+
 - [ ] **Time to initial sync:** How long from app open to "fully synced"?
   - Target: <5 seconds for kind:0, kind:3
   - Target: <10 seconds for recent kind:1 feed
@@ -912,6 +939,7 @@ User's posts disappear with no explanation
 ### User Experience Metrics
 
 **Trust and confidence:**
+
 - [ ] **Data loss complaints:** Support tickets about lost follows/posts
   - Track weekly
   - Goal: <5 reports per 1000 active users
@@ -927,6 +955,7 @@ User's posts disappear with no explanation
 ### Sync State Visibility
 
 **User awareness:**
+
 - [ ] **Sync state visibility:** % of users who notice sync indicators
   - Method: User testing
   - Target: >70% can explain what sync status means
@@ -938,6 +967,7 @@ User's posts disappear with no explanation
 ### Technical Validation
 
 **Relay coordination:**
+
 - [ ] **Multi-relay publish coverage:** % of events published to all configured relays
   - Target: >90%
   - Alert if drops below 80%

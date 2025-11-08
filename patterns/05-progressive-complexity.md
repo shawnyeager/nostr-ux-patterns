@@ -27,6 +27,7 @@ researchCurrency: "All sources from 2024-2025"
 ### Current State
 
 **Overwhelming complexity killing adoption:**
+
 - New users exposed to relay selection, key management, and NIP configurations immediately during onboarding
 - Nostr clients showing 50+ relay pickers, signer app setup (NIP-46), and read/write relay splits before users understand basic posting
 - Settings pages with technical jargon: "Outbox model (NIP-65)", "Relay list metadata", "Event signature verification"
@@ -41,6 +42,7 @@ Nostr apps feel like developer tools, not consumer apps. Users compare to Twitte
 - No sensible defaults—everything requires user configuration
 
 **The retention impact:**
+
 - Users abandon during onboarding when faced with unfamiliar technical concepts
 - "Too complicated" cited as top reason for not adopting Nostr
 - Power users love the control, but they represent <5% of potential audience
@@ -84,17 +86,20 @@ These principles apply to any application managing feature complexity and user e
 **Core insight:** 80% of users will use only 20% of features. Design should optimize for the majority, not the power user minority.
 
 **Application to interface design:**
+
 - **Feature prioritization:** Identify which 20% of features meet 80% of users' needs [[Research:59]](#research-59)
 - **Design focus:** 20% of design decisions drive 80% of impact—focus there [[Research:59]](#research-59)
 - **MVP development:** Minimum viable products are Pareto Principle in action [[Research:59]](#research-59)
 
 **Key strategies:**
+
 - Default to the 20% of features that deliver 80% of value
 - Make power features discoverable, not prominent
 - Measure feature usage—if <20% use it, it shouldn't be in primary UI
 - Reduce cognitive load by simplifying design elements [[Research:59]](#research-59)
 
 **Examples from mainstream apps:**
+
 - **Email clients:** Compose/Read/Archive visible; filters/labels/rules in settings
 - **Social apps:** Post/Like/Comment primary; mute lists/quality filters advanced
 - **Photo apps:** Basic filters prominent; curves/levels/masking for pros
@@ -106,6 +111,7 @@ These principles apply to any application managing feature complexity and user e
 **Core insight:** Defer advanced features and information to secondary UI components. Keep essential content in primary UI, reveal advanced content upon request. [[Research:60]](#research-60)
 
 **Why it works:**
+
 - **30-40% reduction in cognitive load** during onboarding [[Research:55]](#research-55)
 - Reduces decision fatigue by revealing information in stages [[Research:56]](#research-56)
 - Breaks complex processes into manageable steps [[Research:55]](#research-55)
@@ -134,6 +140,7 @@ Define essential vs. advanced content through user research using card sorting a
 **Core insight:** Great UX isn't about hiding features—it's about organizing them so users can find, understand, and use them without frustration. [[Research:61]](#research-61)
 
 **The default experience should:**
+
 - Work excellently without any configuration
 - Serve 80% of users' needs immediately
 - Allow customization for the 20% who need it
@@ -145,12 +152,14 @@ Define essential vs. advanced content through user research using card sorting a
 - Users could still customize, but most didn't need to
 
 **Best practices:**
+
 - Research what most users actually need (not what power users want)
 - Test defaults with non-technical users
 - Make changing defaults easy, but unnecessary for most
 - Provide "Reset to default" option for users who customize
 
 **Examples:**
+
 - **Notification settings:** Defaults that balance engagement without spam
 - **Privacy settings:** Sensible privacy by default, opt-in for sharing
 - **Display settings:** Auto dark mode, readable font sizes, standard layouts
@@ -263,6 +272,7 @@ Tooltips provide subtle, contextual guidance; pop-ups or modals are more disrupt
 Accordions, tooltips, or step-by-step flows reveal content only when needed, keeping interface clean.
 
 **Simplification strategies:**
+
 - Consistent patterns across interface
 - Clear layouts with minimal distractions
 - Group related items logically
@@ -288,6 +298,7 @@ Great UX isn't about hiding features—it's about organizing them so users can f
 **The problem:** Nostr's multi-relay architecture is powerful but overwhelming for new users.
 
 **Current failures:**
+
 - Apps showing 50+ relay pickers during onboarding
 - [[Data:31]](#data-31) Users setting relay preferences in one client (Nostrudel) find other clients (Coracle, Nostter) pulling relay lists incorrectly
 - [[Data:31]](#data-31) Manual relay additions multiply unexpectedly, causing confusion
@@ -300,6 +311,7 @@ Great UX isn't about hiding features—it's about organizing them so users can f
 - Users switching clients experience relay list confusion due to incomplete NIP implementations [[Data:31]](#data-31)
 
 **What 80% of users need:**
+
 - App works perfectly with zero relay configuration
 - Smart default relays chosen based on:
   - Geographic location (latency)
@@ -308,6 +320,7 @@ Great UX isn't about hiding features—it's about organizing them so users can f
 - No relay UI during onboarding
 
 **What 20% of power users need:**
+
 - Relay health indicators (uptime, latency, event coverage)
 - Custom relay management
 - Read/write relay separation
@@ -388,11 +401,13 @@ function shouldShowRelayUI(user: User): boolean {
 While NIP-46 is best practice for key security, "it doesn't currently work very well at all" due to spec instability and poor UX.
 
 **What 80% of users need:**
+
 - Simple, secure key storage in-app
 - Optional passphrase/biometric protection
 - Clear backup instructions
 
 **What 20% of power users need:**
+
 - Remote signer integration (NIP-46)
 - Hardware wallet support
 - Multiple key/identity management
@@ -439,6 +454,7 @@ Backup flow:
 ```
 
 **When to introduce signer apps:**
+
 - NEVER during onboarding
 - Only in advanced security settings
 - With clear explanation of benefits
@@ -449,6 +465,7 @@ Backup flow:
 **The problem:** Nostr-specific jargon (NIPs, relays, events, kinds) exposed in user-facing UI.
 
 **Current failures:**
+
 - Error messages: "Failed to publish kind:1 event to relay"
 - Settings: "Enable NIP-65 Outbox Model"
 - Features: "Import NIP-05 identifier"
@@ -526,6 +543,7 @@ Advanced →
 - Zap configuration
 
 **Power user detection signals:**
+
 - User explores settings multiple times
 - User asks support about advanced features
 - User follows >100 accounts
@@ -699,6 +717,7 @@ function CollapsibleSection({ title, isOpen, onToggle, itemCount, isDangerous, c
 ```
 
 **Validation:**
+
 - Basic settings: 8 items (under 10 limit)
 - Advanced settings: 8 items (collapsed by default)
 - Clear visual hierarchy
@@ -1271,6 +1290,7 @@ Learn more about NIP-01 relay specification →
 ```
 
 **Why it fails:**
+
 - New users have no idea what relays are
 - Overwhelming choice before understanding the platform
 - Technical jargon ("events", "NIP-01") scares users away
@@ -1278,6 +1298,7 @@ Learn more about NIP-01 relay specification →
 - Users abandon before reaching value
 
 **What to do instead:**
+
 - Zero relay configuration during onboarding
 - App chooses optimal relays automatically (2-3 well-connected ones)
 - Defer relay management to advanced settings
@@ -1311,12 +1332,14 @@ a3f82...
 ```
 
 **Why it fails:**
+
 - Users don't know what NIPs are (nor should they)
 - Technical protocol references confuse mainstream users
 - Error messages expose implementation details
 - Makes app feel like developer tool, not consumer product
 
 **What to do instead:**
+
 - Translate protocol terms to user benefits
 - Hide NIP numbers completely
 - Use human-readable error messages
@@ -1350,12 +1373,14 @@ Composer Toolbar:
 ```
 
 **Why it fails:**
+
 - 20+ buttons overwhelming beginners
 - Most users only need 3-4 core features
 - Power features clutter interface
 - Paradox of choice: more options = less usage
 
 **What to do instead:**
+
 - Show 5-7 core features by default
 - Progressive disclosure for advanced features
 - Feature gating based on user level
@@ -1393,12 +1418,14 @@ Before you can use this app, please configure:
 ```
 
 **Why it fails:**
+
 - Requires decisions before user understands platform
 - No "just works" experience
 - Users abandon rather than configure
 - Assumes technical knowledge
 
 **What to do instead:**
+
 - App works perfectly with zero configuration
 - Smart defaults for 80% of users
 - Defer customization to advanced settings
@@ -1443,6 +1470,7 @@ Experimental
 ```
 
 **Why it fails:**
+
 - Overwhelming cognitive load
 - Violates 10-15 items limit
 - Users can't find what they need
@@ -1450,6 +1478,7 @@ Experimental
 - Poor visual hierarchy
 
 **What to do instead:**
+
 - Basic settings: <10 items
 - Group related settings logically
 - Collapse advanced sections by default
@@ -1498,12 +1527,14 @@ Tutorial (12 steps):
 ```
 
 **Why it fails:**
+
 - Information overload before usage
 - Users skip and never return
 - Teaches protocol, not usage
 - No context for why it matters
 
 **What to do instead:**
+
 - Contextual help when features are encountered
 - "Pull" education (user-triggered) not "push" (forced)
 - Short, focused tooltips at point of use
@@ -1543,12 +1574,14 @@ Main Navigation:
 ```
 
 **Why it fails:**
+
 - Developer tools mixed with user features
 - Beginners confused by technical options
 - Poor information architecture
 - Visual clutter
 
 **What to do instead:**
+
 - Main navigation: core user features only
 - Advanced features in settings
 - Developer tools hidden (gesture/code to unlock)
@@ -1588,6 +1621,7 @@ You'll need to install Obtanium first...
 ```
 
 **Why it fails:**
+
 - Massive friction before value
 - Requires installing 2-3 apps before using one
 - Signer apps not in official stores
@@ -1595,6 +1629,7 @@ You'll need to install Obtanium first...
 - 99% of users will abandon
 
 **What to do instead:**
+
 - Simple in-app key storage by default
 - Optional passphrase/biometric protection
 - Introduce signer apps AFTER user is active (1+ weeks)
@@ -1624,6 +1659,7 @@ signer app to manage your keys.
 ### Feature Usage Metrics
 
 **Track which features are actually used:**
+
 - [ ] **Feature usage by user level:**
   - Beginner (0-7 days): Which features do they use?
   - Intermediate (7-30 days): New features adopted?
@@ -1637,6 +1673,7 @@ signer app to manage your keys.
   - Which settings are never touched?
 
 **Questions to answer:**
+
 - Are <20% of features used by >80% of users? (Pareto principle validation)
 - Which advanced features can be hidden without impact?
 - Which "basic" features should be demoted?
@@ -1646,17 +1683,20 @@ signer app to manage your keys.
 ### Settings Complexity Audit
 
 **Count settings by tier:**
+
 - [ ] **Basic settings (visible to all):** Must be <10 items
 - [ ] **Advanced settings (collapsed):** Should be <15 items
 - [ ] **Expert/Developer settings:** Hidden entirely
 
 **Validate hierarchy:**
+
 - [ ] Frequently used settings at top
 - [ ] Related settings grouped logically
 - [ ] No more than 3 levels of nesting
 - [ ] Each setting has clear, jargon-free label
 
 **User testing:**
+
 - [ ] New users can find basic settings in <10 seconds
 - [ ] Users don't feel overwhelmed by settings screen
 - [ ] Power users can find advanced features when needed
@@ -1666,16 +1706,19 @@ signer app to manage your keys.
 ### Progressive Disclosure Effectiveness
 
 **Measure cognitive load:**
+
 - [ ] **Onboarding completion rate:** Target >70%
 - [ ] **Time to first value:** <2 minutes for new users
 - [ ] **Decision points during setup:** <3 required decisions
 
 **User feedback:**
+
 - [ ] "Does the app feel overwhelming?" (Target: <10% say yes)
 - [ ] "Can you find what you need?" (Target: >80% say yes)
 - [ ] "Do you feel in control?" (Target: >70% say yes)
 
 **A/B test progressive disclosure:**
+
 - Test A: All features visible
 - Test B: Progressive disclosure
 - Measure: Completion rate, time-to-value, feature discovery
@@ -1685,6 +1728,7 @@ signer app to manage your keys.
 ### Nostr-Specific Validation
 
 **Relay management:**
+
 - [ ] **Default relay selection works for 80% of users:**
   - Post success rate >95%
   - Average latency <2s
@@ -1695,6 +1739,7 @@ signer app to manage your keys.
   - Power users satisfied with control level
 
 **Protocol terminology:**
+
 - [ ] **Zero NIP references in basic UI:**
   - Error messages use plain language
   - Settings use benefits, not protocol terms
@@ -1705,6 +1750,7 @@ signer app to manage your keys.
   - Users understand "backup" (not "nsec export")
 
 **Signer app introduction:**
+
 - [ ] **Never required during onboarding:** 100% compliance
 - [ ] **Introduced after 1+ week:** For active users only
 - [ ] **Adoption rate tracked:**
@@ -1717,17 +1763,20 @@ signer app to manage your keys.
 ### User Research Questions
 
 **For beginners (0-7 days):**
+
 - "Did anything confuse you during setup?"
 - "What features do you wish were simpler?"
 - "What features do you wish were easier to find?"
 - "Did you see any technical terms you didn't understand?"
 
 **For intermediate users (7-30 days):**
+
 - "Have you explored advanced settings?"
 - "What features did you discover after using the app for a while?"
 - "What would you change about the settings organization?"
 
 **For advanced users (30+ days):**
+
 - "Can you find all the power user features you need?"
 - "What advanced features are missing?"
 - "Would you prefer more or less control over technical settings?"
@@ -1737,18 +1786,21 @@ signer app to manage your keys.
 ### Success Metrics
 
 **Primary metrics:**
+
 - [ ] **Onboarding completion rate:** >70% (vs. current baseline)
 - [ ] **D1/D7/D30 retention:** Improved by >10%
 - [ ] **Time to first post:** <2 minutes (down from 15-20 minutes)
 - [ ] **"Too complicated" complaints:** <10% of users
 
 **Secondary metrics:**
+
 - [ ] **Advanced settings usage:** 10-20% of users
 - [ ] **Support tickets for relay issues:** Down >50%
 - [ ] **Users switching clients for features:** Down >30%
 - [ ] **Power user satisfaction:** >80% can find what they need
 
 **Comparative benchmarks:**
+
 - [ ] Onboarding simpler than Twitter/Instagram? (user survey)
 - [ ] Settings organization clearer than competitors? (user survey)
 - [ ] Advanced features as discoverable as Figma/Slack? (power user survey)

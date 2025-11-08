@@ -26,11 +26,13 @@ lastUpdated: "November 2025"
 ### Current State
 
 **The empty feed problem:**
+
 - New Nostr users report empty or boring feeds after signup [[User:22]](#user-22)
 - "Traditional apps win simply by having much better content selection - you get to see a variety of interesting things that Nostr simply can't match" [[User:15]](#user-15)
 - Cold start problem drives early abandonment: "Nostr is lacking in content, which could be the primary reason people are not sticking around" [[User:22]](#user-22)
 
 **Discovery failures:**
+
 - "The main problem of decentralized alternatives like Nostr is content discovery" [[User:27]](#user-27)
 - Global feed unusable due to spam: Nostr hit with approximately 500,000 daily spam messages in mid-February 2024 [[User:29]](#user-29)
 - "There can't be a 'global' view of the network, as it would be full of spam" [[User:30]](#user-30)
@@ -38,6 +40,7 @@ lastUpdated: "November 2025"
 - "Nostr does not seem to have any external growth loops, such as the ability to invite people by email" [[User:24]](#user-24)
 
 **The retention impact:**
+
 - 30-day retention trending to 0% for recent cohorts [[Data:1]](#data-1)
 - Only ~36,000 weekly active users as of October 2024; less than 15,000 daily active [[Data:2]](#data-2)
 - Post-viral-event retention failure: adoption spikes from X ban in Brazil, Reddit/TikTok events showed poor retention [[Data:2]](#data-2)
@@ -71,6 +74,7 @@ These principles apply to any social application, regardless of underlying archi
 **Core principle:** New users with empty feeds abandon immediately. Every social app must solve: "What do I show someone who follows nobody?"
 
 **Mainstream solutions:**
+
 - **TikTok:** Algorithm-first, no following required. For You Page shows trending content immediately. Users with zero followers can reach large audiences if content aligns with viewer interests. [[Example:4]](#example-4)
 - **Instagram:** Browse mode with trending content, then signup wall. Multiple specialized algorithms: Feed (connections), Reels (entertainment + viral potential for newcomers), Explore (discovery). [[Example:5]](#example-5)
 - **Twitter/X:** Suggests accounts during signup, shows "For You" algorithmic feed by default [[Example:5]](#example-5)
@@ -80,6 +84,7 @@ These principles apply to any social application, regardless of underlying archi
 **Academic research identifies cold start strategies:** Using social network information from existing platforms, collaborative filtering based on similar user behavior, hybrid models, incorporating user demographics and stated preferences, community detection to identify similar users. [[Research:5]](#research-5)
 
 **Key metrics:**
+
 - Time to first interesting content: <30 seconds
 - Posts viewed in first session: >20 (establishes habit)
 - "Was your first session interesting?" user survey
@@ -89,16 +94,19 @@ These principles apply to any social application, regardless of underlying archi
 **Research backing:** Georgetown University's "Better Feeds" report (March 2025) found that moving users from algorithmic to reverse-chronological feeds decreased time spent on platform over 3 months. Instagram users compensated by increasing TikTok usage by 36% and YouTube by 20%; Facebook users moved to Reddit (+52%) and YouTube (+21%). **Critically**: Chronological feeds did NOT reduce polarization as commonly believed. [[Research:6]](#research-6)
 
 **The tradeoff:**
+
 - **Chronological feeds:** User control, transparency, but requires manual curation and leads to platform abandonment [[Research:6]](#research-6)
 - **Algorithmic feeds:** Better discovery, higher engagement, but must avoid pure engagement optimization that amplifies divisive content [[Research:7]](#research-7)
 
 **Successful hybrid approaches:**
+
 - Multiple feed types with clear switching (Mastodon: Home/Local/Federated)
 - Algorithmic "For You" + chronological "Following" (Twitter/X)
 - User-configurable feed preferences (Bluesky custom feeds)
 - Specialized algorithms for different goals: Instagram uses separate algorithms for Feed, Reels, and Explore [[Example:5]](#example-5)
 
 **What makes a good algorithm:**
+
 - Prioritizes content from accounts user explicitly follows
 - Surfaces high-engagement content from extended network
 - Balances familiar (people you follow) with novel (discovery)
@@ -112,6 +120,7 @@ These principles apply to any social application, regardless of underlying archi
 **Research backing:** Instagram's April 2024 algorithm update heavily weights "shares per reach" (content sent via DMs) as deeper engagement than likes. [[Example:5]](#example-5)
 
 **Quality indicators across platforms:**
+
 - **Engagement rate:** Likes, comments, shares relative to follower count
 - **Velocity:** How quickly content gains engagement
 - **Recency:** Fresh content prioritized over old
@@ -123,6 +132,7 @@ These principles apply to any social application, regardless of underlying archi
 **Critical shift:** Two in five Americans currently use TikTok as a search engine. Over 50% of Gen Z and Millennials prefer social media for product discovery, recommendations, and research over traditional search engines. Platforms are no longer just for scrolling—they're where consumers look for information. [[Research:8]](#research-8)
 
 **User expectations from mainstream apps:**
+
 - **Search:** Find people by name/username, find posts by keyword - now TABLE STAKES, not optional [[Research:8]](#research-8)
 - **Explore/Trending:** See what's popular right now
 - **Recommendations:** "People you might like" based on follows
@@ -136,6 +146,7 @@ These principles apply to any social application, regardless of underlying archi
 **Research backing:** "Users are not notified when tagged, and people have to have a habit of opening the app to know if something is happening" - identified as a weak spot in Nostr's habit formation. [User:25, User:26]
 
 **What brings users back:**
+
 - Direct interactions: Replies, mentions, likes on your content
 - Social proof: "Person you follow just posted"
 - Discovery: "Trending in your network"
@@ -152,16 +163,19 @@ These principles apply to any social application, regardless of underlying archi
 ### Challenge 1: Decentralized Discovery Without Central Algorithm
 
 **The protocol reality:**
+
 - No central server to run recommendation algorithms
 - Each client must implement its own discovery logic
 - Relay diversity means content is fragmented
 
 **Nostr advantages:**
+
 - Client diversity enables experimentation with feed algorithms
 - No platform-enforced algorithmic manipulation
 - User can choose clients based on discovery approach
 
 **Nostr disadvantages:**
+
 - No shared recommendation infrastructure
 - Inconsistent discovery experience across clients
 - Harder to bootstrap network effects
@@ -171,18 +185,21 @@ These principles apply to any social application, regardless of underlying archi
 ### Challenge 2: Multi-Relay Content Aggregation
 
 **The complexity:**
+
 - Content scattered across multiple relays
 - Different users use different relay sets
 - Must query multiple relays and deduplicate
 - Slow/dead relays delay content loading
 
 **Current approaches:**
+
 - Query user's relay list for followed accounts [[Protocol:5]](#protocol-5)
 - Use relay hints from user profiles [Protocol:NEEDED]
 - Implement timeout/fallback for slow relays
 - Cache content for offline reading
 
 **Trade-offs:**
+
 - Query all relays = slow, comprehensive
 - Query subset = fast, might miss content
 - Cache aggressively = fast, stale data
@@ -192,17 +209,20 @@ These principles apply to any social application, regardless of underlying archi
 **The concept:** Use social graph to surface quality content and filter spam.
 
 **Implementation approaches:**
+
 - "Friends of friends" recommendations
 - Content from accounts followed by people you trust
 - Weighted by proximity in social graph
 - Filter spam by excluding accounts with no WoT connections
 
 **Benefits:**
+
 - Organic discovery through real social connections
 - Spam resistance (spammers have weak WoT)
 - No central authority deciding what's "good"
 
 **Challenges:**
+
 - Computationally expensive to calculate
 - Privacy concerns (reveals social graph structure)
 - Echo chamber risk (only see similar viewpoints)
@@ -217,12 +237,14 @@ This creates spam resistance and discovery improvement by limiting global feeds 
 **The unique advantage:** Zaps (Lightning payments) [[Protocol:5]](#protocol-5) provide strong quality signal that can't be faked at scale.
 
 **Why it works:**
+
 - Costs real money to zap, unlike free likes
 - High zap counts indicate genuine value to community
 - Can weight by zap amount (100 sats > 10 sats)
 - Sybil-resistant: Expensive to fake engagement
 
 **Discovery applications:**
+
 - "Most zapped posts today" as trending feed
 - Zap velocity for viral content detection
 - Total zaps as reputation/credibility score
@@ -235,12 +257,14 @@ This creates spam resistance and discovery improvement by limiting global feeds 
 **The opportunity:** Different relays can specialize in content types or quality levels.
 
 **Potential patterns:**
+
 - Topic-specific relays (bitcoin, art, music)
 - Curated relays (invite-only, high signal)
 - Regional/language-specific relays
 - Paid relays (spam barrier)
 
 **Discovery implications:**
+
 - "Browse content from [relay name]" as discovery feature
 - Relay reputation affects content quality
 - Users can subscribe to high-quality relay feeds
@@ -290,17 +314,20 @@ After signup:
 ```
 
 **Examples from mainstream apps:**
+
 - Instagram: Suggests accounts from contacts and popular accounts during signup [[Example:5]](#example-5)
 - Twitter: "Who to follow" based on interests and popular accounts
 - Mastodon: Server-specific featured accounts [[Example:7]](#example-7)
 - **Bluesky**: Starter packs allow users to follow up to 150 people + 3 custom feeds with one click. 43% of follows during peak periods came from starter packs, and users in starter packs got 85% more followers. [Research:4, Example:6]
 
 **Nostr implementation:**
+
 - **Nstart** (January 2025): Onboarding wizard that can "Auto follow the contacts list of some old and trusted Nostr users" [[User:32]](#user-32)
 - **NIP-51 starter packs**: Protocol spec exists (kind 39089: "a named set of profiles to be shared around with the goal of being followed together") but clients haven't widely implemented [Research note: NIP-51]
 - **Opportunity**: Nostr has the protocol support but needs more client implementations
 
 **Validation:**
+
 - Track: % of new users with >10 follows after first session
 - Measure: Session length for users with starter follows vs empty
 - Survey: "Was your first feed interesting?"
@@ -361,11 +388,13 @@ Tab navigation:
 ```
 
 **Examples from other platforms:**
+
 - Twitter/X: "For You" (algorithmic) and "Following" (chronological) tabs
 - Bluesky: Custom feeds (algorithmic) + "Following" feed
 - Mastodon: Home, Local, Federated timeline structure
 
 **Trade-offs:**
+
 - ✅ Better discovery, higher engagement
 - ✅ Solves cold start problem
 - ❌ Less user control, black-box algorithm
@@ -373,12 +402,14 @@ Tab navigation:
 - ❌ Risk of echo chamber or filter bubble
 
 **Nostr-specific considerations:**
+
 - Algorithm runs client-side, not server-side
 - Must query multiple relays for comprehensive data
 - Can leverage zaps as strong engagement signal
 - No user tracking/profiling (privacy-preserving)
 
 **Validation:**
+
 - Track: Time spent in algorithmic feed vs chronological
 - Measure: Follows gained from discovery feed interactions
 - Survey: "Do you find interesting content easily?"
@@ -456,11 +487,13 @@ Trending Hashtags (24h)
 ```
 
 **Examples from other platforms:**
+
 - Twitter: Trending topics based on tweet volume and engagement
 - Mastodon: Hashtag trends aggregated server-side
 - Reddit: "Hot" algorithm based on upvotes and time
 
 **Validation:**
+
 - Track: Click-through rate on trending content
 - Measure: Time spent browsing trending vs other feeds
 - Survey: "Do you discover interesting content through trending?"
@@ -532,11 +565,13 @@ Reduces scope of each search, makes implementation easier
 ```
 
 **Examples from other platforms:**
+
 - Twitter: Full-text search across all public tweets
 - Mastodon: Hashtag search works, full-text search limited
 - Reddit: Full-text search with filters (subreddit, time, etc.)
 
 **Validation:**
+
 - Track: Search usage rate (% of sessions with search)
 - Measure: Search result click-through rate
 - Survey: "Can you find content you're looking for?"
@@ -600,6 +635,7 @@ Challenge: Nostr has no central push notification server.
 4. **Unified Push:** Open protocol for privacy-preserving push notifications
 
 **Validation:**
+
 - Track: Notification engagement rate (click-through)
 - Measure: Re-engagement (notifications → app opens)
 - Survey: "Are notifications useful or annoying?"
@@ -618,12 +654,14 @@ Challenge: Nostr has no central push notification server.
 ```
 
 **Why it fails:**
+
 - Puts burden on user to curate feed manually
 - No immediate value
 - High friction before seeing any content
 - Users abandon before reaching value
 
 **What to do instead:**
+
 - Show interesting content immediately (trending, popular accounts)
 - Auto-follow based on interests
 - Provide guest/browse mode before signup
@@ -633,17 +671,20 @@ Challenge: Nostr has no central push notification server.
 ### Anti-Pattern 2: Chronological-Only Feed (No Discovery)
 
 **What it looks like:**
+
 - Single feed showing posts in reverse chronological order
 - No algorithmic ranking, no trending, no recommendations
 - User must manually find all accounts to follow
 
 **Why it fails:**
+
 - Misses content from accounts user would like but hasn't found yet
 - No solution for cold start problem
 - Requires significant manual curation
 - Works for power users, fails for new users
 
 **What to do instead:**
+
 - Provide multiple feed types: chronological AND discovery
 - Let users choose their preference
 - Default to discovery feed for new users
@@ -653,17 +694,20 @@ Challenge: Nostr has no central push notification server.
 ### Anti-Pattern 3: Unusable Global Feed
 
 **What it looks like:**
+
 - "Global" feed showing ALL posts from relay(s) unfiltered
 - No spam filtering, no quality ranking
 - Firehose of random content
 
 **Why it fails:**
+
 - Signal-to-noise ratio extremely low
 - Spam and bot content overwhelms
 - No personalization or relevance
 - Users quickly learn to avoid it
 
 **What to do instead:**
+
 - Filter global feed by Web of Trust
 - Provide quality ranking (engagement, zaps)
 - Offer topic-filtered views of global content
@@ -674,16 +718,19 @@ Challenge: Nostr has no central push notification server.
 ### Anti-Pattern 4: No Search or Broken Search
 
 **What it looks like:**
+
 - No search functionality at all, OR
 - Search that returns no results or irrelevant results
 - Search only works for exact username matches
 
 **Why it fails:**
+
 - Users expect to find people and content by search
 - Breaks basic discovery mechanisms
 - Frustration when search returns nothing
 
 **What to do instead:**
+
 - Implement at least basic search (people by name/NIP-05)
 - Use relay search or specialized search relays for content
 - Clear messaging if search is limited ("Searching your cached content...")
@@ -693,14 +740,17 @@ Challenge: Nostr has no central push notification server.
 ### Anti-Pattern 5: Notification Spam or No Notifications
 
 **What it looks like:**
+
 - **Too many:** Every like, every reaction, every follow = separate notification
 - **Too few:** No notifications at all, users forget app exists
 
 **Why both fail:**
+
 - Too many → notification fatigue → user disables → no re-engagement
 - Too few → user forgets app → churn
 
 **What to do instead:**
+
 - Intelligent notification priority (direct engagement > social proof > discovery)
 - Batching for low-priority notifications
 - User control over notification preferences
@@ -711,16 +761,19 @@ Challenge: Nostr has no central push notification server.
 ### Anti-Pattern 6: Relay-Dependent Discovery (Inconsistent Experience)
 
 **What it looks like:**
+
 - "Trending" or "Explore" content varies drastically by relay selection
 - User switches relays, suddenly can't find content they saw before
 - No explanation for why discovery differs
 
 **Why it fails:**
+
 - Inconsistent, unpredictable experience
 - Users don't understand why content appears/disappears
 - Breaks mental model of "the network"
 
 **What to do instead:**
+
 - Aggregate discovery across multiple relays
 - Explain relay-based differences when relevant
 - Provide consistent discovery experience regardless of relay config
@@ -733,28 +786,33 @@ Challenge: Nostr has no central push notification server.
 ### Metrics to Track
 
 **Engagement Metrics:**
+
 - [ ] **Session length:** Average time spent per session
 - [ ] **Posts viewed per session:** How much content do users consume? (target: >20 in first session)
 - [ ] **Sessions per day:** How often do users return?
 - [ ] **Feed diversity:** What % of content is from new accounts vs followed?
 
 **Discovery Effectiveness:**
+
 - [ ] **Follows per day:** How many new accounts do users follow?
 - [ ] **Discovery feature usage:** % of users who use trending/search/explore
 - [ ] **Search result click-through:** Do search results lead to engagement?
 - [ ] **Discovery → Follow conversion:** % of discovered accounts that get followed
 
 **Content Quality:**
+
 - [ ] **Content engagement rate:** What % of viewed posts get likes/replies/zaps?
 - [ ] **Time to scroll past:** Average time spent viewing each post
 - [ ] **Negative feedback:** Do users hide/mute/block content? (quality signal)
 
 **Retention Impact:**
+
 - [ ] **D1 retention by feed quality:** Do users with interesting feeds return more?
 - [ ] **Churn reasons:** Exit surveys - "Why did you stop using Nostr?"
 - [ ] **Comparison:** Retention rates before/after discovery improvements
 
 **Notification Performance:**
+
 - [ ] **Notification engagement:** What % of notifications lead to app opens?
 - [ ] **Notification to action:** Do users engage with content from notifications?
 - [ ] **Notification settings:** What % of users customize notification preferences?
@@ -764,21 +822,25 @@ Challenge: Nostr has no central push notification server.
 **Qualitative feedback to gather:**
 
 **First Impressions:**
+
 - "Was your first feed interesting? Why or why not?"
 - "Could you find content you cared about?"
 - "Did you feel overwhelmed or bored?"
 
 **Discovery:**
+
 - "How do you find new people to follow?"
 - "Can you find content on topics you're interested in?"
 - "Have you used search? Did it work?"
 
 **Feed Quality:**
+
 - "Is your feed interesting enough to check daily?"
 - "Do you see too much spam or low-quality content?"
 - "Do you wish you had more control over your feed, or is it good as is?"
 
 **Comparison to Other Platforms:**
+
 - "How does content discovery compare to Twitter/Instagram/etc?"
 - "What does [other platform] do better for finding content?"
 - "What does Nostr do better?"
@@ -786,12 +848,14 @@ Challenge: Nostr has no central push notification server.
 ### A/B Testing Opportunities
 
 **Test different discovery approaches:**
+
 - Default follows vs empty feed
 - Algorithmic feed vs chronological only
 - Different trending algorithms (engagement vs zaps vs WoT)
 - Notification frequency and types
 
 **Measure impact on:**
+
 - D1, D7, D30 retention
 - Session length and frequency
 - Follows gained
