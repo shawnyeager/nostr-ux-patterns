@@ -646,7 +646,7 @@ function likePost(postId) {
 
 ---
 
-### Anti-Pattern 3: No Confirmation After Critical Actions
+### Anti-Pattern 3: No Confirmation
 
 **What it looks like:**
 

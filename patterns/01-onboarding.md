@@ -239,7 +239,7 @@ Security vs. usability. Keys are the foundation of Nostr's censorship-resistance
 - NIP-07: Browser extension signing (abstracts key management)
 - NIP-46: Nostr Connect / remote signers (separates keys from client)
 
-### Challenge 2: Relay Selection Is Too Complex for Beginners
+### Challenge 2: Relay Selection
 
 **The Problem:**
 
@@ -324,7 +324,7 @@ This portability means:
 
 - NIP-46: Nostr Connect protocol for remote signing
 
-### Challenge 5: Cold Start Problem Is Worse Without Algorithms
+### Challenge 5: Cold Start Problem
 
 **The Problem:**
 
@@ -662,7 +662,7 @@ Choose your relays:
 
 **What to do instead:** Use Pattern D (Interest-Based First Follows) or Pattern A (Guest/Browse Mode)
 
-### Anti-Pattern 4: Require Signer App for Onboarding
+### Anti-Pattern 4: Require Signer App
 
 **What it looks like:**
 
@@ -707,7 +707,7 @@ Screen 5: Now you're ready!
 
 **What to do instead:** Let users start immediately, provide contextual education
 
-### Anti-Pattern 6: Require Complete Profile Before Access
+### Anti-Pattern 6: Require Complete Profile
 
 **What it looks like:**
 

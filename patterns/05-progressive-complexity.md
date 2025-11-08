@@ -387,7 +387,7 @@ function shouldShowRelayUI(user: User): boolean {
 }
 ```
 
-### Challenge 2: Key Signer Apps (NIP-46) Complexity
+### Challenge 2: Key Signer Apps
 
 **The problem:** Remote signers enhance security but add significant complexity.
 
@@ -532,7 +532,7 @@ Advanced →
   ☐ Use external key manager
 ```
 
-### Challenge 4: When to Introduce Advanced Nostr Features
+### Challenge 4: Advanced Features
 
 **The progressive rollout:**
 
@@ -582,7 +582,7 @@ if (user.daysActive > 30 && user.postsCount > 50) {
 // Only show once, never intrusive
 ```
 
-### Challenge 5: Settings Organization for Nostr Apps
+### Challenge 5: Settings Organization
 
 **Applying 10-15 items limit to Nostr settings:** [[Research:58]](#research-58)
 
@@ -1386,7 +1386,7 @@ We'll try again automatically
 
 ---
 
-### Anti-Pattern 3: All Features Visible to All Users
+### Anti-Pattern 3: All Features Visible
 
 **What it looks like:**
 
@@ -1590,7 +1590,7 @@ We've chosen the best ones for you.
 
 ---
 
-### Anti-Pattern 7: Power User Features in Main Navigation
+### Anti-Pattern 7: Power Features in Main Nav
 
 **What it looks like:**
 
@@ -1636,7 +1636,7 @@ Main Navigation:
 
 ---
 
-### Anti-Pattern 8: Immediate Signer App Requirement
+### Anti-Pattern 8: Immediate Signer Requirement
 
 **What it looks like:**
 

@@ -194,7 +194,7 @@ These principles apply to any distributed system managing user data across multi
 
 ## Nostr-Specific Considerations
 
-### Challenge 1: Kind:3 Race Conditions Destroying Follow Lists
+### Challenge 1: Kind:3 Race Conditions
 
 **The problem:** [[Data:14]](#data-14) [[Data:15]](#data-15)
 
@@ -256,7 +256,7 @@ function followUser(pubkey) {
 }
 ```
 
-### Challenge 2: Profile Metadata Consistency (Kind:0)
+### Challenge 2: Profile Metadata
 
 **The problem:**
 Similar to kind:3, kind:0 (profile metadata) is replaceable and suffers from the same race conditions.
@@ -276,7 +276,7 @@ Similar to kind:3, kind:0 (profile metadata) is replaceable and suffers from the
 3. Warn user if editing while kind:0 is still syncing
 4. Show "Last synced" timestamp for profile data
 
-### Challenge 3: Relay Downtime and Silent Data Loss
+### Challenge 3: Relay Downtime
 
 **The problem:** [[Data:12]](#data-12) [[Data:17]](#data-17)
 
@@ -764,7 +764,7 @@ Client silently picks one, user never knows conflict exists
 - Log conflicts for debugging
 - Prevent NEW conflicts by locking edits during sync
 
-### Anti-Pattern 3: "Just Works" Optimism Without Validation
+### Anti-Pattern 3: Unvalidated Optimism
 
 **What it looks like:**
 
@@ -790,7 +790,7 @@ function followUser(pubkey) {
 - Rollback optimistic update on failure
 - Show retry option with explanation
 
-### Anti-Pattern 4: Exposing Technical Sync Details
+### Anti-Pattern 4: Technical Sync Details
 
 **What it looks like:**
 
@@ -845,7 +845,7 @@ User on airplane
 - Queue events for publish when online
 - "You're offline. 3 posts will send when you reconnect."
 
-### Anti-Pattern 6: Overwriting Newer Data with Stale Cache
+### Anti-Pattern 6: Stale Cache Overwrites
 
 **What it looks like:**
 

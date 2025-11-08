@@ -142,7 +142,7 @@ These principles apply to any social application, regardless of underlying archi
 
 ## Nostr-Specific Considerations
 
-### Challenge 1: Decentralized Discovery Without Central Algorithm
+### Challenge 1: Decentralized Discovery
 
 **The protocol reality:**
 
@@ -234,7 +234,7 @@ This creates spam resistance and discovery improvement by limiting global feeds 
 
 **Current usage:** Primal 2.0's trending feeds likely incorporate zap signals as quality indicators. [[User:31]](#user-31) This is a unique Nostr advantage that mainstream platforms lack—authentic monetary endorsement as a ranking signal.
 
-### Challenge 5: Relay-Based Content Filtering & Specialization
+### Challenge 5: Relay-Based Filtering
 
 **The opportunity:** Different relays can specialize in content types or quality levels.
 
@@ -645,7 +645,7 @@ Challenge: Nostr has no central push notification server.
 
 ## Anti-Patterns: What Not To Do
 
-### Anti-Pattern 1: Empty Feed with "Follow People" Message
+### Anti-Pattern 1: Empty Feed Message
 
 **What it looks like:**
 
@@ -670,7 +670,7 @@ Challenge: Nostr has no central push notification server.
 
 ---
 
-### Anti-Pattern 2: Chronological-Only Feed (No Discovery)
+### Anti-Pattern 2: Chronological-Only Feed
 
 **What it looks like:**
 
@@ -739,7 +739,7 @@ Challenge: Nostr has no central push notification server.
 
 ---
 
-### Anti-Pattern 5: Notification Spam or No Notifications
+### Anti-Pattern 5: Notification Extremes
 
 **What it looks like:**
 
@@ -760,7 +760,7 @@ Challenge: Nostr has no central push notification server.
 
 ---
 
-### Anti-Pattern 6: Relay-Dependent Discovery (Inconsistent Experience)
+### Anti-Pattern 6: Relay-Dependent Discovery
 
 **What it looks like:**
 
