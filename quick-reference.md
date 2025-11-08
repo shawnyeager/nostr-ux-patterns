@@ -328,27 +328,32 @@ If you can't measure it, you can't improve it.
 ## Success Metrics to Track
 
 **Retention (most important):**
+
 - D1 retention (came back next day?)
 - D7 retention (came back after a week?)
 - D30 retention (still using after a month?)
 
 **Engagement:**
+
 - DAU / MAU ratio
 - Session length
 - Posts per session
 - Time-to-first-post for new users
 
 **Onboarding:**
+
 - Signup completion rate
 - Time-to-first-value
 - D1 activation rate (posted, followed, engaged)
 
 **Reliability:**
+
 - Post success rate (to at least one relay)
 - Error rate for core actions
 - Notification delivery rate
 
 **Discovery:**
+
 - Discovery feature usage (search, explore, hashtags)
 - Content diversity (unique authors per session)
 - Follow growth rate

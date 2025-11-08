@@ -26,6 +26,7 @@ lastUpdated: "November 7, 2025"
 ### Current State
 
 **Core interactions failing:**
+
 - [[Data:1]](#data-1) Posts get stuck during publishing, requiring retry mechanisms
 - [[Data:2]](#data-2) Reactions (likes/zaps) fail due to NIP-25 inefficiency - clients must gather thousands of events just to count likes for a single note
 - [[Data:3]](#data-3) Relay downtime causes content loss - when relays go down, users' content is potentially wiped
@@ -33,12 +34,14 @@ lastUpdated: "November 7, 2025"
 - [[Data:5]](#data-5) Missing notifications widespread - zap notifications fail to trigger, quoting users without p-tags doesn't generate notifications, mobile push notifications face fundamental OS limitations
 
 **Trust erosion:**
+
 - Users lose confidence when basic actions don't work
 - "Did my post actually send?" uncertainty
 - Cross-client inconsistency destroys trust
 - No feedback when actions fail
 
 **The retention impact:**
+
 - Users abandon apps that feel "broken"
 - Unreliable core interactions more damaging than missing features
 - Trust lost is hard to rebuild
@@ -73,6 +76,7 @@ These principles apply to any social application, regardless of underlying archi
 **Key insight:** [[Research:3]](#research-3) Response times under 1.0 second keep user's flow of thought uninterrupted, but feedback must come within 100ms to feel instantaneous. A 200ms delay with clear feedback feels better than instant action that might have failed.
 
 **Mainstream approaches:**
+
 - **Twitter/X:** Shows "Sending..." state, confirms when tweet is live [[Example:1]](#example-1)
 - **Instagram:** [[Example:2]](#example-2) Upload progress bar, "Posted" confirmation; 2024 algorithm now heavily weights "shares per reach" as key engagement signal, showing Instagram prioritizes reliable delivery confirmation
 - **Discord:** Message appears with "Sending..." then checkmark when delivered
@@ -96,6 +100,7 @@ These principles apply to any social application, regardless of underlying archi
 4. Rollback or show error if failed
 
 **When to use optimistic UI:**
+
 - ✅ Actions users expect to succeed (like, follow, post)
 - ✅ When you can easily rollback
 - ✅ When instant feedback improves experience
@@ -124,6 +129,7 @@ User clicks like
 5. **Error** - Failed with explanation
 
 **Visual indicators:**
+
 - Initiated: Button state change (pressed) within 100ms
 - Processing: Skeleton screen (2-10s) or spinner, progress bar
 - Success: Checkmark, color change, brief confirmation
@@ -134,16 +140,19 @@ User clicks like
 **Research backing:** [[Research:11]](#research-11) Nielsen Norman Group's 2024 guidelines emphasize helping users recover from errors by clearly identifying problems, allowing users to access and correct fields easily. [[Research:12]](#research-12) Error handling must follow Jakob Nielsen's heuristic: "Help Users Recognize, Diagnose, and Recover" - tell users error occurred, explain what went wrong, show how to recover. [[Research:13]](#research-13) Error messages must have three required elements: (1) Problem statement (what went wrong), (2) Cause explanation (why it happened), (3) Solution suggestion (how to fix it). Use neutral and empathetic language, never blame users.
 
 **Bad error messages:**
+
 - "Error occurred" (no information)
 - "Network error" (too vague)
 - "Failed to post event" (what do I do?)
 
 **Good error messages:**
+
 - "Your post couldn't be sent. Check your connection and try again."
 - "Follow action failed. The user's profile might not be available right now."
 - "Like wasn't saved. Tap to retry."
 
 **Error message checklist:**
+
 - Explains what happened in plain language
 - Suggests what user can do
 - Provides easy retry mechanism
@@ -156,6 +165,7 @@ User clicks like
 **Core principle:** Users should be able to retry actions without creating duplicates or causing problems.
 
 **Implementation:**
+
 - Use unique IDs for actions (Nostr event IDs serve this purpose)
 - Relays/clients check if action already completed
 - Retry produces same result as initial request
@@ -178,17 +188,20 @@ User clicks "Post" → button disables immediately
 ### Challenge 1: Multi-Relay Publishing & Verification
 
 **The protocol reality:**
+
 - Events must be published to multiple relays
 - Different users read from different relays
 - No guarantee all relays will accept the event
 - Some relays may be slow or offline
 
 **Current failures:**
+
 - Post to 3 relays, only 2 accept it
 - Other users don't see your post (they use the 3rd relay)
 - No way to know which relays failed
 
 **Solution patterns:**
+
 - Publish to user's write relays + common relays
 - Wait for confirmation from at least N relays before showing success
 - Retry failed relays in background
@@ -224,18 +237,21 @@ if (results.successCount >= MIN_RELAYS) {
 **The problem:** Kind 3 (contact list) events replace the entire list. Race conditions cause lost follows.
 
 **Current failures:**
+
 - User follows Alice in Client A
 - User follows Bob in Client B (doesn't know about Alice yet)
 - Client B publishes contact list without Alice
 - Alice is now unfollowed
 
 **Solutions:**
+
 - Lock: Don't allow simultaneous follow/unfollow in same client
 - Read-before-write: Always fetch latest contact list before modifying
 - Conflict detection: Check if contact list changed since we read it
 - Merge strategy: Combine follows from multiple sources
 
 **NIP considerations:**
+
 - [[Protocol:1]](#protocol-1) NIP-02: Contact List and Petnames - defines kind 3 events for following lists; entire list is replaceable, causing the race condition problem documented above
 - [[Protocol:2]](#protocol-2) NIP-65: Relay List Metadata - defines kind 10002 events for user's preferred relay hints to help others find their content
 
@@ -244,11 +260,13 @@ if (results.successCount >= MIN_RELAYS) {
 **The problem:** Reactions (Kind 7) need to propagate to where the original post's author can see them.
 
 **Where to publish reactions:**
+
 - User's write relays (so their followers see they liked something)
 - Original post author's relays (so author sees the reaction)
 - Relays where the original post was found
 
 **Current failures:**
+
 - Publish reaction only to your relays
 - Author never sees it (they don't read your relays)
 - Reaction count appears inconsistent across clients
@@ -263,6 +281,7 @@ if (results.successCount >= MIN_RELAYS) {
 5. Client detects zap receipt and shows it
 
 **Failure points:**
+
 - Author has no Lightning address
 - Lightning service is offline
 - User's wallet can't pay invoice
@@ -270,12 +289,14 @@ if (results.successCount >= MIN_RELAYS) {
 - Client doesn't poll for receipts
 
 **Current UX:**
+
 - User clicks zap
 - Wallet opens... then nothing
 - No confirmation if zap went through
 - Zap count doesn't update
 
 **Better patterns:**
+
 - Check for Lightning address before showing zap option
 - Show clear steps: "Requesting invoice..." → "Opening wallet..." → "Confirming..."
 - Poll for zap receipts after payment
@@ -341,6 +362,7 @@ Failed:   [✗] Failed to post [Retry]
 ```
 
 **Validation:**
+
 - Track: % of posts that reach ≥3 relays
 - Measure: Time from click to confirmation
 - Survey: "Did your post publish reliably?"
@@ -443,6 +465,7 @@ async function followUser(pubkey: string) {
 ```
 
 **Safety checks:**
+
 - Lock prevents race conditions within same client
 - Read-before-write prevents conflicts with other clients
 - Verify event created_at is newer than current
@@ -528,6 +551,7 @@ Like button:
 **Solution:** Batch related operations and publish as group.
 
 **Use cases:**
+
 - Publishing a post + uploading attached images
 - Following multiple users from starter pack
 - Deleting multiple posts
@@ -560,6 +584,7 @@ async function batchFollowUsers(pubkeys: string[]) {
 ```
 
 **Benefits:**
+
 - Reduces network requests
 - Prevents race conditions
 - Faster UX
@@ -585,12 +610,14 @@ async function publishPost(content) {
 ```
 
 **Why it fails:**
+
 - User has no idea action failed
 - No way to retry
 - Post appears in local UI but not on network
 - Destroys trust
 
 **What to do instead:**
+
 - Always show error state
 - Provide retry mechanism
 - Explain what went wrong
@@ -611,12 +638,14 @@ function likePost(postId) {
 ```
 
 **Why it fails:**
+
 - Like isn't persisted
 - Disappears on refresh
 - Other users don't see it
 - Completely breaks trust
 
 **What to do instead:**
+
 - Optimistic UI must be followed by actual request
 - Validate and rollback on failure
 - Never fake data
@@ -626,16 +655,19 @@ function likePost(postId) {
 ### Anti-Pattern 3: No Confirmation After Critical Actions
 
 **What it looks like:**
+
 - User deletes post, no confirmation shown
 - User zaps 10000 sats, no receipt
 - User unfollows account, no feedback
 
 **Why it fails:**
+
 - User unsure if action worked
 - Anxiously checks multiple times
 - May retry and create problems
 
 **What to do instead:**
+
 - Always confirm critical actions
 - Show clear success state
 - Provide undo if possible
@@ -654,11 +686,13 @@ async function followUser(pubkey) {
 ```
 
 **Why it fails:**
+
 - User stuck waiting
 - Can't cancel or retry
 - App feels frozen
 
 **What to do instead:**
+
 - Set reasonable timeouts (5-10 seconds)
 - Show timeout error
 - Allow cancellation
@@ -678,11 +712,13 @@ async function publishPost(event) {
 ```
 
 **Why it fails:**
+
 - Single point of failure
 - Other users won't see post
 - Defeats purpose of decentralization
 
 **What to do instead:**
+
 - Publish to multiple relays
 - Include common/popular relays
 - Verify multiple confirmations
@@ -694,6 +730,7 @@ async function publishPost(event) {
 ### Reliability Metrics
 
 **Core interactions to measure:**
+
 - [ ] **Post success rate:** >99% of posts reach ≥3 relays
 - [ ] **Reaction success rate:** >99% of likes/reactions persist
 - [ ] **Follow/unfollow success rate:** >99% without data loss
@@ -720,16 +757,19 @@ async function publishPost(event) {
 ### User Research Questions
 
 **Reliability perception:**
+
 - "Do your posts reliably appear?"
 - "When you like/react to something, does it always register?"
 - "Have you lost follows/followers when switching clients?"
 
 **Feedback clarity:**
+
 - "When you post, is it clear when it's done?"
 - "If something fails, do you know what happened?"
 - "Can you easily retry failed actions?"
 
 **Comparison to other platforms:**
+
 - "How does reliability compare to Twitter/Instagram?"
 - "Do you trust Nostr apps as much as mainstream apps?"
 - "What makes you lose trust in an app?"
@@ -744,6 +784,7 @@ Test different approaches:
 - Retry button placement
 
 **Measure impact on:**
+
 - Perceived reliability
 - User trust scores
 - Action completion rates
