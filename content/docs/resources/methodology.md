@@ -248,13 +248,6 @@ We'll know this methodology is sound if:
 
 ---
 
-## Version History
-
-- **v1.0 (November 2025):** Initial methodology documentation
-- Updates will be tracked via Git commits
-
----
-
 ## Appendix: Research Questions by Pattern
 
 ### Pattern 1: Onboarding & First-Run Experience

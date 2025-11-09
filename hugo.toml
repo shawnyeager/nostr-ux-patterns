@@ -2,6 +2,7 @@ baseURL = 'https://nostr-ux.com/'
 languageCode = 'en-us'
 title = 'Design Patterns for Nostr UX'
 theme = 'hextra'
+enableGitInfo = true
 
 # Mount existing content
 [module]
@@ -24,6 +25,7 @@ theme = 'hextra'
 [params]
   description = 'Design patterns for building consumer Nostr applications with great UX'
   images = ['/images/og-image.png']
+  displayUpdatedDate = true
 
   [params.social]
     twitter = "shawnyeager"
