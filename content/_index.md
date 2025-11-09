@@ -12,7 +12,7 @@ layout: hextra-home
 
 <div class="hx:mb-12">
 {{< hextra/hero-subtitle >}}
-  Research-backed patterns to build consumer Nostr applications&nbsp;<br class="hx:sm:block hx:hidden" />that people actually want to use
+  Evidence-based UX patterns for building Nostr apps people actually use
 {{< /hextra/hero-subtitle >}}
 </div>
 
