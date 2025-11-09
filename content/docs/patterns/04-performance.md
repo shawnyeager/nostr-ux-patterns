@@ -43,13 +43,21 @@ Nostr apps may not be objectively slower than centralized alternatives, but they
 
 > "Users don't distinguish between 'objectively fast' and 'feels fast.' Perception is reality." [[Research:31]](#research-31)
 
-**Research shows:** [[Research:32]](#research-32) [[Research:33]](#research-33)
+{{< callout type="warning" >}}
+**Performance Impact on Bounce Rates:** [[Research:32]](#research-32) [[Research:33]](#research-33)
 
-- **32% bounce rate increase** from 1 to 3 seconds load time, **90% increase** at 5 seconds
+- **32% bounce rate increase** from 1 to 3 seconds load time
+- **90% increase** at 5 seconds
 - **53% of mobile visitors leave** if page takes >3 seconds to load
-- Perceived performance more important than actual performance [[Research:34]](#research-34)
-- Visual feedback during delays dramatically improves satisfaction [[Research:35]](#research-35)
-- 100ms response threshold for "instant" feeling [[Research:31]](#research-31)
+
+Speed directly impacts retention. Every second of delay costs users.
+{{< /callout >}}
+
+**Additional research:** [[Research:34]](#research-34) [[Research:35]](#research-35) [[Research:31]](#research-31)
+
+- Perceived performance more important than actual performance
+- Visual feedback during delays dramatically improves satisfaction
+- 100ms response threshold for "instant" feeling
 
 ---
 
@@ -79,19 +87,18 @@ These principles apply to any application prioritizing performance and user expe
 
 ### 2. The 100ms / 1s / 10s Rule
 
-**Research backing:** [[Research:31]](#research-31) Nielsen Norman Group response time thresholds (Updated January 2024)
-
-**The thresholds:**
+{{< callout type="important" >}}
+**Response Time Thresholds** (Updated January 2024) [[Research:31]](#research-31)
 
 - **<100ms:** Feels instantaneous - user perceives direct manipulation
 - **<1 second:** Maintains flow of thought - no interruption to mental process
-- **<10 seconds (now <5s):** Keeps attention - Nielsen updated in 2024: "probably safe to say the upper limit of 10 seconds is now 5 seconds or even less" [[Research:31]](#research-31)
+- **<5 seconds:** Keeps attention - Nielsen updated threshold from 10s to 5s in 2024
 
-**Application to social apps:**
-
+**For social apps:**
 - Button clicks must respond <100ms (disable, show spinner, change color)
 - Feed refresh should show first content <1s
-- Full feed load acceptable up to 5s if progressive (was 10s in 1993 research)
+- Full feed load acceptable up to 5s if progressive
+{{< /callout >}}
 
 **What to do for each:**
 

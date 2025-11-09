@@ -7,14 +7,18 @@ weight: 6
 
 ### Current State
 
-**Data loss destroying user trust:**
+{{< callout type="error" >}}
+**Data Loss Crisis:**
 
 - Users losing all their follows when switching between clients (Primal → Damus → Snort) [[Data:14]](#data-14)
-- [[Data:15]](#data-15) Race conditions in kind:3 events causing catastrophic follow list destruction when clients sync
-- Profile changes (display name, bio, avatar) not appearing across all apps
+- Race conditions in kind:3 events causing **catastrophic follow list destruction** when clients sync [[Data:15]](#data-15)
+- Profile changes not appearing across all apps
 - Posts disappearing from feeds when relays go offline [[Data:12]](#data-12)
 - Users forced to manually re-follow everyone after switching clients
 - No visibility into what data is synced vs. out-of-sync
+
+This is the most severe UX failure in Nostr. Users don't trust the platform after losing data once.
+{{< /callout >}}
 
 **The trust problem:**
 
@@ -88,16 +92,15 @@ These principles apply to any distributed system managing user data across multi
 
 ### 2. Real-Time Sync Expectations
 
-**Research backing:** [[Research:70]](#research-70) [[Research:72]](#research-72) [[Research:76]](#research-76)
+{{< callout type="info" >}}
+**User Expectations (2024-2025):** [[Research:70]](#research-70) [[Research:72]](#research-72) [[Research:76]](#research-76)
 
-**User expectations (2024-2025 studies):**
+- **72% of users expect instant reflection** of changes across platforms
+- **45% expect content to display correctly** across different devices
+- **69% appreciate quick reply times** (59% expect <5 second response)
 
-- [[Research:70]](#research-70) **72% of users expect instant reflection** of changes in financial data
-- [[Research:72]](#research-72) **45% expect content to display correctly** across different devices
-- [[Research:76]](#research-76) **69% appreciate quick reply times**, 59% expect chatbot response within 5 seconds
-
-**Real-time sync is no longer optional:**
-> "This degree of synchronization allows people to seamlessly switch between devices without losing the continuity of their user experience." [[Research:70]](#research-70)
+**Real-time sync is no longer optional.** Users expect to seamlessly switch between devices/clients without losing continuity.
+{{< /callout >}}
 
 **Cross-device expectations:** [[Research:77]](#research-77)
 

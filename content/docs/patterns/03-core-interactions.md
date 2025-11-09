@@ -41,7 +41,11 @@ weight: 3
 
 > "A very common experience on Nostr is that of losing follows due to race conditions when sending kind 3 events... someone signed in to Coracle, their contact list failed to fully sync before they followed someone, and they ended up deleting all their follows." [[Data:6]](#data-6)
 
-**Trust threshold**: [[Research:1]](#research-1) 94% of users cite design as the main reason they mistrust or reject apps; 40% abandon poorly performing alternatives. [[Data:7]](#data-7) Nostr retention trending to 0% for recent cohorts, with only 10,000-12,000 daily active "trusted" pubkeys. Core interactions must be >99% reliable to rebuild trust.
+{{< callout type="error" >}}
+**Trust threshold**: 94% of users cite design as the main reason they mistrust or reject apps; 40% abandon poorly performing alternatives. [[Research:1]](#research-1)[[Data:7]](#data-7)
+
+With Nostr retention trending to 0% and only 10,000-12,000 daily active users, **core interactions must be >99% reliable to rebuild trust.**
+{{< /callout >}}
 
 ---
 
@@ -83,6 +87,7 @@ These principles apply to any social application, regardless of underlying archi
 3. Validate the response
 4. Rollback or show error if failed
 
+{{< callout type="info" >}}
 **When to use optimistic UI:**
 
 - ✅ Actions users expect to succeed (like, follow, post)
@@ -91,6 +96,7 @@ These principles apply to any social application, regardless of underlying archi
 - ❌ Critical actions that can't be undone
 - ❌ When failure rate is high
 - ❌ When rollback is confusing
+{{< /callout >}}
 
 **Example: Liking a post**
 
@@ -137,12 +143,14 @@ User clicks like
 - "Follow action failed. The user's profile might not be available right now."
 - "Like wasn't saved. Tap to retry."
 
+{{< callout >}}
 **Error message checklist:**
 
 - Explains what happened in plain language
 - Suggests what user can do
 - Provides easy retry mechanism
 - Doesn't expose technical jargon
+{{< /callout >}}
 
 ### 5. Idempotency
 

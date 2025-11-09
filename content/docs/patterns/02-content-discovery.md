@@ -9,8 +9,11 @@ weight: 2
 
 **The empty feed problem:**
 
+{{< callout type="error" >}}
+"Traditional apps win simply by having much better content selection - you get to see a variety of interesting things that Nostr simply can't match" [[User:15]](#user-15)
+{{< /callout >}}
+
 - New Nostr users report empty or boring feeds after signup [[User:22]](#user-22)
-- "Traditional apps win simply by having much better content selection - you get to see a variety of interesting things that Nostr simply can't match" [[User:15]](#user-15)
 - Cold start problem drives early abandonment: "Nostr is lacking in content, which could be the primary reason people are not sticking around" [[User:22]](#user-22)
 
 **Discovery failures:**
@@ -111,7 +114,11 @@ These principles apply to any social application, regardless of underlying archi
 
 ### 4. Search and Discovery Mechanisms
 
-**Critical shift:** Two in five Americans currently use TikTok as a search engine. Over 50% of Gen Z and Millennials prefer social media for product discovery, recommendations, and research over traditional search engines. Platforms are no longer just for scrolling—they're where consumers look for information. [[Research:8]](#research-8)
+{{< callout type="important" >}}
+**Critical shift:** Two in five Americans currently use TikTok as a search engine. Over 50% of Gen Z and Millennials prefer social media for product discovery, recommendations, and research over traditional search engines. [[Research:8]](#research-8)
+
+**Implication:** Search functionality must be a core discovery mechanism, not an afterthought. Users expect to search for topics, hashtags, and people as a primary way to find content.
+{{< /callout >}}
 
 **User expectations from mainstream apps:**
 
@@ -120,8 +127,6 @@ These principles apply to any social application, regardless of underlying archi
 - **Recommendations:** "People you might like" based on follows
 - **Topics/Hashtags:** Browse content by subject
 - **Curated lists:** Topic-specific or editor-curated accounts
-
-**Implication for Nostr:** Search functionality must be a core discovery mechanism, not an afterthought. Users expect to search for topics, hashtags, and people as a primary way to find content.
 
 ### 5. Notification Strategy for Engagement
 

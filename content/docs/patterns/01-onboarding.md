@@ -9,11 +9,14 @@ Onboarding is the critical gate between curiosity and engagement. If users can't
 
 **Current State:**
 
+{{< callout type="error" >}}
+**Retention Crisis:** 30-day retention is trending toward 0% for recent cohorts [[Data:1]](#data-1)
+{{< /callout >}}
+
 - Nostr clients require 15-20 minutes of setup before users can post [[User:11]](#user-11)
 - New users face overwhelming decisions: relay selection, key management, profile setup
 - The complexity of keypair cryptography is exposed immediately without context
 - Users encounter empty feeds after signup with no clear path forward
-- 30-day retention is trending toward 0% for recent cohorts [[Data:1]](#data-1)
 
 **The Impact:**
 Users abandon before reaching their "aha moment" - that first experience of value that makes them want to return. Every minute of friction in onboarding is a decision point where users can leave. Crypto-native early adopters might tolerate this complexity, but mainstream users won't.
@@ -37,7 +40,9 @@ These principles apply to any social application, not just Nostr.
 
 ### 1. Time-to-Value
 
+{{< callout type="important" >}}
 **Principle:** Users should reach their first moment of value within 2 minutes of opening your app.
+{{< /callout >}}
 
 **Why it works:**
 
@@ -605,6 +610,7 @@ Getting Started (3/5 completed)
 
 ### Anti-Pattern 1: Show Private Key Immediately
 
+{{< callout type="warning" >}}
 **What it looks like:**
 
 ```
@@ -621,6 +627,7 @@ Your private key: nsec1qpzqgr3qg7v6p...
 - Increases anxiety and abandonment
 
 **What to do instead:** Use Pattern B (Gradual Key Education)
+{{< /callout >}}
 
 ### Anti-Pattern 2: Relay Picker During Signup
 
@@ -837,6 +844,7 @@ Create your profile:
 
 ### Success Criteria
 
+{{< callout >}}
 **You'll know onboarding is working when:**
 
 - [ ] D30 retention is >10% (vs. current 0%)
@@ -846,6 +854,7 @@ Create your profile:
 - [ ] Support tickets about onboarding decrease
 - [ ] New users successfully back up their keys
 - [ ] First-time posters see their content propagate reliably
+{{< /callout >}}
 
 ---
 

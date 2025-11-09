@@ -41,21 +41,18 @@ Nostr apps feel like developer tools, not consumer apps. Users compare to Twitte
 
 ### Why This Matters
 
-> "80% of users will only use 20% of features. Design for that 80% first." [[Research:54]](#research-54)
+{{< callout type="important" >}}
+**The Pareto Principle: "80% of users will only use 20% of features. Design for that 80% first."** [[Research:54]](#research-54)
 
 **Research shows:** [[Research:55]](#research-55) [[Research:56]](#research-56) [[Research:57]](#research-57)
 
-- **30-40% reduction in cognitive load** through progressive disclosure during onboarding [[Research:55]](#research-55)
-- **25% fewer interactions** needed when interfaces apply smart defaults (Airbnb case study) [[Research:57]](#research-57)
-- **24% reduction in cognitive load** from minimal layouts with decluttered designs (Figma research) [[Research:57]](#research-57)
-- Progressive disclosure reduces decision fatigue by revealing information in stages [[Research:56]](#research-56)
+- **30-40% reduction in cognitive load** through progressive disclosure
+- **25% fewer interactions** needed with smart defaults (Airbnb)
+- **24% reduction in cognitive load** from decluttered designs (Figma)
 - Users abandon apps with >10-15 settings on a single screen [[Research:58]](#research-58)
 
-**The Pareto Principle in UX:** [[Research:54]](#research-54)
-
-- Focus on the 20% of features that deliver 80% of user value
-- Most users never explore advanced settings
-- Complexity should be optional, not mandatory
+**Key insight:** Focus on the 20% of features that deliver 80% of user value. Complexity should be optional, not mandatory.
+{{< /callout >}}
 
 ---
 
@@ -155,7 +152,11 @@ Define essential vs. advanced content through user research using card sorting a
 
 **Research backing:** [[Research:58]](#research-58) [[Research:61]](#research-61)
 
-**Core insight:** Limit settings on one screen to 10-15 items—more becomes overwhelming. [[Research:58]](#research-58) Create intuitive menus by moving additional settings to separate screens. [[Research:58]](#research-58)
+{{< callout type="warning" >}}
+**Core insight:** Limit settings on one screen to 10-15 items—more becomes overwhelming. [[Research:58]](#research-58)
+
+Create intuitive menus by moving additional settings to separate screens.
+{{< /callout >}}
 
 **Three-tier hierarchy:**
 
