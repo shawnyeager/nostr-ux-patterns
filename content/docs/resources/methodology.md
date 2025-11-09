@@ -245,7 +245,6 @@ We'll know this methodology is sound if:
 - Public data only (no private analytics)
 - Anonymize user quotes unless publicly posted
 - Respect GitHub issue confidentiality norms
-- No scraping of private relays or DMs
 
 ---
 
