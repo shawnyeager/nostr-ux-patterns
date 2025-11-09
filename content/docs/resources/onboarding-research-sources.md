@@ -7,7 +7,7 @@ This document contains credible sources backing the core UX principles in Patter
 
 ---
 
-## 1. Time-to-Value / Time-to-First-Value (TTFV)
+## 1. Time-to-First-Value (TTFV)
 
 ### Source 1A: Industry Research on Time to First Value
 
@@ -127,7 +127,7 @@ This document contains credible sources backing the core UX principles in Patter
 
 ---
 
-## 3. Friction Laddering / Gradual Commitment
+## 3. Friction Laddering
 
 ### Source 3A: Robert Cialdini - Commitment & Consistency Principle
 
@@ -428,7 +428,7 @@ Using these sources, evaluate your onboarding:
 
 ---
 
-## References for Citations in Pattern Documentation
+## Pattern Citation References
 
 When writing Pattern 1 (Onboarding), cite sources using this format:
 
