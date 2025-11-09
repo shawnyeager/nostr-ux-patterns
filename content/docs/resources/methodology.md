@@ -186,14 +186,6 @@ All factual claims are backed by citations in the following categories:
 - **Community review:** Publish findings for feedback and correction
 - **Versioning:** Document when research was conducted and update as needed
 
-### Researcher Bias Disclosure
-
-**Author Background:**
-
-- Perspective: [To be filled in based on Shawn's background]
-- Potential biases: [To be disclosed]
-- Conflicts of interest: [None known/to be disclosed]
-
 **Approach to Objectivity:**
 
 - Evidence-based claims over opinion

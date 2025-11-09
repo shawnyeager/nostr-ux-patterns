@@ -669,25 +669,7 @@ Citations in pattern documents use this format:
 - **Application:** Focus on 20% of design decisions that drive 80% of impact, design for majority first
 - **Relevance:** Pattern 5 (Progressive Complexity)
 
-**[Research:13]** Settings Hierarchy and Configuration Burden
-
-- **Citation:** [UX research - to be researched]
-- **Key finding:** [Summary]
-- **Relevance:** Pattern 5 (Progressive Complexity)
-
 ### Data Consistency & Trust
-
-**[Research:14]** User Trust in Distributed Systems
-
-- **Citation:** [HCI research - to be found]
-- **Key finding:** [Summary]
-- **Relevance:** Pattern 6 (Cross-Client Consistency)
-
-**[Research:15]** Eventual Consistency and User Experience
-
-- **Citation:** [Distributed systems + UX research]
-- **Key finding:** [Summary]
-- **Relevance:** Pattern 6 (Cross-Client Consistency)
 
 ---
 
@@ -872,18 +854,6 @@ Citations in pattern documents use this format:
 - **Relevance:** Pattern 3 - Real-world retry pattern implementations
 
 ### Progressive Disclosure
-
-**[Example:10]** Slack Settings Hierarchy
-
-- **Source:** [Product analysis]
-- **Key pattern:** [Summary]
-- **Relevance:** Pattern 5 (Progressive Complexity)
-
-**[Example:11]** Apple iOS Progressive Feature Education
-
-- **Source:** [iOS design patterns]
-- **Key pattern:** [Summary]
-- **Relevance:** Pattern 5 (Progressive Complexity)
 
 ---
 
