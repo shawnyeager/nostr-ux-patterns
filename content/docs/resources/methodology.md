@@ -198,19 +198,23 @@ All factual claims are backed by citations in the following categories:
 
 ## Validation & Peer Review
 
-### Internal Validation
+**Status: Work in Progress**
+
+This research has not undergone formal academic peer review. It represents an initial synthesis of UX research, industry best practices, and Nostr-specific observations.
+
+### Internal Validation (Completed)
 
 - All patterns cross-checked against multiple sources
-- Claims verified with citations
+- Claims verified with citations where available
 - Anti-patterns tested against real client examples
 - Validation checklists piloted against mainstream app metrics
 
-### Community Review
+### Community Review (Ongoing)
 
 - Published openly on GitHub for feedback
-- Discussed on Nostr with developer community
-- Incorporated feedback from Nostr Design community
-- Iterated based on practitioner input
+- Being discussed on Nostr with developer community
+- Seeking feedback from Nostr Design community
+- Will iterate based on practitioner input
 
 ### Success Criteria for This Research
 
