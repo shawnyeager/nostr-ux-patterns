@@ -885,13 +885,13 @@ Challenge: Nostr has no central push notification server.
 - <a id="research-4"></a>**[[Research:4]](/docs/resources/references#research-4)** Bluesky Starter Packs Study (Lancaster University, January 2025) - 43% of follows from starter packs during peak periods, 85% more followers for included users
 - <a id="research-5"></a>**[[Research:5]](/docs/resources/references#research-5)** Cold Start Problem in Recommendation Systems (Academic, 2024) - Strategies: social network info, collaborative filtering, hybrid models, user demographics, community detection
 - <a id="research-6"></a>**[[Research:6]](/docs/resources/references#research-6)** "Better Feeds" Report (Georgetown University, March 2025) - Chronological feeds decrease engagement without reducing polarization; users compensate by using other platforms
-- <a id="research-7"></a>**[[Research:7]](/docs/resources/references#research-7)** Engagement-Based Algorithms Amplify Divisive Content (PNAS Nexus, 2024-2025) - Pure engagement optimization amplifies content users report makes them feel worse
-- <a id="research-8"></a>**[[Research:8]](/docs/resources/references#research-8)** Social Media as Search Engine (2024-2025) - 2 in 5 Americans use TikTok as search engine; 50%+ of Gen Z prefer social for discovery over Google
+- <a id="research-7"></a>**[[Research:7]](/docs/resources/references#research-7)** Engagement-Based Algorithms Amplify Divisive Content (PNAS Nexus, 2024) - Pure engagement optimization amplifies content users report makes them feel worse
+- <a id="research-8"></a>**[[Research:8]](/docs/resources/references#research-8)** Social Media as Search Engine (2024) - 2 in 5 Americans use TikTok as search engine; 50%+ of Gen Z prefer social for discovery over Google
 
 ### Case Studies & Examples
 
-- <a id="example-4"></a>**[[Example:4]](/docs/resources/references#example-4)** TikTok For You Algorithm (2024-2025) - Prioritizes content relevance over creator popularity; users with zero followers can reach large audiences; 75%+ impressions from For You feed
-- <a id="example-5"></a>**[[Example:5]](/docs/resources/references#example-5)** Instagram Algorithm Updates (2024-2025) - April 2024: rewards original content, weights shares over likes; Multiple specialized algorithms for Feed/Reels/Explore
+- <a id="example-4"></a>**[[Example:4]](/docs/resources/references#example-4)** TikTok For You Algorithm (2024) - Prioritizes content relevance over creator popularity; users with zero followers can reach large audiences; 75%+ impressions from For You feed
+- <a id="example-5"></a>**[[Example:5]](/docs/resources/references#example-5)** Instagram Algorithm Updates (2024) - April 2024: rewards original content, weights shares over likes; Multiple specialized algorithms for Feed/Reels/Explore
 - <a id="example-6"></a>**[[Example:6]](/docs/resources/references#example-6)** Bluesky Starter Packs (June 2024) - Up to 150 people + 3 custom feeds per pack; proven cold start solution
 - <a id="example-7"></a>**[[Example:7]](/docs/resources/references#example-7)** Mastodon Discovery - Local/Federated timeline structure, hashtag-based discovery
 

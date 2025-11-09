@@ -837,7 +837,7 @@ Test different approaches:
 ### Case Studies & Examples (Mainstream Apps)
 
 - <a id="example-1"></a>**[[Example:1]](/docs/resources/references#example-8)** Social media management retry patterns: Re-queue for bugs, edit for post issues, wait for rate limits (SocialBee et al., 2024)
-- <a id="example-2"></a>**[[Example:2]](/docs/resources/references#example-5)** Instagram April 2024 update: Rewards original content, weights 'shares per reach' as key signal (Later, 2024-2025)
+- <a id="example-2"></a>**[[Example:2]](/docs/resources/references#example-5)** Instagram April 2024 update: Rewards original content, weights 'shares per reach' as key signal (Later, 2024)
 - <a id="example-3"></a>**[[Example:3]](/docs/resources/references#example-9)** TikTok FYP: Instant content display, no loading state, 100ms response creates instantaneous feel (Iterators, 2024)
 - <a id="example-4"></a>**[[Example:4]](/docs/resources/references#example-10)** Apple Human Interface Guidelines: Clear feedback, progress indication, animations/sounds/haptics confirm actions (Apple, 2024)
 - <a id="example-5"></a>**[[Example:5]](/docs/resources/references#example-16)** Material Design 3: Motion for visual feedback, instant response, spring-like animations (Google, 2024)

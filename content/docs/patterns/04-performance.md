@@ -1018,14 +1018,14 @@ Test different approaches:
 
 ### Data & Analytics (Nostr-Specific)
 
-- <a id="data-19"></a>**[[Data:19]](/docs/resources/references#data-21)** User complaints: Nostr apps "slow and clunky", "clients blasting entire message history" (2024-2025)
-- <a id="data-20"></a>**[[Data:20]](/docs/resources/references#data-22)** Crash reports across Primal, Amethyst, Nostur, Damus clients (2024-2025)
-- <a id="data-21"></a>**[[Data:21]](/docs/resources/references#data-23)** Database identified as "core bottleneck" for slow feed loading; gap vs Twitter's Redis architecture (2024-2025)
-- <a id="data-22"></a>**[[Data:22]](/docs/resources/references#data-24)** Amethyst battery drain: Background video loops, up to 100 relay connections, improper WebSocket management (2024-2025)
-- <a id="data-23"></a>**[[Data:23]](/docs/resources/references#data-18)** Only 639 relays online; default SQLite backend "worst performance"; free relays slower than paid (2024-2025)
-- <a id="data-24"></a>**[[Data:24]](/docs/resources/references#data-25)** Clients can open hundreds of WebSocket connections simultaneously; one per relay (2024-2025)
+- <a id="data-19"></a>**[[Data:19]](/docs/resources/references#data-21)** User complaints: Nostr apps "slow and clunky", "clients blasting entire message history" (2024)
+- <a id="data-20"></a>**[[Data:20]](/docs/resources/references#data-22)** Crash reports across Primal, Amethyst, Nostur, Damus clients (2024)
+- <a id="data-21"></a>**[[Data:21]](/docs/resources/references#data-23)** Database identified as "core bottleneck" for slow feed loading; gap vs Twitter's Redis architecture (2024)
+- <a id="data-22"></a>**[[Data:22]](/docs/resources/references#data-24)** Amethyst battery drain: Background video loops, up to 100 relay connections, improper WebSocket management (2024)
+- <a id="data-23"></a>**[[Data:23]](/docs/resources/references#data-18)** Only 639 relays online; default SQLite backend "worst performance"; free relays slower than paid (2024)
+- <a id="data-24"></a>**[[Data:24]](/docs/resources/references#data-25)** Clients can open hundreds of WebSocket connections simultaneously; one per relay (2024)
 - <a id="data-25"></a>**[[Data:25]](/docs/resources/references#data-26)** Black Hat USA 2025: Some clients omit signature verification for performance; security tradeoff (2025)
-- <a id="data-26"></a>**[[Data:26]](/docs/resources/references#data-27)** nostrdb: "Unfairly fast" embedded database with zero-copy, O(1) access, LMDB design (2024-2025)
+- <a id="data-26"></a>**[[Data:26]](/docs/resources/references#data-27)** nostrdb: "Unfairly fast" embedded database with zero-copy, O(1) access, LMDB design (2024)
 - <a id="data-27"></a>**[[Data:27]](/docs/resources/references#data-28)** Primal Caching Service: Server-side caching for Nostr events, open sourced (December 2024)
 
 ### Academic & UX Research (Universal Principles)
@@ -1043,8 +1043,8 @@ Test different approaches:
 
 - <a id="research-41"></a>**[[Research:41]](/docs/resources/references#research-49)** JS Bundle Size: Tree shaking, code splitting, dynamic import() reduce bundles 20-50% (2025)
 - <a id="research-42"></a>**[[Research:42]](/docs/resources/references#research-50)** Webpack Bundles: <250KB gzipped initial, <1MB total for good UX (2025)
-- <a id="research-43"></a>**[[Research:43]](/docs/resources/references#research-51)** React Server Components: 40% faster loads, 15% conversion increase; no JS shipped to client (2024-2025)
-- <a id="research-44"></a>**[[Research:44]](/docs/resources/references#research-52)** Native Lazy Loading: 97.5% images load <10ms on 4G, 92.6% on 2G; WebP/AVIF more efficient (2024-2025)
+- <a id="research-43"></a>**[[Research:43]](/docs/resources/references#research-51)** React Server Components: 40% faster loads, 15% conversion increase; no JS shipped to client (2024)
+- <a id="research-44"></a>**[[Research:44]](/docs/resources/references#research-52)** Native Lazy Loading: 97.5% images load <10ms on 4G, 92.6% on 2G; WebP/AVIF more efficient (2024)
 - <a id="research-45"></a>**[[Research:45]](/docs/resources/references#research-53)** React Performance: Virtual scrolling/windowing essential for large lists, reduces DOM ops (2025)
 - <a id="research-46"></a>**[[Research:46]](/docs/resources/references#research-54)** React Virtualization: Only render visible elements; reduces DOM updates, memory, render time (2024)
 - <a id="research-47"></a>**[[Research:47]](/docs/resources/references#research-55)** TanStack Virtual: Most popular library; use React.memo(), combine with pagination, overscan 1-2 items (November 2024)
