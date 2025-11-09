@@ -859,3 +859,24 @@ Test different approaches:
 **See [References & Bibliography](/docs/resources/references) for full citation details.**
 
 ---
+
+## Related Patterns
+
+{{< cards >}}
+  {{< card link="04-performance" title="Pattern 4: Performance" subtitle="Speed and reliability work together to build trust" icon="lightning-bolt" >}}
+  {{< card link="06-cross-client-consistency" title="Pattern 6: Cross-Client Consistency" subtitle="Actions must persist across all clients" icon="refresh" >}}
+  {{< card link="01-onboarding" title="Pattern 1: Onboarding" subtitle="First interactions must work flawlessly" icon="user-add" >}}
+{{< /cards >}}
+
+---
+
+## Next Steps
+
+1. **Measure core interaction reliability:** Track success rates for posts, reactions, and follows across all relays (target: >99%)
+2. **Implement standardized feedback system:** Build reusable components for optimistic UI with rollback, error handling, and retry mechanisms
+3. **A/B test optimistic UI patterns:** Compare instant feedback vs confirmed feedback to optimize perceived reliability without sacrificing trust
+4. **Audit multi-relay publishing logic:** Ensure events reach minimum relay threshold and implement background retry for failed relays
+
+---
+
+*Last updated: November 2025*

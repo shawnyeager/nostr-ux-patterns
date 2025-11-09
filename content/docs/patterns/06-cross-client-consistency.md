@@ -1065,3 +1065,24 @@ User's posts disappear with no explanation
 **See [References & Bibliography](/docs/resources/references) for full citation details.**
 
 ---
+
+## Related Patterns
+
+{{< cards >}}
+  {{< card link="03-core-interactions" title="Pattern 3: Core Interactions" subtitle="Data integrity essential for user trust in all interactions" icon="cursor-click" >}}
+  {{< card link="04-performance" title="Pattern 4: Performance" subtitle="Sync must be fast and reliable to meet real-time expectations" icon="lightning-bolt" >}}
+  {{< card link="05-progressive-complexity" title="Pattern 5: Progressive Complexity" subtitle="Smart relay defaults prevent user-caused sync conflicts" icon="adjustments" >}}
+{{< /cards >}}
+
+---
+
+## Next Steps
+
+1. **Implement sync state visibility:** Add persistent sync status indicators for all replaceable events (follows, profile, settings) to give users confidence
+2. **Build conflict detection and resolution:** Implement read-before-write patterns for kind:3 events with conflict UI when race conditions detected
+3. **Create offline queue with visual feedback:** Show "3 posts queued, will sync when online" messages to maintain user trust during network issues
+4. **Track and measure data loss incidents:** Monitor follow list preservation rate (target: 99%+), profile sync success, and cross-client consistency metrics
+
+---
+
+*Last updated: November 2025*

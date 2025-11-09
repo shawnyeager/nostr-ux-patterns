@@ -1910,3 +1910,24 @@ signer app to manage your keys.
 **See [References & Bibliography](/docs/resources/references) for full citation details.**
 
 ---
+
+## Related Patterns
+
+{{< cards >}}
+  {{< card link="01-onboarding" title="Pattern 1: Onboarding" subtitle="First experience must be simple, not overwhelming" icon="user-add" >}}
+  {{< card link="02-content-discovery" title="Pattern 2: Content Discovery" subtitle="Feed algorithms and discovery settings hidden from beginners" icon="search" >}}
+  {{< card link="06-cross-client-consistency" title="Pattern 6: Cross-Client Consistency" subtitle="Smart defaults prevent configuration complexity" icon="refresh" >}}
+{{< /cards >}}
+
+---
+
+## Next Steps
+
+1. **Audit feature usage by user cohort:** Validate Pareto principle (80% of users use 20% of features) and identify which advanced features can be hidden
+2. **Implement progressive disclosure hierarchy:** Move relay configuration, NIP settings, and technical options to advanced settings (Settings → Advanced → [Feature])
+3. **Translate protocol terminology:** Replace all user-facing NIP references, relay jargon, and technical terms with plain language ("servers" not "relays", "username" not "NIP-05")
+4. **Build feature gating system:** Create user proficiency detection (beginner/intermediate/advanced) and gate power features appropriately with clear upgrade paths
+
+---
+
+*Last updated: November 2025*

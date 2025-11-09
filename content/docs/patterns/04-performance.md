@@ -1068,3 +1068,24 @@ Test different approaches:
 **See [References & Bibliography](/docs/resources/references) for full citation details.**
 
 ---
+
+## Related Patterns
+
+{{< cards >}}
+  {{< card link="03-core-interactions" title="Pattern 3: Core Interactions" subtitle="Speed and reliability must work together to build user trust" icon="cursor-click" >}}
+  {{< card link="02-content-discovery" title="Pattern 2: Content Discovery" subtitle="Fast feed loading critical for discovery and retention" icon="search" >}}
+  {{< card link="01-onboarding" title="Pattern 1: Onboarding" subtitle="First impression speed determines whether users stay" icon="user-add" >}}
+{{< /cards >}}
+
+---
+
+## Next Steps
+
+1. **Measure Core Web Vitals:** Track LCP (<2.5s), INP (<200ms), and CLS (<0.1) to establish performance baseline and monitor improvements
+2. **Implement perceived performance patterns:** Deploy skeleton screens for >1s loads, optimistic UI for interactions, and progressive feed loading
+3. **Optimize relay coordination:** Implement parallel queries with race conditions, enforce 5s timeouts, and prioritize fast relays for initial content
+4. **Build comprehensive caching layer:** Cache profiles (>80% hit rate), posts (>50% hit rate), and implement offline-first patterns with service workers
+
+---
+
+*Last updated: November 2025*

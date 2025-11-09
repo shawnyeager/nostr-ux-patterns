@@ -920,3 +920,24 @@ Challenge: Nostr has no central push notification server.
 **See [References & Bibliography](/docs/resources/references) for full citation details.**
 
 ---
+
+## Related Patterns
+
+{{< cards >}}
+  {{< card link="01-onboarding" title="Pattern 1: Onboarding" subtitle="Solving cold start problem with smart defaults" icon="user-add" >}}
+  {{< card link="03-core-interactions" title="Pattern 3: Core Interactions" subtitle="Discovery must lead to successful engagement" icon="cursor-click" >}}
+  {{< card link="05-progressive-complexity" title="Pattern 5: Progressive Complexity" subtitle="Hide feed algorithms and discovery settings from beginners" icon="adjustments" >}}
+{{< /cards >}}
+
+---
+
+## Next Steps
+
+1. **A/B test discovery mechanisms:** Compare starter follows, algorithmic feeds, and trending features to validate which drives highest engagement
+2. **Implement search infrastructure:** Build or integrate relay-based search to meet user expectations (50%+ of Gen Z use social as search engine)
+3. **Measure content quality metrics:** Track session length, posts viewed per session, and follow conversion from discovery features
+4. **Validate notification strategy:** Test notification batching and priority tiers to optimize re-engagement without causing fatigue
+
+---
+
+*Last updated: November 2025*
