@@ -1,0 +1,331 @@
+{
+  "version": "1.0.0",
+  "title": "Design Patterns for Nostr UX",
+  "description": "Evidence-based UX patterns for building Nostr apps people actually use",
+  "website": "https://nostr-ux.com",
+  "repository": "https://github.com/shawnyeager/nostr-ux-research",
+  "lastUpdated": "2025-11-08",
+  "license": "MIT",
+
+  "readingPaths": {
+    "quick": {
+      "title": "Quick Overview (10 minutes)",
+      "description": "Fast scan of top recommendations and anti-patterns",
+      "files": [
+        "guides/quick-reference",
+        "guides/get-started"
+      ]
+    },
+    "comprehensive": {
+      "title": "Complete Pattern Study (2-3 hours)",
+      "description": "Full deep-dive into all 6 critical UX patterns",
+      "files": [
+        "guides/get-started",
+        "patterns/01-onboarding",
+        "patterns/02-content-discovery",
+        "patterns/03-core-interactions",
+        "patterns/04-performance",
+        "patterns/05-progressive-complexity",
+        "patterns/06-cross-client-consistency"
+      ]
+    },
+    "researcher": {
+      "title": "Research & Evidence (1-2 hours)",
+      "description": "Methodology, raw evidence, and complete bibliography",
+      "files": [
+        "resources/methodology",
+        "research/content-discovery-evidence",
+        "research/content-discovery-mainstream",
+        "research/performance-evidence",
+        "resources/references"
+      ]
+    }
+  },
+
+  "content": [
+    {
+      "id": "meta/readme",
+      "title": "Design Patterns for Nostr UX",
+      "description": "Public-facing repository README. Problem statement, quick start guide, links to nostr-ux.com website, overview of 6 patterns.",
+      "category": "meta",
+      "path": "README.md",
+      "url": "https://github.com/shawnyeager/nostr-ux-research",
+      "importance": "high",
+      "keywords": ["overview", "introduction", "getting-started"]
+    },
+    {
+      "id": "meta/outline",
+      "title": "Nostr UX Research Study - Structure & Outline",
+      "description": "Complete project structure, meta-narrative, core thesis, executive summary, target audience, expected impact.",
+      "category": "meta",
+      "path": "OUTLINE.md",
+      "url": "https://github.com/shawnyeager/nostr-ux-research/blob/master/OUTLINE.md",
+      "importance": "medium",
+      "keywords": ["structure", "project-overview", "thesis"]
+    },
+    {
+      "id": "guides/introduction",
+      "title": "Introduction",
+      "description": "Main landing page explaining why this study exists, what you'll find, how it was built. Links to get-started, patterns, and resources sections.",
+      "category": "guides",
+      "path": "content/docs/_index.md",
+      "url": "https://nostr-ux.com/docs/",
+      "importance": "high",
+      "keywords": ["introduction", "overview", "landing-page"]
+    },
+    {
+      "id": "guides/get-started",
+      "title": "Get Started",
+      "description": "Executive overview with 5-min, 30-min, and building-from-scratch paths. Where to start based on pain point. Validation framework introduction.",
+      "category": "guides",
+      "path": "content/docs/get-started.md",
+      "url": "https://nostr-ux.com/docs/get-started/",
+      "importance": "high",
+      "keywords": ["getting-started", "quick-start", "overview", "validation-framework"]
+    },
+    {
+      "id": "guides/quick-reference",
+      "title": "Quick Reference Guide",
+      "description": "Scan in ~10 minutes. Top 3 recommendations, anti-patterns, and validation checklists for each of the 6 patterns.",
+      "category": "guides",
+      "path": "quick-reference.md",
+      "url": "https://github.com/shawnyeager/nostr-ux-research/blob/master/quick-reference.md",
+      "importance": "high",
+      "keywords": ["quick-reference", "cheat-sheet", "summary", "anti-patterns"]
+    },
+    {
+      "id": "patterns/overview",
+      "title": "The 6 Critical Patterns",
+      "description": "Overview page introducing the 6 patterns with brief summary of what each includes and links to detailed pattern documents.",
+      "category": "patterns",
+      "path": "content/docs/patterns/_index.md",
+      "url": "https://nostr-ux.com/docs/patterns/",
+      "importance": "high",
+      "keywords": ["patterns", "overview", "landing-page"]
+    },
+    {
+      "id": "patterns/01-onboarding",
+      "title": "Pattern 1: Onboarding & First-Run Experience",
+      "description": "Addresses the 15-20 minute setup problem killing retention. Covers time-to-value, progressive disclosure, guest/browse mode, and smart defaults. Key metric: 30-day retention trending to 0%.",
+      "category": "patterns",
+      "path": "content/docs/patterns/01-onboarding.md",
+      "url": "https://nostr-ux.com/docs/patterns/01-onboarding/",
+      "importance": "critical",
+      "keywords": ["onboarding", "first-run", "time-to-value", "retention", "progressive-disclosure"],
+      "keyMetrics": [
+        "30-day retention trending to 0%",
+        "15-20 minute setup time",
+        "Target: <2 minutes to first value"
+      ],
+      "relatedPatterns": ["patterns/02-content-discovery", "patterns/05-progressive-complexity", "patterns/03-core-interactions"]
+    },
+    {
+      "id": "patterns/02-content-discovery",
+      "title": "Pattern 2: Content Discovery & Feed Quality",
+      "description": "Solves the empty feed problem. 'Traditional apps win by having much better content selection.' Covers algorithmic feeds, cold start solutions, search, trending, and growth loops.",
+      "category": "patterns",
+      "path": "content/docs/patterns/02-content-discovery.md",
+      "url": "https://nostr-ux.com/docs/patterns/02-content-discovery/",
+      "importance": "critical",
+      "keywords": ["content-discovery", "feeds", "algorithms", "cold-start", "search", "notifications"],
+      "keyMetrics": [
+        "Only 36,000 weekly active users",
+        "Less than 15,000 daily active users",
+        "500,000 daily spam messages (Feb 2024)",
+        "Target: >20 posts viewed in first session"
+      ],
+      "relatedPatterns": ["patterns/01-onboarding", "patterns/03-core-interactions", "patterns/05-progressive-complexity"]
+    },
+    {
+      "id": "patterns/03-core-interactions",
+      "title": "Pattern 3: Core Interaction Loops",
+      "description": "Makes basic actions (post, like, zap, follow) reliable. Addresses posts getting stuck, reactions failing, relay downtime causing content loss, catastrophic follow list destruction.",
+      "category": "patterns",
+      "path": "content/docs/patterns/03-core-interactions.md",
+      "url": "https://nostr-ux.com/docs/patterns/03-core-interactions/",
+      "importance": "critical",
+      "keywords": ["reliability", "interactions", "optimistic-ui", "error-handling", "multi-relay", "feedback"],
+      "keyMetrics": [
+        "Users losing 130 follows down to 1",
+        "Missing notifications widespread",
+        "Target: >99% reliability for core actions"
+      ],
+      "relatedPatterns": ["patterns/04-performance", "patterns/06-cross-client-consistency", "patterns/01-onboarding"]
+    },
+    {
+      "id": "patterns/04-performance",
+      "title": "Pattern 4: Performance & Perceived Speed",
+      "description": "Optimistic UI, loading states, perceived performance. Addresses 'slow and clunky' perception, crashes, battery drain, database bottlenecks.",
+      "category": "patterns",
+      "path": "content/docs/patterns/04-performance.md",
+      "url": "https://nostr-ux.com/docs/patterns/04-performance/",
+      "importance": "critical",
+      "keywords": ["performance", "speed", "perceived-speed", "optimization", "caching", "skeleton-screens"],
+      "keyMetrics": [
+        "32% bounce rate increase from 1-3s load time",
+        "90% bounce rate increase at 5s",
+        "Target: LCP <2.5s, INP <200ms"
+      ],
+      "relatedPatterns": ["patterns/03-core-interactions", "patterns/02-content-discovery", "patterns/01-onboarding"]
+    },
+    {
+      "id": "patterns/05-progressive-complexity",
+      "title": "Pattern 5: Progressive Complexity",
+      "description": "Hides advanced features from beginners. Addresses overwhelming relay selection, key management, NIP configurations shown upfront. Smart defaults over configuration.",
+      "category": "patterns",
+      "path": "content/docs/patterns/05-progressive-complexity.md",
+      "url": "https://nostr-ux.com/docs/patterns/05-progressive-complexity/",
+      "importance": "critical",
+      "keywords": ["progressive-disclosure", "complexity", "smart-defaults", "feature-gating", "pareto-principle"],
+      "keyMetrics": [
+        "80% of users use only 20% of features",
+        "30-40% cognitive load reduction via progressive disclosure",
+        "Target: <10 items in basic settings"
+      ],
+      "relatedPatterns": ["patterns/01-onboarding", "patterns/02-content-discovery", "patterns/06-cross-client-consistency"]
+    },
+    {
+      "id": "patterns/06-cross-client-consistency",
+      "title": "Pattern 6: Cross-Client Consistency & Data Integrity",
+      "description": "Most severe UX failure - users losing all follows when switching clients. Data integrity, sync state visibility, conflict resolution, offline support.",
+      "category": "patterns",
+      "path": "content/docs/patterns/06-cross-client-consistency.md",
+      "url": "https://nostr-ux.com/docs/patterns/06-cross-client-consistency/",
+      "importance": "critical",
+      "keywords": ["data-integrity", "sync", "consistency", "conflict-resolution", "offline", "race-conditions"],
+      "keyMetrics": [
+        "Race conditions causing catastrophic follow list destruction",
+        "72% of users expect instant sync",
+        "Target: 99%+ follow list preservation rate"
+      ],
+      "relatedPatterns": ["patterns/03-core-interactions", "patterns/04-performance", "patterns/05-progressive-complexity"]
+    },
+    {
+      "id": "research/overview",
+      "title": "Research Evidence Files",
+      "description": "Explains purpose of research directory (raw evidence vs. polished appendices), citation policy (URL-only), and file organization.",
+      "category": "research",
+      "path": "research/README.md",
+      "url": "https://github.com/shawnyeager/nostr-ux-research/blob/master/research/README.md",
+      "importance": "medium",
+      "keywords": ["research", "evidence", "methodology", "citations"]
+    },
+    {
+      "id": "research/content-discovery-evidence",
+      "title": "Content Discovery Evidence: 2024-2025",
+      "description": "Nostr-specific content discovery problems. 11 findings from 6 verified sources covering retention crisis, cold start problem, spam, discovery mechanisms.",
+      "category": "research",
+      "path": "research/content-discovery-evidence-2024-2025.md",
+      "url": "https://github.com/shawnyeager/nostr-ux-research/blob/master/research/content-discovery-evidence-2024-2025.md",
+      "importance": "high",
+      "keywords": ["content-discovery", "evidence", "nostr-specific", "retention", "spam"],
+      "relatedPatterns": ["patterns/02-content-discovery"]
+    },
+    {
+      "id": "research/content-discovery-mainstream",
+      "title": "Content Discovery & Feed Algorithm Research Findings",
+      "description": "Mainstream platform research. 12 academic/platform findings covering Bluesky starter packs, TikTok algorithm, Instagram updates, chronological feeds research.",
+      "category": "research",
+      "path": "research/content-discovery-mainstream-lessons.md",
+      "url": "https://github.com/shawnyeager/nostr-ux-research/blob/master/research/content-discovery-mainstream-lessons.md",
+      "importance": "high",
+      "keywords": ["content-discovery", "algorithms", "mainstream-platforms", "academic-research"],
+      "relatedPatterns": ["patterns/02-content-discovery"]
+    },
+    {
+      "id": "research/performance-evidence",
+      "title": "Pattern 4: Performance & Perceived Speed - Research Evidence",
+      "description": "Performance research foundation. 14 verified sources (2022-2025) covering battery drain, crashes, database bottlenecks, relay performance issues.",
+      "category": "research",
+      "path": "research/pattern-4-performance-evidence.md",
+      "url": "https://github.com/shawnyeager/nostr-ux-research/blob/master/research/pattern-4-performance-evidence.md",
+      "importance": "high",
+      "keywords": ["performance", "evidence", "crashes", "battery-drain", "database"],
+      "relatedPatterns": ["patterns/04-performance"]
+    },
+    {
+      "id": "resources/overview",
+      "title": "Resources",
+      "description": "Overview of research methodology, references/bibliography, and onboarding research sources. Explains content balance and citation policy.",
+      "category": "resources",
+      "path": "content/docs/resources/_index.md",
+      "url": "https://nostr-ux.com/docs/resources/",
+      "importance": "medium",
+      "keywords": ["resources", "methodology", "references", "overview"]
+    },
+    {
+      "id": "resources/methodology",
+      "title": "Research Methodology",
+      "description": "How the study was conducted - problem identification methods, pattern extraction process, source evaluation criteria, synthesis approach.",
+      "category": "resources",
+      "path": "content/docs/resources/methodology.md",
+      "url": "https://nostr-ux.com/docs/resources/methodology/",
+      "importance": "medium",
+      "keywords": ["methodology", "research-process", "credibility", "transparency"]
+    },
+    {
+      "id": "resources/references",
+      "title": "References & Bibliography",
+      "description": "All 100+ citations organized by category (Data, Research, Examples, Protocol, User feedback). Complete source list with URLs.",
+      "category": "resources",
+      "path": "content/docs/resources/references.md",
+      "url": "https://nostr-ux.com/docs/resources/references/",
+      "importance": "high",
+      "keywords": ["references", "bibliography", "citations", "sources"]
+    },
+    {
+      "id": "resources/onboarding-research",
+      "title": "Onboarding Research Sources",
+      "description": "Detailed evidence specifically for Pattern 1. Deep-dive on time-to-value research, progressive disclosure, browse-first patterns.",
+      "category": "resources",
+      "path": "content/docs/resources/onboarding-research-sources.md",
+      "url": "https://nostr-ux.com/docs/resources/onboarding-research-sources/",
+      "importance": "medium",
+      "keywords": ["onboarding", "research", "evidence", "time-to-value"],
+      "relatedPatterns": ["patterns/01-onboarding"]
+    }
+  ],
+
+  "categories": {
+    "meta": {
+      "title": "Project Meta",
+      "description": "Repository documentation and project structure"
+    },
+    "guides": {
+      "title": "Guides & Getting Started",
+      "description": "Entry points and quick reference materials"
+    },
+    "patterns": {
+      "title": "The 6 Critical Patterns",
+      "description": "Core UX patterns addressing Nostr's biggest retention problems"
+    },
+    "research": {
+      "title": "Research Evidence",
+      "description": "Raw evidence files with verified citations supporting the patterns"
+    },
+    "resources": {
+      "title": "Resources & Methodology",
+      "description": "Research methodology, complete bibliography, and supplementary materials"
+    }
+  },
+
+  "statistics": {
+    "totalFiles": 20,
+    "totalPatterns": 6,
+    "totalCitations": "100+",
+    "lastUpdated": "2025-11-08",
+    "estimatedReadTime": {
+      "quick": "10 minutes",
+      "comprehensive": "2-3 hours",
+      "researcher": "1-2 hours"
+    }
+  },
+
+  "useCases": {
+    "aiAgents": "Feed complete manifest to LLMs for context about repository structure and content organization",
+    "rag": "Use as index for RAG systems to retrieve relevant pattern documentation",
+    "automation": "Automate documentation generation, link checking, or content validation",
+    "navigation": "Build custom navigation interfaces or documentation sites",
+    "analysis": "Analyze content coverage, identify gaps, or track updates"
+  }
+}

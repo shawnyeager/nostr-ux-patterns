@@ -60,6 +60,19 @@ Or jump directly to a specific pattern:
 
 ---
 
+## For AI Agents & Developers
+
+**[manifest.json](./manifest.json)** - Machine-readable content map for automated tools, AI agents, and RAG systems:
+
+- Complete file inventory with titles, descriptions, and metadata
+- 3 curated reading paths (quick/comprehensive/researcher)
+- Category organization and importance ratings
+- Perfect for feeding to LLMs, documentation generators, or analysis tools
+
+Use cases: LLM context ingestion, RAG indexing, automated documentation, content validation, custom navigation interfaces.
+
+---
+
 ## Who This Is For
 
 - **Nostr developers** building consumer social apps (mobile, web, desktop)
