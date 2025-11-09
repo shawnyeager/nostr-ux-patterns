@@ -162,7 +162,7 @@ All factual claims are backed by citations in the following categories:
 
 **2. Sample Bias**
 
-- Early Nostr users are crypto-native and may not represent mainstream users
+- Early Nostr users are bleeding-edge early adopters and may not represent mainstream users
 - Feedback comes from users who stayed long enough to complain (survivorship bias)
 - Developer community is small and may have groupthink
 
@@ -234,7 +234,7 @@ We'll know this methodology is sound if:
 
 ### Principles
 
-- **Respect for developers:** No naming-and-shaming of specific clients
+- **Respect for developers:** Cite specific clients with verifiable evidence; avoid shaming or unconstructive criticism
 - **User privacy:** No identification of individual users in feedback
 - **Transparency:** Open methodology, sources cited
 - **Humility:** Acknowledge limitations and uncertainty
