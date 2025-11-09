@@ -1,5 +1,6 @@
 ---
-title: "Nostr UX Research Study"
+title: "Design Patterns for Nostr UX"
+description: "Evidence-based UX patterns for building Nostr apps people actually use"
 layout: hextra-home
 ---
 
