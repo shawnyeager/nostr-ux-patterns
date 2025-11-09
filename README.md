@@ -1,6 +1,6 @@
-# Nostr UX Research
+# Design Patterns for Nostr UX
 
-**Evidence-based design patterns for building Nostr clients that people actually use.**
+**Evidence-based UX patterns for building Nostr apps people actually use.**
 
 **🌐 View the complete study at:** **[nostr-ux.com](https://nostr-ux.com/)**
 
