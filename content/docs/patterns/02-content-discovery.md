@@ -924,9 +924,9 @@ Challenge: Nostr has no central push notification server.
 ## Related Patterns
 
 {{< cards >}}
-  {{< card link="01-onboarding" title="Pattern 1: Onboarding" subtitle="Solving cold start problem with smart defaults" icon="user-add" >}}
-  {{< card link="03-core-interactions" title="Pattern 3: Core Interactions" subtitle="Discovery must lead to successful engagement" icon="cursor-click" >}}
-  {{< card link="05-progressive-complexity" title="Pattern 5: Progressive Complexity" subtitle="Hide feed algorithms and discovery settings from beginners" icon="adjustments" >}}
+  {{< card link="../01-onboarding" title="Pattern 1: Onboarding" subtitle="Solving cold start problem with smart defaults" icon="user-add" >}}
+  {{< card link="../03-core-interactions" title="Pattern 3: Core Interactions" subtitle="Discovery must lead to successful engagement" icon="cursor-click" >}}
+  {{< card link="../05-progressive-complexity" title="Pattern 5: Progressive Complexity" subtitle="Hide feed algorithms and discovery settings from beginners" icon="adjustments" >}}
 {{< /cards >}}
 
 ---

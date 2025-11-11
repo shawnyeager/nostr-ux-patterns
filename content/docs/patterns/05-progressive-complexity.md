@@ -1914,9 +1914,9 @@ signer app to manage your keys.
 ## Related Patterns
 
 {{< cards >}}
-  {{< card link="01-onboarding" title="Pattern 1: Onboarding" subtitle="First experience must be simple, not overwhelming" icon="user-add" >}}
-  {{< card link="02-content-discovery" title="Pattern 2: Content Discovery" subtitle="Feed algorithms and discovery settings hidden from beginners" icon="search" >}}
-  {{< card link="06-cross-client-consistency" title="Pattern 6: Cross-Client Consistency" subtitle="Smart defaults prevent configuration complexity" icon="refresh" >}}
+  {{< card link="../01-onboarding" title="Pattern 1: Onboarding" subtitle="First experience must be simple, not overwhelming" icon="user-add" >}}
+  {{< card link="../02-content-discovery" title="Pattern 2: Content Discovery" subtitle="Feed algorithms and discovery settings hidden from beginners" icon="search" >}}
+  {{< card link="../06-cross-client-consistency" title="Pattern 6: Cross-Client Consistency" subtitle="Smart defaults prevent configuration complexity" icon="refresh" >}}
 {{< /cards >}}
 
 ---

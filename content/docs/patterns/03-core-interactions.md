@@ -863,9 +863,9 @@ Test different approaches:
 ## Related Patterns
 
 {{< cards >}}
-  {{< card link="04-performance" title="Pattern 4: Performance" subtitle="Speed and reliability work together to build trust" icon="lightning-bolt" >}}
-  {{< card link="06-cross-client-consistency" title="Pattern 6: Cross-Client Consistency" subtitle="Actions must persist across all clients" icon="refresh" >}}
-  {{< card link="01-onboarding" title="Pattern 1: Onboarding" subtitle="First interactions must work flawlessly" icon="user-add" >}}
+  {{< card link="../04-performance" title="Pattern 4: Performance" subtitle="Speed and reliability work together to build trust" icon="lightning-bolt" >}}
+  {{< card link="../06-cross-client-consistency" title="Pattern 6: Cross-Client Consistency" subtitle="Actions must persist across all clients" icon="refresh" >}}
+  {{< card link="../01-onboarding" title="Pattern 1: Onboarding" subtitle="First interactions must work flawlessly" icon="user-add" >}}
 {{< /cards >}}
 
 ---

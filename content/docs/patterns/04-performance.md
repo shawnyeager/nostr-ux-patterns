@@ -1072,9 +1072,9 @@ Test different approaches:
 ## Related Patterns
 
 {{< cards >}}
-  {{< card link="03-core-interactions" title="Pattern 3: Core Interactions" subtitle="Speed and reliability must work together to build user trust" icon="cursor-click" >}}
-  {{< card link="02-content-discovery" title="Pattern 2: Content Discovery" subtitle="Fast feed loading critical for discovery and retention" icon="search" >}}
-  {{< card link="01-onboarding" title="Pattern 1: Onboarding" subtitle="First impression speed determines whether users stay" icon="user-add" >}}
+  {{< card link="../03-core-interactions" title="Pattern 3: Core Interactions" subtitle="Speed and reliability must work together to build user trust" icon="cursor-click" >}}
+  {{< card link="../02-content-discovery" title="Pattern 2: Content Discovery" subtitle="Fast feed loading critical for discovery and retention" icon="search" >}}
+  {{< card link="../01-onboarding" title="Pattern 1: Onboarding" subtitle="First impression speed determines whether users stay" icon="user-add" >}}
 {{< /cards >}}
 
 ---

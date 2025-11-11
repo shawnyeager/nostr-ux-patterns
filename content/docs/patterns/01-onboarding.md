@@ -1014,9 +1014,9 @@ Interest-based follow suggestions, pre-populated feed
 ## Related Patterns
 
 {{< cards >}}
-  {{< card link="02-content-discovery" title="Pattern 2: Content Discovery" subtitle="Solving the empty feed problem" icon="search" >}}
-  {{< card link="05-progressive-complexity" title="Pattern 5: Progressive Complexity" subtitle="When to reveal advanced features like relay management" icon="adjustments" >}}
-  {{< card link="03-core-interactions" title="Pattern 3: Core Interactions" subtitle="Making first post successful" icon="cursor-click" >}}
+  {{< card link="../02-content-discovery" title="Pattern 2: Content Discovery" subtitle="Solving the empty feed problem" icon="search" >}}
+  {{< card link="../05-progressive-complexity" title="Pattern 5: Progressive Complexity" subtitle="When to reveal advanced features like relay management" icon="adjustments" >}}
+  {{< card link="../03-core-interactions" title="Pattern 3: Core Interactions" subtitle="Making first post successful" icon="cursor-click" >}}
 {{< /cards >}}
 
 ---

@@ -1069,9 +1069,9 @@ User's posts disappear with no explanation
 ## Related Patterns
 
 {{< cards >}}
-  {{< card link="03-core-interactions" title="Pattern 3: Core Interactions" subtitle="Data integrity essential for user trust in all interactions" icon="cursor-click" >}}
-  {{< card link="04-performance" title="Pattern 4: Performance" subtitle="Sync must be fast and reliable to meet real-time expectations" icon="lightning-bolt" >}}
-  {{< card link="05-progressive-complexity" title="Pattern 5: Progressive Complexity" subtitle="Smart relay defaults prevent user-caused sync conflicts" icon="adjustments" >}}
+  {{< card link="../03-core-interactions" title="Pattern 3: Core Interactions" subtitle="Data integrity essential for user trust in all interactions" icon="cursor-click" >}}
+  {{< card link="../04-performance" title="Pattern 4: Performance" subtitle="Sync must be fast and reliable to meet real-time expectations" icon="lightning-bolt" >}}
+  {{< card link="../05-progressive-complexity" title="Pattern 5: Progressive Complexity" subtitle="Smart relay defaults prevent user-caused sync conflicts" icon="adjustments" >}}
 {{< /cards >}}
 
 ---
