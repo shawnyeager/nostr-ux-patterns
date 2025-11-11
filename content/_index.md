@@ -38,6 +38,11 @@ layout: hextra-home
     subtitle="Apply these patterns. Which pattern first, how to measure, what to avoid."
     link="docs/implementation"
   >}}
+{{< /hextra/feature-grid >}}
+
+<div class="hx:mt-6"></div>
+
+{{< hextra/feature-grid >}}
   {{< hextra/feature-card
     title="Pattern 1: Onboarding"
     subtitle="15-20 minute setup drives abandonment. Get users to value in under 2 minutes."
