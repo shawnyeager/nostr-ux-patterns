@@ -17,7 +17,7 @@ layout: hextra-home
 </div>
 
 <div class="hx:mb-6">
-{{< hextra/hero-button text="Get Started" link="docs/" >}}
+{{< hextra/hero-button text="Get Started" link="docs/introduction/" >}}
 </div>
 
 <div class="hx:mt-6"></div>
@@ -28,14 +28,14 @@ layout: hextra-home
     subtitle="A 3-question filter for every feature decision."
     class="hx:aspect-auto hx:md:aspect-[1.1/1] hx:max-md:min-h-[340px]"
     image="images/validation.png"
-    imageClass="hx:top-[40%] hx:left-[24px] hx:w-[180%] hx:sm:w-[110%] hx:dark:opacity-80"
+    imageClass="hx:top-[40%] hx:left-[24px] hx:w-[110%] hx:sm:w-[110%] hx:dark:opacity-80"
   >}}
   {{< hextra/feature-card
     title="Quick Wins"
     subtitle="18 high-impact, low-effort improvements by pattern area."
     class="hx:aspect-auto hx:md:aspect-[1.1/1] hx:max-lg:min-h-[340px]"
     image="images/quick-wins.png"
-    imageClass="hx:top-[40%] hx:left-[36px] hx:w-[180%] hx:sm:w-[110%] hx:dark:opacity-80"
+    imageClass="hx:top-[40%] hx:left-[36px] hx:w-[110%] hx:sm:w-[110%] hx:dark:opacity-80"
   >}}
   {{< hextra/feature-card
     title="Implementation Guide"
