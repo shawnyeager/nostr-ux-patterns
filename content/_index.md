@@ -1,18 +1,18 @@
 ---
-title: "Design Patterns for Nostr UX"
-description: "Evidence-based UX patterns for building Nostr apps people actually use"
+title: "UX Patterns for Nostr Apps"
+description: "Evidence-informed patterns for building Nostr apps people actually use"
 layout: hextra-home
 ---
 
 <div class="hx:mt-6 hx:mb-6">
 {{< hextra/hero-headline >}}
-  Design Patterns for&nbsp;<br class="hx:sm:block hx:hidden" />Nostr UX
+  UX Patterns for&nbsp;<br class="hx:sm:block hx:hidden" />Nostr Apps
 {{< /hextra/hero-headline >}}
 </div>
 
 <div class="hx:mb-12">
 {{< hextra/hero-subtitle >}}
-  Evidence-based UX patterns for building Nostr apps people actually use
+  Evidence-informed patterns for building Nostr apps people actually use
 {{< /hextra/hero-subtitle >}}
 </div>
 
