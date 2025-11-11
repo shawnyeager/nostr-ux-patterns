@@ -61,6 +61,8 @@ This study synthesizes **100+ verified sources** from academic HCI research, ind
 
 **[View complete methodology and references →](../research/methodology)**
 
+This project was developed by [Shawn Yeager](https://github.com/shawnyeager).
+
 ---
 
 ## Next Steps
@@ -70,7 +72,3 @@ This study synthesizes **100+ verified sources** from academic HCI research, ind
   {{< card link="../foundation/" title="Foundation" subtitle="Learn the validation framework" icon="academic-cap" >}}
   {{< card link="../patterns/" title="View Patterns" subtitle="Dive into the 6 critical patterns" icon="collection" >}}
 {{< /cards >}}
-
----
-
-*Research compiled by [Shawn Yeager](https://github.com/shawnyeager)*
