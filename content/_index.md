@@ -27,16 +27,19 @@ layout: hextra-home
     title="Validation Framework"
     subtitle="Stop building unvalidated features. Use the 3-question filter for every feature decision."
     link="docs/foundation/validation-framework"
+    icon="clipboard-check"
   >}}
   {{< hextra/feature-card
     title="Quick Wins"
     subtitle="Ship improvements this week. 18 high-impact, low-effort improvements by pattern area."
     link="docs/foundation/quick-wins"
+    icon="lightning-bolt"
   >}}
   {{< hextra/feature-card
     title="Implementation Guide"
     subtitle="Apply these patterns. Which pattern first, how to measure, what to avoid."
     link="docs/implementation"
+    icon="play"
   >}}
 {{< /hextra/feature-grid >}}
 
