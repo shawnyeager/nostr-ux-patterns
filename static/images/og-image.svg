@@ -20,6 +20,6 @@
 
   <!-- Title - large, bold, positioned below logo at y=484 -->
   <text x="600" y="484" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="700" fill="white" text-anchor="middle" letter-spacing="-0.02em">
-    Design Patterns for Nostr UX
+    UX Patterns for Nostr Apps
   </text>
 </svg>

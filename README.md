@@ -1,8 +1,8 @@
-# Design Patterns for Nostr UX
+# UX Patterns for Nostr Apps
 
-**Evidence-based UX patterns for building Nostr apps people actually use.**
+**Evidence-informed patterns for building Nostr apps people actually use.**
 
-**🌐 View the complete study at:** **[nostr-ux.com](https://nostr-ux.com/)**
+**🌐 View the complete guide at:** **[nostr-ux.com](https://nostr-ux.com/)**
 
 ---
 
@@ -18,7 +18,7 @@ Nostr has a working, censorship-resistant protocol. The critical problem is user
 
 This is a retention crisis. But it's also **solvable**. Traditional social apps achieve better retention not through centralization, but through better content discovery, reliable core interactions, and streamlined onboarding—all implementable on Nostr.
 
-This research study provides evidence-based patterns to fix these critical UX problems.
+This pattern library provides evidence-informed patterns to fix these critical UX problems.
 
 ---
 
@@ -47,7 +47,7 @@ Each pattern includes:
 
 ## Quick Start
 
-→ **[Read the complete study](https://nostr-ux.com/docs/introduction/quick-start/)**
+→ **[Read the complete guide](https://nostr-ux.com/docs/introduction/quick-start/)**
 
 Or jump directly to a specific pattern:
 
@@ -83,19 +83,22 @@ Use cases: LLM context ingestion, RAG indexing, automated documentation, content
 
 ---
 
-## Research Foundation
+## How This Was Built
 
-This study synthesizes:
+Patterns were identified through analysis of:
 
-- Academic HCI research on social media UX, onboarding, feed algorithms
+- User feedback and complaints from Nostr clients (GitHub issues, social discussions)
+- Usage data and retention metrics (nostr.band)
+- Developer discussions on UX challenges
 - Industry design systems (Apple HIG, Material Design)
-- Nostr-specific data (retention metrics from nostr.band, user complaints, GitHub issues)
-- Mainstream app case studies (TikTok, Instagram, Bluesky, Discord)
-- 100+ verified sources with URLs (strict citation policy)
+- Available HCI research on social media UX
+- Mainstream app practices (TikTok, Instagram, Bluesky, Discord)
+
+Solutions apply established UX principles to Nostr's specific challenges. 100+ sources cited throughout.
 
 **Content balance:** 70% universal principles (applicable to any social app) + 30% Nostr-specific considerations (relays, keys, decentralization)
 
-**[View complete methodology and references →](https://nostr-ux.com/docs/resources/)**
+**[View complete approach and references →](https://nostr-ux.com/docs/resources/)**
 
 ---
 
@@ -104,7 +107,7 @@ This study synthesizes:
 Found errors? Have additional research? Implemented these patterns and want to share results?
 
 - **GitHub Issues:** [Report issues or suggest improvements](https://github.com/shawnyeager/nostr-ux-research/issues)
-- **Pull Requests:** Contributions welcome (see [research methodology](https://nostr-ux.com/docs/resources/methodology/))
+- **Pull Requests:** Contributions welcome (see [approach and sources](https://nostr-ux.com/docs/resources/methodology/))
 - **Nostr Discussion:** Share feedback on Nostr with #NostrUX
 
 ---

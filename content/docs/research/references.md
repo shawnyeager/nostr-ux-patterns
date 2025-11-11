@@ -3,7 +3,7 @@ title: "References & Bibliography"
 weight: 2
 ---
 
-This document contains all sources cited throughout the Nostr UX Research Study, organized by category.
+This document contains all sources cited throughout UX Patterns for Nostr Apps, organized by category.
 
 ---
 
@@ -1307,16 +1307,16 @@ This study analyzed **13 distinct Nostr applications and services** across multi
 ## How to Cite This Work
 
 **APA Style:**
-Yeager, S. (2025). *Nostr UX Research Study: Design Patterns for Consumer Applications*. GitHub. <https://github.com/shawnyeager/nostr-ux-research>
+Yeager, S. (2025). *UX Patterns for Nostr Apps: Evidence-Informed Patterns for Building Nostr Apps People Actually Use*. GitHub. <https://github.com/shawnyeager/nostr-ux-research>
 
 **MLA Style:**
-Yeager, Shawn. "Nostr UX Research Study: Design Patterns for Consumer Applications." *GitHub*, 2025, <https://github.com/shawnyeager/nostr-ux-research>.
+Yeager, Shawn. "UX Patterns for Nostr Apps: Evidence-Informed Patterns for Building Nostr Apps People Actually Use." *GitHub*, 2025, <https://github.com/shawnyeager/nostr-ux-research>.
 
 ---
 
 {{< cards >}}
-  {{< card link="../patterns/01-onboarding" title="View Patterns" subtitle="See the 6 design patterns" icon="collection" >}}
-  {{< card link="methodology/" title="Methodology" subtitle="Research approach" icon="beaker" >}}
+  {{< card link="../patterns/01-onboarding" title="View Patterns" subtitle="See the 6 UX patterns" icon="collection" >}}
+  {{< card link="methodology/" title="Approach" subtitle="How this was done" icon="beaker" >}}
 {{< /cards >}}
 
 ---

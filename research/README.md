@@ -1,18 +1,18 @@
-# Research Evidence Files
+# Source Files
 
-This directory contains verified evidence files that support the pattern documentation in this study.
+This directory contains verified source files that support the pattern documentation.
 
 ---
 
 ## Purpose
 
-These are **raw evidence collections** that inform the pattern documents and master bibliography. They represent the source material gathered during research, before being synthesized into the final patterns.
+These are **source material collections** that inform the pattern documents and master bibliography. They represent the sources gathered during pattern identification and analysis.
 
 **Distinction:**
 
-- `research/` = Raw evidence files with verified citations
+- `research/` = Source files with verified citations
 - `appendices/` = Polished documentation and deep-dive analysis
-- `patterns/` = Final deliverable pattern documents
+- `patterns/` = Final pattern documents
 
 ---
 
@@ -27,13 +27,13 @@ Every claim in these files includes:
 - Date of publication/access
 - Context and relevance
 
-This strict policy ensures all research is traceable and verifiable.
+This strict policy ensures all sources are traceable and verifiable.
 
 ---
 
 ## Files in This Directory
 
-### Content Discovery Research
+### Content Discovery Sources
 
 **`content-discovery-evidence-2024-2025.md`**
 

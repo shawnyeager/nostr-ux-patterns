@@ -1,6 +1,6 @@
 baseURL = 'https://nostr-ux.com/'
 languageCode = 'en-us'
-title = 'Design Patterns for Nostr UX'
+title = 'UX Patterns for Nostr Apps'
 theme = 'hextra'
 enableGitInfo = true
 
@@ -23,7 +23,7 @@ enableGitInfo = true
     target = "static"
 
 [params]
-  description = 'Design patterns for building consumer Nostr applications with great UX'
+  description = 'Evidence-informed patterns for building Nostr apps people actually use'
   images = ['/images/og-image.png']
   displayUpdatedDate = true
 

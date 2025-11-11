@@ -4,7 +4,7 @@ title: Introduction
 weight: 1
 ---
 
-**Evidence-based design patterns for building Nostr clients that people actually use.**
+**Evidence-informed UX patterns for building Nostr clients that people actually use.**
 
 ## The Problem
 
@@ -22,7 +22,7 @@ This is a retention crisis---but it's solvable. Traditional social apps achieve 
 
 ## The Solution
 
-**Six evidence-based design patterns** backed by 100+ verified sources, addressing the highest-impact UX problems:
+**Six evidence-informed UX patterns** addressing the highest-impact UX problems:
 
 1. **[Onboarding & First-Run Experience](../patterns/01-onboarding)** - Get users to value in under 2 minutes
 2. **[Content Discovery & Feed Quality](../patterns/02-content-discovery)** - Solve the empty feed problem
@@ -55,11 +55,11 @@ Ship working experiences, then add features.
 
 ## How This Was Built
 
-This study synthesizes **100+ verified sources** from academic HCI research, industry design systems (Apple HIG, Material Design), Nostr-specific data (retention metrics, user complaints, GitHub issues), and mainstream app case studies (TikTok, Instagram, Bluesky, Discord).
+Patterns were identified through analysis of user feedback, usage data, and developer discussions, then solutions were developed by applying established UX principles to Nostr's specific challenges. Draws on industry design systems (Apple HIG, Material Design), available HCI research, Nostr-specific data (retention metrics, user complaints, GitHub issues), and mainstream app practices (TikTok, Instagram, Bluesky, Discord). 100+ sources cited throughout.
 
 **Content balance:** 70% universal principles (applicable to any social app) + 30% Nostr-specific considerations (relays, keys, decentralization)
 
-**[View complete methodology and references →](../research/methodology)**
+**[View complete approach and references →](../research/methodology)**
 
 This project was developed by [Shawn Yeager](https://github.com/shawnyeager).
 

@@ -880,7 +880,7 @@ Challenge: Nostr has no central push notification server.
 - <a id="data-2"></a>**[[Data:2]](/docs/research/references#data-2)** Nostr Content Discovery Crisis - ~36K weekly active users (October 2024), post-viral retention failure
 - <a id="data-5"></a>**[[Data:5]](/docs/research/references#data-5)** Nostr Spam Crisis - 500,000 daily spam messages (February 2024)
 
-### Academic & UX Research
+### UX Research & Industry Studies
 
 - <a id="research-4"></a>**[[Research:4]](/docs/research/references#research-4)** Bluesky Starter Packs Study (Lancaster University, January 2025) - 43% of follows from starter packs during peak periods, 85% more followers for included users
 - <a id="research-5"></a>**[[Research:5]](/docs/research/references#research-5)** Cold Start Problem in Recommendation Systems (Academic, 2024) - Strategies: social network info, collaborative filtering, hybrid models, user demographics, community detection

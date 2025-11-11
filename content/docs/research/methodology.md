@@ -1,15 +1,15 @@
 ---
-title: "Research Methodology"
+title: "Approach and Sources"
 weight: 1
 ---
 
 ## Overview
 
-This study synthesizes research on user experience design for social applications and applies it to the unique challenges of building Nostr clients. The methodology combines established UX research principles with Nostr-specific data analysis to produce evidence-based design patterns.
+This pattern library identifies UX problems in Nostr clients through analysis of user feedback, usage data, and developer discussions, then applies established UX principles to address those problems. The approach combines pattern identification from real-world observations with application of proven UX practices.
 
 ---
 
-## Research Approach
+## How This Was Done
 
 ### 1. Problem Identification
 
@@ -42,15 +42,15 @@ This study synthesizes research on user experience design for social application
 
 **Process:**
 
-1. Map user problems to UX failure points
-2. Cluster related problems into pattern categories
-3. Prioritize patterns by impact × frequency
-4. Validate patterns against academic HCI literature
-5. Test patterns against mainstream app best practices
+1. Mapped user problems to UX failure points
+2. Clustered related problems into pattern categories
+3. Prioritized patterns by impact × frequency
+4. Applied established UX principles to each pattern
+5. Referenced mainstream app practices where relevant
 
-### 3. Universal Principles Research
+### 3. Applying UX Principles
 
-**Objective:** Ground each pattern in established UX research and industry best practices.
+**Objective:** Apply established UX principles to each identified pattern.
 
 **Sources:**
 
@@ -149,7 +149,7 @@ All factual claims are backed by citations in the following categories:
 
 ---
 
-## Research Limitations & Biases
+## Limitations & Biases
 
 ### Known Limitations
 
@@ -196,20 +196,21 @@ All factual claims are backed by citations in the following categories:
 
 ---
 
-## Validation & Peer Review
+## Validation & Review Status
 
 {{< callout type="warning" >}}
-**Status: Work in Progress**
+**Important Context**
 
-This research has not undergone formal academic peer review. It represents an initial synthesis of UX research, industry best practices, and Nostr-specific observations.
+This is a practitioner's pattern library, not formal academic research. It has not undergone peer review. It represents one informed person's analysis of Nostr UX problems and application of established UX principles to address them.
 {{< /callout >}}
 
-### Internal Validation (Completed)
+### What Has Been Done
 
-- All patterns cross-checked against multiple sources
-- Claims verified with citations where available
-- Anti-patterns tested against real client examples
-- Validation checklists piloted against mainstream app metrics
+- Patterns identified through analysis of user feedback and usage data
+- UX principles applied from established industry practices
+- Sources cited where claims are made
+- Anti-patterns based on observed client behavior
+- Validation checklists adapted from mainstream app metrics
 
 ### Community Review (Ongoing)
 
@@ -218,19 +219,19 @@ This research has not undergone formal academic peer review. It represents an in
 - Seeking feedback from Nostr Design community
 - Will iterate based on practitioner input
 
-### Success Criteria for This Research
+### Success Criteria
 
-We'll know this methodology is sound if:
+We'll know this is valuable if:
 
-- Developers find the patterns actionable and evidence-based
+- Developers find the patterns actionable and well-reasoned
 - Claims are verifiable and not disputed
 - Patterns lead to measurable UX improvements when implemented
-- The research generates substantive discussion (not just agreement/disagreement)
-- Other researchers build on this work
+- It generates substantive discussion in the Nostr developer community
+- Other practitioners reference or build on this work
 
 ---
 
-## Research Ethics
+## Ethics and Approach
 
 ### Principles
 
@@ -248,7 +249,7 @@ We'll know this methodology is sound if:
 
 ---
 
-## Appendix: Research Questions by Pattern
+## Appendix: Key Questions by Pattern
 
 ### Pattern 1: Onboarding & First-Run Experience
 

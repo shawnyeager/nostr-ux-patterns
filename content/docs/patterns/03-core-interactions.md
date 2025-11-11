@@ -815,7 +815,7 @@ Test different approaches:
 - <a id="data-9"></a>**[[Data:9]](/docs/research/references#data-19)** Non-kind:1 events storage 10:1 ratio to content; 2GB/day relay growth from reactions/metadata (2024)
 - <a id="data-10"></a>**[[Data:10]](/docs/research/references#data-20)** Relay availability challenges; financial sustainability of free relays is key factor (arXiv, February 2024)
 
-### Academic & UX Research (Universal Principles)
+### UX Research & Industry Studies
 
 - <a id="research-1"></a>**[[Research:1]](/docs/research/references#research-26)** Mobile App Trends: 94% cite design as rejection reason; 40% leave for better performance alternatives (Framna, 2024)
 - <a id="research-2"></a>**[[Research:2]](/docs/research/references#research-27)** User trust in social platforms falling: Only 35% feel safe (down from 44%); all major platforms lost trust (eMarketer, 2024)

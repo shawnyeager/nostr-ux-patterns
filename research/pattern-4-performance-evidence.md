@@ -1,8 +1,8 @@
 # Pattern 4: Performance & Perceived Speed
 
-## Research Evidence from 2024-2025 Sources
+## Source Materials from 2024-2025
 
-**Research Focus:** Concrete evidence of performance problems affecting Nostr apps
+**Focus:** Evidence of performance problems affecting Nostr apps
 
 ---
 
@@ -307,5 +307,5 @@
 
 **Compiled by:** Claude (Anthropic)
 **Date:** November 7, 2025
-**Updated:** November 8, 2025 (citation cleanup)
-**Purpose:** Research foundation for Pattern 4: Performance & Perceived Speed in Nostr UX Research Study
+**Updated:** November 11, 2025 (reframing)
+**Purpose:** Source materials for Pattern 4: Performance & Perceived Speed in UX Patterns for Nostr Apps

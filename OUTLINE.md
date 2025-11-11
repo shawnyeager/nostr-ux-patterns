@@ -1,4 +1,4 @@
-# Nostr UX Research Study - Structure & Outline
+# UX Patterns for Nostr Apps - Structure & Outline
 
 ## Meta-Narrative
 
@@ -31,7 +31,7 @@
 - Root cause: Feature bloat without user validation, protocol complexity exposed to users
 
 **Core Findings** (Bullet list)
-The research identifies 6 critical UX patterns that must be addressed:
+This pattern library addresses 6 critical UX patterns:
 
 1. **Onboarding:** Get to value in <2 minutes, defer complexity
 2. **Content Discovery:** Solve empty feed problem with smart defaults

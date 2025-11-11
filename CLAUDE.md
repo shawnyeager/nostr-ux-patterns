@@ -1,6 +1,6 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code when working with this Nostr UX research study repository.
+This file provides guidance to Claude Code when working with this Nostr UX pattern library repository.
 
 ---
 
@@ -38,7 +38,7 @@ This file provides guidance to Claude Code when working with this Nostr UX resea
 ## Project Overview
 
 **Repository:** nostr-ux-research
-**Purpose:** Meta research study on UX best practices for Nostr consumer applications
+**Purpose:** UX pattern library providing evidence-informed best practices for Nostr consumer applications
 **Owner:** Shawn Yeager (@shawnyeager)
 **Target Audience:** Nostr developers building consumer apps (social clients)
 
@@ -299,24 +299,24 @@ nostr-ux-research/
 
 ---
 
-## Research Sources & Methodology
+## Sources & Approach
 
-### Sources Used
+### Current Sources
 
-- Web research on Nostr client UX problems (2024-2025)
-- User complaints and feedback (Damus, Amethyst, Primal, Snort)
+- User feedback and complaints from Nostr clients (Damus, Amethyst, Primal, Snort)
 - Nostr Design website (nostrdesign.org)
 - Developer discussions on UX challenges
 - Retention and usage data (nostr.band)
-
-### What Still Needs Research
-
-- Academic HCI literature on social media UX
 - Industry design systems (Apple HIG, Material Design)
+- Available HCI research on social media UX
+- Mainstream app practices (TikTok, Instagram, Bluesky, Discord)
+
+### Potential Future Sources
+
 - Detailed audit of 10-15 popular Nostr clients
 - Developer interviews/surveys
 - Specific NIPs with UX implications
-- Case studies from successful social apps (TikTok, Instagram, Mastodon, Discord)
+- Additional case studies from successful social apps
 
 ---
 
@@ -419,7 +419,7 @@ Based on CLAUDE.md patterns from other repos:
 **Major Milestones Completed:**
 
 - 6 complete pattern documents (01-06, ranging from 900-1900 lines each)
-- 3 research evidence files with verified URL-only citations
+- 3 source files with verified URL-only citations
 - README.md, OUTLINE.md, CLAUDE.md all complete
 - All appendices and supporting documentation created
 - Multiple rounds of citation verification and cleanup
@@ -427,19 +427,20 @@ Based on CLAUDE.md patterns from other repos:
 **Recent Work (November 2025):**
 
 - Citation audit: Verified all sources have URLs, removed unverifiable claims
-- Fixed date errors across research files
+- Fixed date errors across source files
 - Moved and renamed files for clarity (content-discovery-mainstream-lessons.md)
 - Removed 30+ unverifiable findings, restored accidentally removed verified sources
-- Enforced strict URL-only citation policy across all research documents
-- Organized file structure: research/ = raw evidence, appendices/ = polished analysis
-- Created research/README.md to clarify purpose of evidence files
+- Enforced strict URL-only citation policy across all source documents
+- Organized file structure: research/ = source materials, appendices/ = polished analysis
+- Created research/README.md to clarify purpose of source files
 - Removed outdated research-notes.md working document
+- Reframed project as "UX Pattern Library" instead of "research study"
 
 **Current Focus:**
 
-- Final cleanup and organization refinement
-- Resolving citation gaps in pattern documents
-- Clarifying relationship between pattern files (definitive) and research files (supporting)
+- Reframing all project claims to be honest about what this is (pattern library, not research study)
+- Updating terminology across all documentation
+- Maintaining all patterns and sources while being accurate about methodology
 - File naming and organization audit for consistency
 
 ---
@@ -451,16 +452,17 @@ When continuing this project in a new session:
 1. **Read this file first** to understand the full context
 2. **Check "Current State Summary"** to see what's been completed recently
 3. **Check git status** to see what's been committed/pushed
-4. **Current phase:** Cleanup and organization refinement
+4. **Current phase:** Reframing project as UX Pattern Library
    - All 6 pattern documents are complete
-   - All research evidence files have verified citations
-   - Focus is on polishing, consistency, and resolving gaps
+   - All source files have verified citations
+   - Focus is on honest terminology and accurate claims
 5. **Use the TodoWrite tool** to track progress on multi-step work
 6. **Reference the Validation Framework** when making UX recommendations
 7. **Citation policy:** All claims must have verifiable URLs or be removed
-8. **Remember:** Never push without explicit permission
+8. **Project framing:** This is a UX pattern library, NOT a research study or meta-analysis
+9. **Remember:** Never push without explicit permission
 
 ---
 
-Last updated: November 8, 2025
+Last updated: November 11, 2025
 - Always check the official theme documentation before making ANY design changes

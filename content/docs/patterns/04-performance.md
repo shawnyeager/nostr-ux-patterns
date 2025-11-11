@@ -1028,7 +1028,7 @@ Test different approaches:
 - <a id="data-26"></a>**[[Data:26]](/docs/research/references#data-27)** nostrdb: "Unfairly fast" embedded database with zero-copy, O(1) access, LMDB design (2024)
 - <a id="data-27"></a>**[[Data:27]](/docs/research/references#data-28)** Primal Caching Service: Server-side caching for Nostr events, open sourced (December 2024)
 
-### Academic & UX Research (Universal Principles)
+### UX Research & Industry Studies
 
 - <a id="research-31"></a>**[[Research:31]](/docs/research/references#research-28)** Response Time Limits: 100ms instant, 1s flow uninterrupted, 5s (updated from 10s) keeps attention (NN/g, January 2024)
 - <a id="research-32"></a>**[[Research:32]](/docs/research/references#research-42)** Speed & Bounce: 32% bounce at 3s, 90% at 5s, 123% at 10s; 53% mobile visitors leave >3s (2025)

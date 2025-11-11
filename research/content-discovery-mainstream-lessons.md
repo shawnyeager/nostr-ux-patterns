@@ -1,6 +1,6 @@
-# Content Discovery & Feed Algorithm Research Findings
+# Content Discovery & Feed Algorithm Findings
 
-Research compilation for Pattern 2: Content Discovery & Feed Quality
+Source compilation for Pattern 2: Content Discovery & Feed Quality
 
 ---
 

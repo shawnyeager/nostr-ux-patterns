@@ -4,7 +4,7 @@ title: "The 6 Critical Patterns"
 weight: 3
 ---
 
-These six patterns address the most critical UX problems facing Nostr applications today, based on extensive research of user complaints, retention data, and mainstream app best practices.
+These six patterns address the most critical UX problems facing Nostr applications today, based on analysis of user complaints, retention data, and mainstream app best practices.
 
 Each pattern includes:
 
