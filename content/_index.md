@@ -40,7 +40,11 @@ layout: hextra-home
   >}}
 {{< /hextra/feature-grid >}}
 
-<div class="hx:mt-6"></div>
+<div class="hx:mt-16 hx:mb-12">
+{{< hextra/hero-subtitle >}}
+  Design Patterns
+{{< /hextra/hero-subtitle >}}
+</div>
 
 {{< hextra/feature-grid >}}
   {{< hextra/feature-card
