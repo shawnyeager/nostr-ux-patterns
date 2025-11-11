@@ -20,14 +20,14 @@ The Foundation provides:
 
 ## The Core Problem
 
-Nostr apps suffer from **feature bloat without validation**. Developers add features because:
+Nostr apps often suffer from **feature bloat without validation**. Features get added for various reasons:
 
 - "Competitor X has it"
-- "Protocol purism demands it"
-- "Power users will configure it"
-- "We'll fix UX after we add more features"
+- "The protocol makes it possible"
+- "Power users can configure it"
+- "We'll improve UX after adding more features"
 
-**None of these are user-validated reasons.**
+**These reasons don't guarantee the feature solves a real user problem.**
 
 The result: 15-20 minute onboarding flows, relay configuration exposed to beginners, posts that disappear, and 0% retention.
 
@@ -49,7 +49,7 @@ If you can't answer "yes" to all three, reconsider whether this feature should b
 
 {{< cards >}}
   {{< card link="validation-framework/" title="The Validation Framework" subtitle="The 3-question filter for feature decisions" icon="clipboard-check" >}}
-  {{< card link="core-principles/" title="Core Principles" subtitle="UX over protocol purity, ship small, validate fast" icon="light-bulb" >}}
+  {{< card link="core-principles/" title="Core Principles" subtitle="User-first design, ship small, validate fast" icon="light-bulb" >}}
   {{< card link="quick-wins/" title="Quick Wins" subtitle="Ship high-impact improvements this week" icon="lightning-bolt" >}}
 {{< /cards >}}
 

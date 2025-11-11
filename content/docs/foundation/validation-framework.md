@@ -211,7 +211,7 @@ Instead:
 ---
 
 {{< cards >}}
-  {{< card link="../core-principles/" title="Core Principles" subtitle="UX over protocol purity" icon="light-bulb" >}}
+  {{< card link="../core-principles/" title="Core Principles" subtitle="User-first design principles" icon="light-bulb" >}}
   {{< card link="../quick-wins/" title="Quick Wins" subtitle="Validated improvements to ship now" icon="lightning-bolt" >}}
   {{< card link="../../patterns/" title="Apply to Patterns" subtitle="Use the framework with the 6 patterns" icon="collection" >}}
 {{< /cards >}}

@@ -137,24 +137,24 @@ You prioritize features for existing power users over onboarding improvements:
 
 ---
 
-## Trap 4: Protocol Purity Over UX
+## Trap 4: Exposing Protocol Complexity Too Early
 
 ### The Problem
 
-You prioritize protocol elegance over user experience:
+You expose protocol implementation details to all users from day one:
 
-- Exposing relay selection to all users
-- Requiring understanding of NIPs
-- Showing technical error messages
-- Building features "because the protocol supports it"
+- Showing relay selection to all users during onboarding
+- Requiring understanding of NIPs for basic features
+- Displaying technical error messages
+- Adding features simply because "the protocol supports it"
 
-**Result:** Overwhelming complexity, confused users, poor retention.
+**Result:** Interface complexity that can confuse new users and hurt retention.
 
 ### Why This Happens
 
 - "Users need to understand how Nostr works"
-- "Protocol purity is important"
-- "Censorship resistance requires user control"
+- "The protocol makes these features possible"
+- "Decentralization requires user control"
 
 ### The Solution
 
@@ -191,7 +191,7 @@ You reject mainstream UX patterns because "Nostr is different":
 ### Why This Happens
 
 - Desire to be different from "Big Tech"
-- Protocol purism
+- Focus on protocol capabilities over proven UX patterns
 - Not-invented-here syndrome
 
 ### The Solution

@@ -5,21 +5,21 @@ weight: 2
 
 **The mindset shift required for great Nostr UX.**
 
-## Principle 1: UX Over Protocol Purity
+## Principle 1: User-First Design
 
-**The Problem:** "Protocol purity over pragmatic UX"
+**The Challenge:** Protocol capabilities vs. user needs
 
-Nostr developers often prioritize protocol elegance over user experience:
-- Exposing relay selection to new users
+Nostr's powerful protocol makes many features technically possible. However, exposing all capabilities to users can create friction:
+- Showing relay selection to new users
 - Requiring users to understand NIPs
-- Showing technical error messages ("relay wss://... closed connection")
-- Building features because "the protocol supports it"
+- Displaying technical error messages ("relay wss://... closed connection")
+- Adding features simply because "the protocol supports it"
 
-**Result:** Overwhelming complexity, user abandonment, 0% retention.
+**Result:** Complex interfaces that can overwhelm new users.
 
 **The Principle:**
 
-> **Good UX beats protocol purity. Ship working experiences, then add features.**
+> **Prioritize user experience over technical capabilities. Ship working experiences, then add features.**
 
 **What This Means:**
 
@@ -290,7 +290,7 @@ Decisions based on hunches instead of evidence. Result: Features that don't solv
 
 **The 7 Core Principles:**
 
-1. **UX Over Protocol Purity** - Ship working experiences, then add features
+1. **User-First Design** - Prioritize user experience over technical capabilities
 2. **Ship Small, Validate Fast** - Validate core interactions before adding features
 3. **Optimize for New Users** - If new users don't stick, you'll never get power users
 4. **Perceived Performance > Actual Performance** - Feel fast even when slow
