@@ -141,5 +141,5 @@ Under the following terms:
 
 ---
 
-**Remember:** Good UX beats protocol purity. Ship working experiences, then add features.
+**Remember:** Great UX is the gateway to the protocol's power. Ship working experiences, then add features.
 

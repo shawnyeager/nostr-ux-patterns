@@ -158,7 +158,7 @@ You expose protocol implementation details to all users from day one:
 
 ### The Solution
 
-**Good UX is the gateway to the protocol's power.**
+**Great UX is the gateway to the protocol's power.**
 
 Users don't need to understand relays to post. They don't need to see NIPs to follow people.
 

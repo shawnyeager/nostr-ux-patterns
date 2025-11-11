@@ -417,5 +417,5 @@ If you can't measure it, you can't improve it.
 
 ---
 
-**Remember:** Good UX beats protocol purity. Ship working experiences, then add features.
+**Remember:** Great UX is the gateway to the protocol's power. Ship working experiences, then add features.
 

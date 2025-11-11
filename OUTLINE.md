@@ -2,7 +2,7 @@
 
 ## Meta-Narrative
 
-**Core Thesis:** Good UX beats protocol purity. Ship working experiences, then add features.
+**Core Thesis:** Great UX is the gateway to the protocol's power. Ship working experiences, then add features.
 
 **Target Frustrations:**
 
@@ -49,7 +49,7 @@ This pattern library addresses 6 critical UX patterns:
 5. Validate features with users before building
 
 **The Thesis**
-Good UX beats protocol purity. Ship working experiences, then add features.
+Great UX is the gateway to the protocol's power. Ship working experiences, then add features.
 
 **Target Audience**
 

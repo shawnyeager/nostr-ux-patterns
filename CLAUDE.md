@@ -42,7 +42,7 @@ This file provides guidance to Claude Code when working with this Nostr UX patte
 **Owner:** Shawn Yeager (@shawnyeager)
 **Target Audience:** Nostr developers building consumer apps (social clients)
 
-**Core Thesis:** Good UX beats protocol purity. Ship working experiences, then add features.
+**Core Thesis:** Great UX is the gateway to the protocol's power. Ship working experiences, then add features.
 
 ---
 
