@@ -4,7 +4,7 @@ title: Introduction
 weight: 1
 ---
 
-**Evidence-informed UX patterns for building Nostr clients that people actually use.**
+**Evidence-informed patterns for building Nostr apps people actually use.**
 
 ## The Problem
 
