@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" fill="none">
+  <!-- Background -->
+  <rect width="800" height="600" fill="#1a1625"/>
+
+  <!-- Building blocks - higher -->
+  <!-- Step 1 -->
+  <rect x="120" y="210" width="90" height="90" rx="8" fill="#7c3aed"/>
+  <text x="165" y="265" font-family="Arial, sans-serif" font-size="44" font-weight="bold" fill="white" text-anchor="middle">1</text>
+
+  <!-- Step 2 -->
+  <rect x="230" y="150" width="90" height="150" rx="8" fill="#7c3aed" opacity="0.95"/>
+  <text x="275" y="235" font-family="Arial, sans-serif" font-size="44" font-weight="bold" fill="white" text-anchor="middle">2</text>
+
+  <!-- Step 3 -->
+  <rect x="340" y="90" width="90" height="210" rx="8" fill="#7c3aed" opacity="0.9"/>
+  <text x="385" y="210" font-family="Arial, sans-serif" font-size="44" font-weight="bold" fill="white" text-anchor="middle">3</text>
+
+  <!-- Target/goal flag -->
+  <line x1="480" y1="70" x2="480" y2="300" stroke="#6d28d9" stroke-width="5" stroke-linecap="round"/>
+  <path d="M 480 70 L 535 88 L 480 106 Z" fill="#fbbf24" stroke="#f59e0b" stroke-width="2"/>
+</svg>

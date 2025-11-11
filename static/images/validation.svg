@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" fill="none">
+  <!-- Background -->
+  <rect width="800" height="600" fill="#1a1625"/>
+
+  <!-- Checklist board - positioned higher -->
+  <rect x="120" y="50" width="350" height="260" rx="12" fill="#2d2438" stroke="#3d3349" stroke-width="3"/>
+
+  <!-- Checklist items -->
+  <!-- Item 1 -->
+  <circle cx="165" cy="110" r="18" fill="#7c3aed"/>
+  <path d="M 158 110 L 162 114 L 172 104" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <line x1="200" y1="110" x2="430" y2="110" stroke="#4a4458" stroke-width="4" stroke-linecap="round"/>
+
+  <!-- Item 2 -->
+  <circle cx="165" cy="175" r="18" fill="#7c3aed"/>
+  <path d="M 158 175 L 162 179 L 172 169" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <line x1="200" y1="175" x2="410" y2="175" stroke="#4a4458" stroke-width="4" stroke-linecap="round"/>
+
+  <!-- Item 3 -->
+  <circle cx="165" cy="240" r="18" fill="#7c3aed"/>
+  <path d="M 158 240 L 162 244 L 172 234" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <line x1="200" y1="240" x2="420" y2="240" stroke="#4a4458" stroke-width="4" stroke-linecap="round"/>
+
+  <!-- Question marks -->
+  <text x="490" y="120" font-family="Arial, sans-serif" font-size="50" fill="#7c3aed" opacity="0.3">?</text>
+  <text x="90" y="380" font-family="Arial, sans-serif" font-size="42" fill="#6d28d9" opacity="0.25">?</text>
+</svg>

@@ -4,6 +4,37 @@ This file provides guidance to Claude Code when working with this Nostr UX resea
 
 ---
 
+## ⚠️ CRITICAL RULES - READ FIRST ⚠️
+
+### HEXTRA THEME MODIFICATIONS - ABSOLUTELY FORBIDDEN
+
+**YOU ARE STRICTLY FORBIDDEN FROM MAKING ANY CUSTOM MODIFICATIONS TO THE HEXTRA THEME WITHOUT EXPRESS PERMISSION.**
+
+**MANDATORY WORKFLOW:**
+
+1. **ALWAYS CHECK THE OFFICIAL HEXTRA DOCUMENTATION FIRST** at https://imfing.github.io/hextra/docs/
+2. **ALWAYS USE BUILT-IN HEXTRA SHORTCODES** - Never create custom HTML, CSS, or layout overrides
+3. **NEVER CREATE FILES IN `layouts/` DIRECTORY** - This overrides the theme and is forbidden
+4. **NEVER ADD CUSTOM CSS** unless it's for the Hextra-documented purple theme configuration
+5. **NEVER MODIFY THEME BEHAVIOR** - Use what the theme provides or ask for permission first
+
+**Available Hextra Shortcodes (USE THESE):**
+- `{{< cards >}}` and `{{< card >}}` - For card grids
+- `{{< callout >}}` - For notices
+- `{{< details >}}` - For collapsible content
+- `{{< steps >}}` - For step-by-step guides
+- `{{< tabs >}}` - For tabbed content
+
+**If you need to do something and don't know the Hextra way:**
+1. Search the Hextra documentation at https://imfing.github.io/hextra/docs/
+2. Use WebFetch to read the relevant docs page
+3. Use what the theme provides
+4. If theme doesn't support it, ASK THE USER before doing anything custom
+
+**Violation of these rules will result in immediate termination.**
+
+---
+
 ## Project Overview
 
 **Repository:** nostr-ux-research
@@ -432,3 +463,4 @@ When continuing this project in a new session:
 ---
 
 Last updated: November 8, 2025
+- Always check the official theme documentation before making ANY design changes
