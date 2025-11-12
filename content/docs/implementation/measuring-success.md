@@ -541,7 +541,7 @@ analytics.track('feature_variant', { feature: 'guest-mode', variant })
 ---
 
 {{< cards >}}
-  {{< card link="getting-started/" title="Getting Started" subtitle="Which pattern to implement first" icon="play" >}}
-  {{< card link="common-traps/" title="Common Traps" subtitle="Measurement pitfalls to avoid" icon="exclamation" >}}
+  {{< card link="../getting-started/" title="Getting Started" subtitle="Which pattern to implement first" icon="play" >}}
+  {{< card link="../common-traps/" title="Common Traps" subtitle="Measurement pitfalls to avoid" icon="exclamation" >}}
   {{< card link="../../foundation/validation-framework/" title="Validation Framework" subtitle="The 3-question filter" icon="clipboard-check" >}}
 {{< /cards >}}

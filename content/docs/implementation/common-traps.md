@@ -557,7 +557,7 @@ You only track quantitative metrics, ignore user complaints:
 ---
 
 {{< cards >}}
-  {{< card link="getting-started/" title="Getting Started" subtitle="Start implementing patterns" icon="play" >}}
-  {{< card link="measuring-success/" title="Measuring Success" subtitle="Track if it's working" icon="chart-bar" >}}
+  {{< card link="../getting-started/" title="Getting Started" subtitle="Start implementing patterns" icon="play" >}}
+  {{< card link="../measuring-success/" title="Measuring Success" subtitle="Track if it's working" icon="chart-bar" >}}
   {{< card link="../../foundation/validation-framework/" title="Validation Framework" subtitle="Avoid building unvalidated features" icon="clipboard-check" >}}
 {{< /cards >}}

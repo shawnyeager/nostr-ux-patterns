@@ -410,6 +410,6 @@ if (featureFlags.optimisticUI) {
 
 {{< cards >}}
   {{< card link="../../foundation/quick-wins/" title="Quick Wins" subtitle="High-impact improvements to start with" icon="lightning-bolt" >}}
-  {{< card link="measuring-success/" title="Measuring Success" subtitle="Track if it's working" icon="chart-bar" >}}
-  {{< card link="common-traps/" title="Common Traps" subtitle="What to avoid" icon="exclamation" >}}
+  {{< card link="../measuring-success/" title="Measuring Success" subtitle="Track if it's working" icon="chart-bar" >}}
+  {{< card link="../common-traps/" title="Common Traps" subtitle="What to avoid" icon="exclamation" >}}
 {{< /cards >}}

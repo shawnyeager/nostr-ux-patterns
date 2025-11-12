@@ -1315,8 +1315,8 @@ Yeager, Shawn. "UX Patterns for Nostr Apps: Evidence-Informed Patterns for Build
 ---
 
 {{< cards >}}
-  {{< card link="../patterns/01-onboarding" title="View Patterns" subtitle="See the 6 UX patterns" icon="collection" >}}
-  {{< card link="methodology/" title="Approach" subtitle="How this was done" icon="beaker" >}}
+  {{< card link="../../patterns/01-onboarding" title="View Patterns" subtitle="See the 6 UX patterns" icon="collection" >}}
+  {{< card link="../methodology/" title="Approach" subtitle="How this was done" icon="beaker" >}}
 {{< /cards >}}
 
 ---
