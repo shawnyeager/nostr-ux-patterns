@@ -106,7 +106,7 @@ Solutions apply established UX principles to Nostr's specific challenges. 100+ s
 
 Found errors? Have additional research? Implemented these patterns and want to share results?
 
-- **GitHub Issues:** [Report issues or suggest improvements](https://github.com/shawnyeager/nostr-ux-research/issues)
+- **GitHub Issues:** [Report issues or suggest improvements](https://github.com/shawnyeager/nostr-ux-patterns/issues)
 - **Pull Requests:** Contributions welcome (see [approach and sources](https://nostr-ux.com/docs/resources/methodology/))
 - **Nostr Discussion:** Share feedback on Nostr with #NostrUX
 

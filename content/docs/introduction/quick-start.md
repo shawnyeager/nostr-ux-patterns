@@ -66,7 +66,7 @@ Jump straight to [Quick Wins](../../foundation/quick-wins/) for high-impact, low
 2. **Learn the [Validation Framework](../../foundation/validation-framework)** to make better feature decisions
 3. **Apply the [Implementation Guide](../../implementation/)** to integrate these patterns
 4. **Join the discussion** on Nostr (search for #NostrUX)
-5. **Share feedback** by opening issues on [GitHub](https://github.com/shawnyeager/nostr-ux-research)
+5. **Share feedback** by opening issues on [GitHub](https://github.com/shawnyeager/nostr-ux-patterns)
 
 ---
 

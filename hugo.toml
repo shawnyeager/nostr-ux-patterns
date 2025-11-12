@@ -63,7 +63,7 @@ enableGitInfo = true
 
 [[menu.main]]
   name = "GitHub"
-  url = "https://github.com/shawnyeager/nostr-ux-research"
+  url = "https://github.com/shawnyeager/nostr-ux-patterns"
   weight = 6
   [menu.main.params]
     icon = "github"

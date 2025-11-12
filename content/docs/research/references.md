@@ -1307,10 +1307,10 @@ This study analyzed **13 distinct Nostr applications and services** across multi
 ## How to Cite This Work
 
 **APA Style:**
-Yeager, S. (2025). *UX Patterns for Nostr Apps: Evidence-Informed Patterns for Building Nostr Apps People Actually Use*. GitHub. <https://github.com/shawnyeager/nostr-ux-research>
+Yeager, S. (2025). *UX Patterns for Nostr Apps: Evidence-Informed Patterns for Building Nostr Apps People Actually Use*. GitHub. <https://github.com/shawnyeager/nostr-ux-patterns>
 
 **MLA Style:**
-Yeager, Shawn. "UX Patterns for Nostr Apps: Evidence-Informed Patterns for Building Nostr Apps People Actually Use." *GitHub*, 2025, <https://github.com/shawnyeager/nostr-ux-research>.
+Yeager, Shawn. "UX Patterns for Nostr Apps: Evidence-Informed Patterns for Building Nostr Apps People Actually Use." *GitHub*, 2025, <https://github.com/shawnyeager/nostr-ux-patterns>.
 
 ---
 

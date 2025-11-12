@@ -1,4 +1,4 @@
-module github.com/shawnyeager/nostr-ux-research
+module github.com/shawnyeager/nostr-ux-patterns
 
 go 1.21
 

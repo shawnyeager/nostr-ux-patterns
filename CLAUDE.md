@@ -37,7 +37,7 @@ This file provides guidance to Claude Code when working with this Nostr UX patte
 
 ## Project Overview
 
-**Repository:** nostr-ux-research
+**Repository:** nostr-ux-patterns
 **Purpose:** UX pattern library providing evidence-informed best practices for Nostr consumer applications
 **Owner:** Shawn Yeager (@shawnyeager)
 **Target Audience:** Nostr developers building consumer apps (social clients)
@@ -249,7 +249,7 @@ A central theme woven throughout all patterns to address "features without valid
 ### File Organization
 
 ```
-nostr-ux-research/
+nostr-ux-patterns/
 ├── CLAUDE.md              # This file
 ├── OUTLINE.md             # Complete structure
 ├── README.md              # Public-facing introduction
