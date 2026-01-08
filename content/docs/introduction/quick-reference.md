@@ -1,5 +1,6 @@
 ---
 title: "Quick Reference Guide"
+weight: 3
 ---
 
 Scan this guide in ~10 minutes to understand the critical issues. Then deep-dive the patterns most relevant to your work.

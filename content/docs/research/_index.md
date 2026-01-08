@@ -1,6 +1,6 @@
 ---
-linkTitle: "Resources"
-title: Approach & Sources
+linkTitle: "Research"
+title: Research & Sources
 weight: 5
 ---
 

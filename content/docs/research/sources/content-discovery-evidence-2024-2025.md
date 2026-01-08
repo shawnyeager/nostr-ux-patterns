@@ -1,6 +1,9 @@
-# Content Discovery Evidence: 2024-2025
+---
+title: "Content Discovery Evidence: 2024-2025"
+weight: 1
+---
 
-Findings on content discovery problems in Nostr apps from verified sources, compiled November 2025.
+Findings on content discovery problems in Nostr apps from verified sources.
 
 **Sources:** Verified web sources with URLs only. All findings without verifiable URLs have been removed.
 

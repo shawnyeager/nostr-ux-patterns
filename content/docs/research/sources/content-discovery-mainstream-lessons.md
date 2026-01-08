@@ -1,4 +1,7 @@
-# Content Discovery & Feed Algorithm Findings
+---
+title: "Content Discovery: Mainstream Platform Lessons"
+weight: 2
+---
 
 Source compilation for Pattern 2: Content Discovery & Feed Quality
 
