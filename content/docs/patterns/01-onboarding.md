@@ -452,7 +452,7 @@ Nostr's decentralization is a feature, but content discovery suffers. Algorithmi
 
 **Implementation:**
 
-- Ship with 5-10 curated default relays
+- Ship with 2-4 curated default relays (aligned with NIP-65 recommendations)
 - Criteria: uptime, speed, content quality, moderation
 - Don't show relay picker during onboarding
 - Add "Advanced: Manage Relays" in settings later
@@ -481,9 +481,12 @@ Nostr's decentralization is a feature, but content discovery suffers. Algorithmi
 
 **Nostr considerations:**
 
-- Use NIP-65 relay list metadata for portability
-- Write user's posts to multiple relays for redundancy
-- Read from aggregated relay set for feed
+- Implement the NIP-65 outbox model properly—this is key to relay efficiency
+- With outbox, the client fetches others' content from *their* preferred relays, not the user's
+- This means the user's relay list is primarily for *publishing*, not discovery
+- 2-4 relays per category (read/write) is sufficient per NIP-65
+- More relays = more connections = battery/bandwidth impact on mobile
+- Write user's posts to their chosen relays for redundancy
 
 ### Pattern D: Interest-Based First Follows
 
