@@ -33,11 +33,11 @@
       "title": "Sources & Evidence (1-2 hours)",
       "description": "Approach, source materials, and complete bibliography",
       "files": [
-        "resources/methodology",
-        "research/content-discovery-evidence",
-        "research/content-discovery-mainstream",
-        "research/performance-evidence",
-        "resources/references"
+        "docs/research/methodology",
+        "docs/research/sources/content-discovery-evidence-2024-2025",
+        "docs/research/sources/content-discovery-mainstream-lessons",
+        "docs/research/sources/pattern-4-performance-evidence",
+        "docs/research/references"
       ]
     }
   },
@@ -88,8 +88,8 @@
       "title": "Quick Reference Guide",
       "description": "Scan in ~10 minutes. Top 3 recommendations, anti-patterns, and validation checklists for each of the 6 patterns.",
       "category": "guides",
-      "path": "quick-reference.md",
-      "url": "https://github.com/shawnyeager/nostr-ux-patterns/blob/master/quick-reference.md",
+      "path": "content/docs/introduction/quick-reference.md",
+      "url": "https://nostr-ux.com/docs/introduction/quick-reference/",
       "importance": "high",
       "keywords": ["quick-reference", "cheat-sheet", "summary", "anti-patterns"]
     },
@@ -205,8 +205,8 @@
       "title": "Source Files",
       "description": "Explains purpose of research directory (source materials vs. polished analysis), citation policy (URL-only), and file organization.",
       "category": "research",
-      "path": "research/README.md",
-      "url": "https://github.com/shawnyeager/nostr-ux-patterns/blob/master/research/README.md",
+      "path": "content/docs/research/sources/_index.md",
+      "url": "https://nostr-ux.com/docs/research/sources/",
       "importance": "medium",
       "keywords": ["research", "evidence", "methodology", "citations"]
     },
@@ -215,8 +215,8 @@
       "title": "Content Discovery Sources: 2024-2025",
       "description": "Nostr-specific content discovery problems. 11 findings from 6 verified sources covering retention crisis, cold start problem, spam, discovery mechanisms.",
       "category": "research",
-      "path": "research/content-discovery-evidence-2024-2025.md",
-      "url": "https://github.com/shawnyeager/nostr-ux-patterns/blob/master/research/content-discovery-evidence-2024-2025.md",
+      "path": "content/docs/research/sources/content-discovery-evidence-2024-2025.md",
+      "url": "https://nostr-ux.com/docs/research/sources/content-discovery-evidence-2024-2025/",
       "importance": "high",
       "keywords": ["content-discovery", "evidence", "nostr-specific", "retention", "spam"],
       "relatedPatterns": ["patterns/02-content-discovery"]
@@ -226,8 +226,8 @@
       "title": "Content Discovery & Feed Algorithm Research Findings",
       "description": "Mainstream platform research. 12 academic/platform findings covering Bluesky starter packs, TikTok algorithm, Instagram updates, chronological feeds research.",
       "category": "research",
-      "path": "research/content-discovery-mainstream-lessons.md",
-      "url": "https://github.com/shawnyeager/nostr-ux-patterns/blob/master/research/content-discovery-mainstream-lessons.md",
+      "path": "content/docs/research/sources/content-discovery-mainstream-lessons.md",
+      "url": "https://nostr-ux.com/docs/research/sources/content-discovery-mainstream-lessons/",
       "importance": "high",
       "keywords": ["content-discovery", "algorithms", "mainstream-platforms", "academic-research"],
       "relatedPatterns": ["patterns/02-content-discovery"]
@@ -237,49 +237,49 @@
       "title": "Pattern 4: Performance & Perceived Speed - Source Materials",
       "description": "Performance source materials. 14 verified sources (2022-2025) covering battery drain, crashes, database bottlenecks, relay performance issues.",
       "category": "research",
-      "path": "research/pattern-4-performance-evidence.md",
-      "url": "https://github.com/shawnyeager/nostr-ux-patterns/blob/master/research/pattern-4-performance-evidence.md",
+      "path": "content/docs/research/sources/pattern-4-performance-evidence.md",
+      "url": "https://nostr-ux.com/docs/research/sources/pattern-4-performance-evidence/",
       "importance": "high",
       "keywords": ["performance", "evidence", "crashes", "battery-drain", "database"],
       "relatedPatterns": ["patterns/04-performance"]
     },
     {
-      "id": "resources/overview",
-      "title": "Resources",
+      "id": "research/overview",
+      "title": "Research & Sources",
       "description": "Overview of approach and sources, references/bibliography, and source materials. Explains content balance and citation policy.",
       "category": "resources",
-      "path": "content/docs/resources/_index.md",
-      "url": "https://nostr-ux.com/docs/resources/",
+      "path": "content/docs/research/_index.md",
+      "url": "https://nostr-ux.com/docs/research/",
       "importance": "medium",
-      "keywords": ["resources", "methodology", "references", "overview"]
+      "keywords": ["research", "methodology", "references", "overview"]
     },
     {
-      "id": "resources/methodology",
+      "id": "research/methodology",
       "title": "Approach and Sources",
       "description": "How this was done - problem identification methods, pattern extraction process, source evaluation, and limitations.",
       "category": "resources",
-      "path": "content/docs/resources/methodology.md",
-      "url": "https://nostr-ux.com/docs/resources/methodology/",
+      "path": "content/docs/research/methodology.md",
+      "url": "https://nostr-ux.com/docs/research/methodology/",
       "importance": "medium",
       "keywords": ["methodology", "research-process", "credibility", "transparency"]
     },
     {
-      "id": "resources/references",
+      "id": "research/references",
       "title": "References & Bibliography",
       "description": "All 100+ citations organized by category (Data, Research, Examples, Protocol, User feedback). Complete source list with URLs.",
       "category": "resources",
-      "path": "content/docs/resources/references.md",
-      "url": "https://nostr-ux.com/docs/resources/references/",
+      "path": "content/docs/research/references.md",
+      "url": "https://nostr-ux.com/docs/research/references/",
       "importance": "high",
       "keywords": ["references", "bibliography", "citations", "sources"]
     },
     {
-      "id": "resources/onboarding-research",
+      "id": "research/onboarding-sources",
       "title": "Onboarding Source Materials",
       "description": "Detailed sources for Pattern 1. Deep-dive on time-to-value research, progressive disclosure, browse-first patterns.",
       "category": "resources",
-      "path": "content/docs/resources/onboarding-research-sources.md",
-      "url": "https://nostr-ux.com/docs/resources/onboarding-research-sources/",
+      "path": "content/docs/research/onboarding-research-sources.md",
+      "url": "https://nostr-ux.com/docs/research/onboarding-research-sources/",
       "importance": "medium",
       "keywords": ["onboarding", "research", "evidence", "time-to-value"],
       "relatedPatterns": ["patterns/01-onboarding"]

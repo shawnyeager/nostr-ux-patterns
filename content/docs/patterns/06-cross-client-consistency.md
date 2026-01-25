@@ -994,29 +994,27 @@ User's posts disappear with no explanation
   - Measure: Events with identical content/timestamp
   - Target: 0 duplicates published
 
----
+### A/B Testing Opportunities
 
-## A/B Testing Opportunities
-
-### Test 1: Sync State Visibility
+#### Test 1: Sync State Visibility
 
 - **A:** No sync indicators (current state in many clients)
 - **B:** Persistent sync badge showing real-time status
 - **Measure:** User confidence survey, data loss reports
 
-### Test 2: Conflict Resolution Strategy
+#### Test 2: Conflict Resolution Strategy
 
 - **A:** Auto-resolve using Last Write Wins
 - **B:** Show conflict UI, let user choose
 - **Measure:** Data satisfaction, "lost data" complaints
 
-### Test 3: Follow Action Blocking
+#### Test 3: Follow Action Blocking
 
 - **A:** Allow follow during sync (risk data loss)
 - **B:** Block follow until sync complete with explanation
 - **Measure:** Follow list preservation rate, user frustration
 
-### Test 4: Offline Queue Visibility
+#### Test 4: Offline Queue Visibility
 
 - **A:** Silent queuing (no indication)
 - **B:** "3 posts queued. Will send when online."

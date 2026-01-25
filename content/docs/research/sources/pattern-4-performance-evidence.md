@@ -1,4 +1,7 @@
-# Pattern 4: Performance & Perceived Speed
+---
+title: "Performance Evidence: 2024-2025"
+weight: 3
+---
 
 ## Source Materials from 2024-2025
 

@@ -4,19 +4,11 @@ title = 'UX Patterns for Nostr Apps'
 theme = 'hextra'
 enableGitInfo = true
 
-# Mount existing content
+# Hugo module mounts
 [module]
   [[module.mounts]]
     source = "content"
     target = "content"
-
-  [[module.mounts]]
-    source = "patterns"
-    target = "content/docs/patterns"
-
-  [[module.mounts]]
-    source = "appendices"
-    target = "content/docs/research"
 
   [[module.mounts]]
     source = "static"
