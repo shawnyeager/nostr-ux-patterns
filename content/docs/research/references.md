@@ -38,6 +38,9 @@ This study analyzed **13 distinct Nostr applications and services** across multi
   - Performance: Follower count queries bandwidth intensive [[Data:20]](#data-20)
   - Security: Omitted signature verification in earlier versions [[Data:25]](#data-25)
   - Database: Created nostrdb for performance optimization [[Data:26]](#data-26)
+- **Recent updates (2025):**
+  - v1.12 (Jan 2025): Fixed hidden "next" button on create account view (onboarding), GIF/video composing support — <https://www.nobsbitcoin.com/damus-v1-12/>
+  - Notedeck v0.4 Beta: Multi-platform Rust client with full-text search, Dave AI assistant, zaps — <https://www.nobsbitcoin.com/damus-notedeck-v0-4-0-beta/>
   - User feedback: "Very smooth experience" and "amazed by how smooth"
 - **Referenced in:** [Pattern 1](/docs/patterns/01-onboarding), [Pattern 3](/docs/patterns/03-core-interactions), [Pattern 4](/docs/patterns/04-performance), [Pattern 6](/docs/patterns/06-cross-client-consistency)
 - **Cross-client scenario:** User data loss when switching "Primal → Damus → Snort"
@@ -158,7 +161,7 @@ This study analyzed **13 distinct Nostr applications and services** across multi
   - Spam Filter: <https://spam.nostr.band/>
 - **Key Data:**
   - 30-day retention tracking (trending to 0% for recent cohorts)
-  - DAU/WAU metrics (10,000-12,000 daily active users)
+  - DAU/WAU metrics (~17,000 daily active users as of March 2025, flat)
   - Weekly active users: ~36,000 (October 2024)
   - Spam tracking (500,000 daily spam messages, February 2024)
 - **Referenced in:** All patterns (primary data source)
@@ -183,7 +186,7 @@ This study analyzed **13 distinct Nostr applications and services** across multi
 - **URL:** <https://nostr.band/stats>
 - **Date accessed:** November 2025
 - **Data:** DAU trends, retention cohorts, network growth metrics
-- **Key findings:** 30-day retention trending to 0% for recent cohorts, DAU stable at 10,000-12,000 trusted pubkeys
+- **Key findings:** 30-day retention trending to 0% for recent cohorts, DAU ~17,000 as of March 2025 (flat; was reported as 10,000-12,000 trusted pubkeys in October 2024)
 
 **[Data:2]** Nostr Content Discovery and Retention Crisis
 
@@ -191,10 +194,18 @@ This study analyzed **13 distinct Nostr applications and services** across multi
 - **URL:** <https://stats.nostr.band/> and <https://socialcapitalmarkets.net/crypto-trading/nostr-statistics/>
 - **Date:** October 2024
 - **Key findings:**
-  - Only ~36,000 weekly active users as of October 2024; less than 15,000 daily active
+  - ~36,000 weekly active users (October 2024); ~17,000 daily active users (March 2025, flat)
   - Adoption spikes (X ban in Brazil, Reddit/TikTok events) show poor retention
   - Post-viral-event retention failure demonstrates discovery/content problems
 - **Relevance:** Pattern 2 (Content Discovery) - Quantifies the retention impact of poor content discovery
+
+**[Data:2b]** Nostr DAU March 2025 Update
+
+- **Source:** Nostr post citing nostr.band stats
+- **URL:** <https://nostr.com/nevent1qqsgaumjavwfhwutw62hkp604a34nuenxzrpsaevv563d4syq9ad8cgpqqvvnfmv>
+- **Date:** March 16, 2025
+- **Key findings:** "Nostr's daily user numbers remain pretty much flat at 17k daily users according to nostr.band stats"
+- **Relevance:** Confirms DAU stagnation continues despite client quality improvements in 2025
 
 **[Data:5]** Nostr Spam Crisis
 

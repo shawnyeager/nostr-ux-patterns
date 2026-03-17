@@ -110,7 +110,7 @@ Findings on content discovery problems in Nostr apps from verified sources.
 ### Empty Feed / Cold Start Problems
 
 1. **Retention crisis:** 30-day retention trends to 0% for new cohorts (nostr.band, Oct 2024)
-2. **DAU stagnation:** Stuck at 10-12K daily active users despite viral spikes (nostr.band, Oct 2024)
+2. **DAU stagnation:** ~10-12K daily active users (Oct 2024), ~17K (March 2025) — effectively flat for 18+ months despite viral spikes and client improvements
 3. **Content scarcity:** Primary reason people don't stick around (karnage, March 2024)
 4. **Chicken-egg problem:** Need users for content, need content for users (karnage, March 2024)
 
@@ -126,6 +126,14 @@ Findings on content discovery problems in Nostr apps from verified sources.
 2. **Nstart onboarding wizard** (Jan 2025): Auto-follow trusted users, email backup, simplified key management
 3. **Spam mitigation** (Feb-Sep 2024): Response to 500K daily spam attack with Web of Trust filtering and Purgatory pipeline
 4. **Nostr Design guidelines**: Prioritizes progressive disclosure and content/user discovery in onboarding recommendations
+
+### 2025 Updates
+
+- **DAU**: ~17,000 as of March 2025 — effectively flat, confirms stagnation continues despite client improvements. Source: <https://nostr.com/nevent1qqsgaumjavwfhwutw62hkp604a34nuenxzrpsaevv563d4syq9ad8cgpqqvvnfmv>
+- **Damus v1.12** (Jan 2025): Fixed hidden "next" button on create account view (direct onboarding regression fix), added GIF/video composing. Source: <https://www.nobsbitcoin.com/damus-v1-12/>
+- **Notedeck v0.4 Beta** (2025): Damus's multi-platform client added full-text note search — addresses discovery gap. Source: <https://www.nobsbitcoin.com/damus-notedeck-v0-4-0-beta/>
+- **Amethyst v1.04.2**: Follow packs, timeline filters, image gallery. Incremental discovery improvements.
+- **Core problem unchanged**: Client quality is improving but DAU remains flat. Validates the thesis that UX problems are deeper than individual client bugs.
 
 ### Design Community Acknowledgment
 

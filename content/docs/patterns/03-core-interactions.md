@@ -44,7 +44,7 @@ weight: 3
 {{< callout type="error" >}}
 **Trust threshold**: 94% of users cite design as the main reason they mistrust or reject apps; 40% abandon poorly performing alternatives. [[Research:1]](#research-1)[[Data:7]](#data-7)
 
-With Nostr retention trending to 0% and only 10,000-12,000 daily active users, **core interactions must be >99% reliable to rebuild trust.**
+With Nostr retention trending to 0% and only ~17,000 daily active users (flat for 18+ months), **core interactions must be >99% reliable to rebuild trust.**
 {{< /callout >}}
 
 ---

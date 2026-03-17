@@ -436,12 +436,17 @@ Based on CLAUDE.md patterns from other repos:
 - Removed outdated research-notes.md working document
 - Reframed project as "UX Pattern Library" instead of "research study"
 
+**Maintenance Update (March 2026):**
+
+- Updated DAU stats: ~17,000 as of March 2025 (was 10-12K trusted pubkeys Oct 2024) — still flat
+- Added 2025 client updates to sources: Damus v1.12 onboarding fix, Notedeck v0.4, Amethyst v1.04.2
+- Added Data:2b reference (March 2025 DAU citation)
+- Core thesis unchanged: client quality improving, retention stagnant
+
 **Current Focus:**
 
-- Reframing all project claims to be honest about what this is (pattern library, not research study)
-- Updating terminology across all documentation
-- Maintaining all patterns and sources while being accurate about methodology
-- File naming and organization audit for consistency
+- Project is complete and stable; maintenance-mode updates to keep stats current
+- All 6 patterns remain accurate — ecosystem improvements validate rather than undermine the arguments
 
 ---
 
@@ -464,5 +469,5 @@ When continuing this project in a new session:
 
 ---
 
-Last updated: November 11, 2025
+Last updated: March 17, 2026
 - Always check the official theme documentation before making ANY design changes

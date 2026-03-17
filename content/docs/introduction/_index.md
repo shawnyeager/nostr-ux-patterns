@@ -12,8 +12,8 @@ Nostr has a working, censorship-resistant protocol. The critical bottleneck is u
 
 **Current metrics:**
 
-- **30-day retention trending to 0%** for recent cohorts
-- **Daily active users stuck at 10,000-12,000** despite viral adoption spikes
+- **30-day retention still trending to 0%** for recent cohorts
+- **Daily active users ~17,000** (as of March 2025, per nostr.band) — effectively flat for 18+ months despite client improvements
 - Users often need **multiple clients** to access different features
 
 This is a retention crisis---but it's solvable. Traditional social apps achieve better retention not through centralization, but through better content discovery, reliable core interactions, and streamlined onboarding. All of these are implementable on Nostr.
