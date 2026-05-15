@@ -1,5 +1,7 @@
 ---
 title: Measuring Success
+date: 2025-11-10
+description: "Leading and lagging UX metrics for each of the six Nostr patterns, plus tools for analytics, performance, and user feedback."
 weight: 2
 ---
 

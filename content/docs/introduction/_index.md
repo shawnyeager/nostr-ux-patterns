@@ -1,6 +1,8 @@
 ---
 linkTitle: "Introduction"
 title: Introduction
+date: 2025-11-08
+description: "Why Nostr apps struggle with retention, and how evidence-informed UX patterns address it. Start here."
 weight: 1
 ---
 

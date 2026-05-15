@@ -1,5 +1,7 @@
 ---
 title: "References & Bibliography"
+date: 2025-11-07
+description: "Full bibliography for the Nostr UX pattern library: usage data, academic UX research, case studies, NIPs, and user feedback, all with verifiable URLs."
 weight: 2
 ---
 

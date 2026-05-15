@@ -1,5 +1,7 @@
 ---
 title: Core Principles
+date: 2025-11-10
+description: "Seven core UX principles for Nostr apps: user-first design, ship-and-validate, optimizing for new users, perceived performance, reliability, simplicity, and evidence."
 weight: 2
 ---
 

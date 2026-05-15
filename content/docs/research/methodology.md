@@ -1,5 +1,7 @@
 ---
 title: "Approach and Sources"
+date: 2025-11-07
+description: "How the Nostr UX patterns were derived: problem identification, pattern extraction, UX principles, and the URL-only citation standard."
 weight: 1
 ---
 

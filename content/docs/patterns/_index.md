@@ -1,6 +1,8 @@
 ---
 linkTitle: "Patterns"
 title: "The 6 Critical Patterns"
+date: 2025-11-08
+description: "The six critical UX patterns for Nostr consumer apps, each addressing a high-impact retention or usability problem."
 weight: 3
 ---
 

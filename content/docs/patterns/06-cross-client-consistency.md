@@ -1,5 +1,7 @@
 ---
 title: "Pattern 6: Cross-Client Consistency & Data Integrity"
+date: 2025-11-08
+description: "How to prevent data loss across Nostr clients: multi-relay write strategies, Kind:3 race conditions, sync state visibility, and conflict resolution."
 weight: 6
 ---
 

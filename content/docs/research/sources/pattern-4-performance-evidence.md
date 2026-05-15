@@ -1,5 +1,7 @@
 ---
 title: "Performance Evidence: 2024-2025"
+date: 2025-11-07
+description: "2024-2025 evidence on Nostr app performance: user complaints, developer discussions, relay benchmarks, and protocol-level considerations."
 weight: 3
 ---
 

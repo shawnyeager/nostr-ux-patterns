@@ -1,5 +1,7 @@
 ---
 title: Source Files
+date: 2026-01-08
+description: "Source evidence files with verified, URL-only citations underpinning the Nostr UX patterns."
 linkTitle: "Sources"
 weight: 10
 sidebar:

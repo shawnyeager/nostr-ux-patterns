@@ -1,5 +1,7 @@
 ---
 title: "Pattern 3: Core Interaction Loops"
+date: 2025-11-07
+description: "How to make core Nostr interactions reliable: optimistic UI with validation, multi-relay publishing, clear error states, and trustworthy feedback."
 weight: 3
 ---
 

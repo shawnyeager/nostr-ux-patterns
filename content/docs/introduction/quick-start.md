@@ -1,5 +1,7 @@
 ---
 title: Quick Start
+date: 2025-11-10
+description: "Fast paths into the Nostr UX pattern library, whether you have 5 minutes or are building a client from scratch."
 weight: 2
 ---
 

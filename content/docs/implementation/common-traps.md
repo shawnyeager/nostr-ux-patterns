@@ -1,5 +1,7 @@
 ---
 title: Common Traps
+date: 2025-11-10
+description: "Six common traps when improving Nostr app UX and how to avoid them, from skipping validation to exposing protocol complexity too early."
 weight: 3
 ---
 

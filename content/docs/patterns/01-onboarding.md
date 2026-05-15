@@ -1,5 +1,7 @@
 ---
 title: "Pattern 1: Onboarding & First-Run Experience"
+date: 2025-11-07
+description: "How to fix Nostr app onboarding: cut the 15-20 minute setup, handle key management gracefully, defer relay selection, and get users to first value fast."
 weight: 1
 ---
 

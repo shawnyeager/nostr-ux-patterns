@@ -1,5 +1,7 @@
 ---
 title: "Content Discovery Evidence: 2024-2025"
+date: 2025-11-07
+description: "2024-2025 evidence on Nostr content discovery: the retention and cold start crisis, weak discovery mechanisms, and emerging solutions."
 weight: 1
 ---
 

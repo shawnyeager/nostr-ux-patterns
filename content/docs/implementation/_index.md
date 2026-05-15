@@ -1,6 +1,8 @@
 ---
 linkTitle: "Implementation"
 title: Implementation Guide
+date: 2025-11-10
+description: "How to adopt the Nostr UX patterns: assess your state, pick one pattern, ship quick wins, measure impact, and iterate."
 weight: 4
 ---
 

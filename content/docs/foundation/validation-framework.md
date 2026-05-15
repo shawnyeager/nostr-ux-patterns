@@ -1,5 +1,7 @@
 ---
 title: The Validation Framework
+date: 2025-11-10
+description: "A three-question filter for every Nostr app feature decision: does it help the core goal, is it validated, and can you measure it?"
 weight: 1
 ---
 

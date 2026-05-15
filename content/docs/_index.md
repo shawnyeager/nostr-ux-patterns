@@ -1,6 +1,8 @@
 ---
 linkTitle: "Documentation"
 title: Documentation
+date: 2025-11-08
+description: "Browse the full UX Patterns for Nostr Apps library: foundation principles, six critical patterns, implementation guidance, and research sources."
 ---
 
 {{< cards >}}

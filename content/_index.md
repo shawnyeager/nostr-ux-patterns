@@ -1,5 +1,6 @@
 ---
 title: "UX Patterns for Nostr Apps"
+date: 2025-11-08
 description: "Evidence-informed patterns for building Nostr apps people actually use"
 layout: hextra-home
 ---

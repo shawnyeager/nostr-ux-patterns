@@ -1,5 +1,7 @@
 ---
 title: Quick Wins
+date: 2025-11-10
+description: "18 high-impact, low-effort UX improvements for Nostr clients, grouped by pattern area and prioritized by effort versus impact."
 weight: 3
 ---
 

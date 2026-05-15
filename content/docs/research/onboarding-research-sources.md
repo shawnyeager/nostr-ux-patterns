@@ -1,5 +1,7 @@
 ---
 title: "Onboarding Research Sources"
+date: 2025-11-07
+description: "Verified research sources behind Pattern 1: time-to-first-value, progressive disclosure, friction laddering, and retention benchmarks."
 weight: 3
 ---
 

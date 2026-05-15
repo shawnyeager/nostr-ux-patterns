@@ -1,5 +1,7 @@
 ---
 title: "Pattern 5: Progressive Complexity"
+date: 2025-11-08
+description: "How to manage complexity in Nostr apps: progressive disclosure, smart defaults, and hiding relay and signer setup from new users."
 weight: 5
 ---
 

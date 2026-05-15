@@ -1,5 +1,7 @@
 ---
 title: Getting Started
+date: 2025-11-10
+description: "A step-by-step plan for adopting Nostr UX patterns: diagnose your biggest problem, ship quick wins, and roll out changes safely."
 weight: 1
 ---
 

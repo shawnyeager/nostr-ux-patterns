@@ -1,6 +1,8 @@
 ---
 linkTitle: "Research"
 title: Research & Sources
+date: 2025-11-08
+description: "Research, methodology, and verified sources behind the Nostr UX pattern library."
 weight: 5
 ---
 

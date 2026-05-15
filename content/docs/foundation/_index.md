@@ -1,6 +1,8 @@
 ---
 linkTitle: "Foundation"
 title: Foundation
+date: 2025-11-10
+description: "The validation-first foundation behind every Nostr UX pattern: why core reliability must come before features."
 weight: 2
 ---
 

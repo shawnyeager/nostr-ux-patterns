@@ -1,5 +1,7 @@
 ---
 title: "Content Discovery: Mainstream Platform Lessons"
+date: 2025-11-07
+description: "What Nostr can learn from mainstream platforms on content discovery: Bluesky starter packs, TikTok's algorithm, and cold start research."
 weight: 2
 ---
 

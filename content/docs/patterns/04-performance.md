@@ -1,5 +1,7 @@
 ---
 title: "Pattern 4: Performance & Perceived Speed"
+date: 2025-11-07
+description: "How to make Nostr apps feel fast: skeleton screens, caching, perceived-performance techniques, and multi-relay query optimization."
 weight: 4
 ---
 

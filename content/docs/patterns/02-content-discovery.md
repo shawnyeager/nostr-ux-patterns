@@ -1,5 +1,7 @@
 ---
 title: "Pattern 2: Content Discovery & Feed Quality"
+date: 2025-11-07
+description: "How to solve the cold start problem in Nostr apps: smart default follows, discovery feeds, decentralized trending content, and search that works."
 weight: 2
 ---
 

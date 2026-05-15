@@ -1,0 +1,43 @@
+# UX Patterns for Nostr Apps
+
+> Evidence-informed UX patterns for building Nostr consumer apps (social clients) that people actually use. Covers six critical patterns — onboarding, content discovery, core interactions, performance, progressive complexity, and cross-client consistency — each with universal UX principles (~70%), Nostr-specific considerations (~30%), a concrete pattern library, anti-patterns, and validation checklists.
+
+The core thesis: great UX is the gateway to the protocol's power. Ship reliable core experiences first, then add features. Every recommendation runs through a three-question validation filter (does it help the user's core goal, is it validated, can you measure it). Audience: mid-to-senior developers building Nostr clients. Author: Shawn Yeager (@shawnyeager). Source repository: https://github.com/shawnyeager/nostr-ux-patterns
+
+## Foundation
+
+- [The Validation Framework](https://nostr-ux.com/docs/foundation/validation-framework/): The meta-pattern — a three-question filter applied to every feature decision before building.
+- [Core Principles](https://nostr-ux.com/docs/foundation/core-principles/): Seven UX principles — user-first design, ship-and-validate, optimizing for new users over power users, perceived performance, reliability over features, default to simplicity, evidence-based design.
+- [Quick Wins](https://nostr-ux.com/docs/foundation/quick-wins/): 18 high-impact, low-effort improvements grouped by pattern area and prioritized by effort versus impact.
+
+## The 6 Critical Patterns
+
+- [Pattern 1: Onboarding & First-Run Experience](https://nostr-ux.com/docs/patterns/01-onboarding/): Cutting the 15-20 minute setup, handling key management without password recovery, deferring relay selection, and reaching first value fast.
+- [Pattern 2: Content Discovery & Feed Quality](https://nostr-ux.com/docs/patterns/02-content-discovery/): Solving the cold start problem with smart default follows, discovery feeds, decentralized trending content, and search that works.
+- [Pattern 3: Core Interaction Loops](https://nostr-ux.com/docs/patterns/03-core-interactions/): Making posting, reacting, and following reliable with optimistic UI plus validation, multi-relay publishing, and clear error states.
+- [Pattern 4: Performance & Perceived Speed](https://nostr-ux.com/docs/patterns/04-performance/): Skeleton screens, caching, perceived-performance techniques, and multi-relay query optimization.
+- [Pattern 5: Progressive Complexity](https://nostr-ux.com/docs/patterns/05-progressive-complexity/): Progressive disclosure, smart defaults, settings hierarchy, and hiding relay and signer setup from new users.
+- [Pattern 6: Cross-Client Consistency & Data Integrity](https://nostr-ux.com/docs/patterns/06-cross-client-consistency/): Multi-relay write strategies, Kind:3 race conditions, sync state visibility, and conflict resolution to prevent data loss across clients.
+
+## Implementation
+
+- [Implementation Guide](https://nostr-ux.com/docs/implementation/): How to adopt the patterns — assess your state, pick one pattern, ship quick wins, measure impact, iterate.
+- [Getting Started](https://nostr-ux.com/docs/implementation/getting-started/): A step-by-step plan: diagnose your biggest problem, ship quick wins, and roll out changes safely.
+- [Measuring Success](https://nostr-ux.com/docs/implementation/measuring-success/): Leading and lagging UX metrics for each pattern, plus analytics, performance, and feedback tooling.
+- [Common Traps](https://nostr-ux.com/docs/implementation/common-traps/): Six recurring mistakes when improving Nostr UX and how to avoid them.
+
+## Introduction & Quick Reference
+
+- [Introduction](https://nostr-ux.com/docs/introduction/): Why Nostr apps struggle with retention and how evidence-informed UX patterns address it.
+- [Quick Start](https://nostr-ux.com/docs/introduction/quick-start/): Fast paths into the library whether you have 5 minutes or are building a client from scratch.
+- [Quick Reference Guide](https://nostr-ux.com/docs/introduction/quick-reference/): Condensed top recommendations, anti-patterns, and validation checklists for all six patterns.
+
+## Research & Sources
+
+- [Research & Sources](https://nostr-ux.com/docs/research/): Methodology and verified sources behind the library.
+- [Approach and Sources](https://nostr-ux.com/docs/research/methodology/): How the patterns were derived and the URL-only citation standard.
+- [References & Bibliography](https://nostr-ux.com/docs/research/references/): Full bibliography — usage data, academic UX research, case studies, NIPs, and user feedback, all with verifiable URLs.
+- [Onboarding Research Sources](https://nostr-ux.com/docs/research/onboarding-research-sources/): Verified sources behind Pattern 1 — time-to-first-value, progressive disclosure, friction laddering, retention benchmarks.
+- [Content Discovery Evidence: 2024-2025](https://nostr-ux.com/docs/research/sources/content-discovery-evidence-2024-2025/): Nostr-specific evidence on retention, cold start, discovery mechanisms, and emerging solutions.
+- [Content Discovery: Mainstream Platform Lessons](https://nostr-ux.com/docs/research/sources/content-discovery-mainstream-lessons/): What Nostr can learn from Bluesky, TikTok, and Instagram on content discovery.
+- [Performance Evidence: 2024-2025](https://nostr-ux.com/docs/research/sources/pattern-4-performance-evidence/): Evidence on Nostr app performance — user complaints, developer discussions, relay benchmarks.

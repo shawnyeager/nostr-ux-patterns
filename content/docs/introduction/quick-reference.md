@@ -1,5 +1,7 @@
 ---
 title: "Quick Reference Guide"
+date: 2025-11-08
+description: "A condensed reference for all six Nostr UX patterns: top recommendations, anti-patterns, and validation checklists at a glance."
 weight: 3
 ---
 
