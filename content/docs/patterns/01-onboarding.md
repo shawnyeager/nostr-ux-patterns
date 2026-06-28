@@ -3,7 +3,22 @@ title: "Pattern 1: Onboarding & First-Run Experience"
 date: 2025-11-07
 description: "How to fix Nostr app onboarding: cut the 15-20 minute setup, handle key management gracefully, defer relay selection, and get users to first value fast."
 weight: 1
+faqs:
+  - q: "How long should Nostr app onboarding take?"
+    a: "Aim for under two minutes to first value. Let people browse content before creating an account, and defer key backup and relay selection until after they've experienced the core loop."
+  - q: "Should I show the user their nsec (private key) during signup?"
+    a: "No. Generate the key silently, tell the user their account is secured, and introduce backup options later through progressive disclosure. A raw nsec on the first screen is the most common onboarding anti-pattern."
+  - q: "Do new users need to choose relays during onboarding?"
+    a: "No. Assign sensible default relays automatically — for example, by region — and move relay management into settings for power users. A relay picker during signup overwhelms newcomers."
+  - q: "How do you avoid an empty feed after signup?"
+    a: "Solve the cold start with interest-based default follows and a discovery feed, so new accounts see active, relevant content immediately rather than a blank screen."
+  - q: "Should onboarding require a signer app (NIP-46)?"
+    a: "Not for new users. Signer setup adds friction during the most fragile moment. Offer it as an optional upgrade for users who want stronger key separation."
 ---
+
+{{< callout type="info" >}}
+**In short:** Nostr onboarding fails when it front-loads keys, relays, and jargon. Get users to value in under two minutes: let them browse before signing up, generate keys silently with backup deferred, assign default relays automatically, and seed the first feed so it's never empty.
+{{< /callout >}}
 
 ## Problem Statement
 
@@ -64,10 +79,12 @@ These principles apply to any social application, not just Nostr.
 
 **Examples from mainstream apps:**
 
-- **TikTok:** Opens directly to For You feed, no signup required. Value (entertaining videos) is immediate - contrast with Instagram's minimum 8 clicks before viewing first content [[Example:1]](#example-1)
-- **Instagram:** Can browse limited content before signup, demonstrates value upfront
-- **Discord:** Can join servers and read channels before creating account
-- **Twitter/X:** Can browse tweets and threads without account (partially)
+| App | Time to first value | Browse before signup? |
+| --- | --- | --- |
+| **TikTok** | Immediate — opens to the For You feed | Yes, no signup required [[Example:1]](#example-1) |
+| **Instagram** | Fast — limited content shown upfront | Partial (vs. 8+ clicks to first content) |
+| **Discord** | Fast — join servers and read channels | Yes |
+| **Twitter/X** | Fast — browse tweets and threads | Partial |
 
 ### 2. Progressive Disclosure
 
@@ -900,6 +917,30 @@ Create your profile:
 - <a id="user-19"></a>**[[User:19]](/docs/research/references#user-19)** Damus GitHub Issue #2642: Onboarding improvements tracker (Opened Nov 2024, last updated Feb 2025, ACTIVE)
 - <a id="user-20"></a>**[[User:20]](/docs/research/references#user-20)** Damus GitHub Issue #3207: Remove 'Create Account' step being considered due to friction (August 2025)
 - <a id="user-21"></a>**[[User:21]](/docs/research/references#user-21)** Nstart Onboarding Tool: Standalone tool created because client-level onboarding is too complex (February 2025)
+
+---
+
+## Frequently Asked Questions
+
+### How long should Nostr app onboarding take?
+
+Aim for under two minutes to first value. Let people browse content before creating an account, and defer key backup and relay selection until after they've experienced the core loop.
+
+### Should I show the user their nsec (private key) during signup?
+
+No. Generate the key silently, tell the user their account is secured, and introduce backup options later through progressive disclosure. A raw nsec on the first screen is the most common onboarding anti-pattern.
+
+### Do new users need to choose relays during onboarding?
+
+No. Assign sensible default relays automatically — for example, by region — and move relay management into settings for power users. A relay picker during signup overwhelms newcomers.
+
+### How do you avoid an empty feed after signup?
+
+Solve the cold start with interest-based default follows and a discovery feed, so new accounts see active, relevant content immediately rather than a blank screen.
+
+### Should onboarding require a signer app (NIP-46)?
+
+Not for new users. Signer setup adds friction during the most fragile moment. Offer it as an optional upgrade for users who want stronger key separation.
 
 ---
 

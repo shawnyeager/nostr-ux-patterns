@@ -3,7 +3,22 @@ title: "Pattern 3: Core Interaction Loops"
 date: 2025-11-07
 description: "How to make core Nostr interactions reliable: optimistic UI with validation, multi-relay publishing, clear error states, and trustworthy feedback."
 weight: 3
+faqs:
+  - q: "Why do I lose follows when switching Nostr clients?"
+    a: "Kind 3 contact list events replace the entire list, so a race condition wipes your follows when a client publishes a stale list before it finishes syncing. Use a read-before-write pattern: fetch the latest contact list, lock against concurrent edits, and detect conflicts before publishing."
+  - q: "Should I use optimistic UI for Nostr posts and likes?"
+    a: "Yes for actions that nearly always succeed — likes, follows, posts — but always pair it with validation and rollback. Show the change immediately, send the event in the background, and revert with an error toast if relays don't accept it. Never fake optimistic UI that skips the network request entirely."
+  - q: "How many relays should I publish a post to before showing success?"
+    a: "Publish to the user's write relays plus common high-traffic relays, and wait for confirmation from at least three relays before marking the post published. Show partial success such as posted to 2 of 4 relays, and retry the failed relays in the background."
+  - q: "What makes a good error message for a failed Nostr action?"
+    a: "A good error message explains what happened in plain language, suggests what the user can do next, and offers an easy retry — without exposing technical jargon. Tell the user their post could not be sent and prompt them to check their connection and try again, rather than showing a vague network error."
+  - q: "How reliable do Nostr core interactions need to be?"
+    a: "With retention trending toward zero and only about 17,000 daily active users that have stayed flat for 18 months, core interactions must be over 99 percent reliable to rebuild trust. Target above 99 percent success for posts reaching three or more relays, reactions persisting, and follows completing without data loss."
 ---
+
+{{< callout type="info" >}}
+**In short:** Nostr's core interactions — posting, reactions, follows, notifications — fail often enough to erode trust. Fix them with optimistic UI backed by validation, multi-relay publishing with confirmation, clear feedback states, and helpful error messages. With retention near zero, these actions must be over 99 percent reliable to rebuild user trust.
+{{< /callout >}}
 
 ## Problem Statement
 
@@ -65,11 +80,13 @@ These principles apply to any social application, regardless of underlying archi
 
 **Mainstream approaches:**
 
-- **Twitter/X:** Shows "Sending..." state, confirms when tweet is live [[Example:1]](#example-1)
-- **Instagram:** [[Example:2]](#example-2) Upload progress bar, "Posted" confirmation; 2024 algorithm now heavily weights "shares per reach" as key engagement signal, showing Instagram prioritizes reliable delivery confirmation
-- **Discord:** Message appears with "Sending..." then checkmark when delivered
-- **Slack:** Pending indicator, retry on failure
-- **TikTok:** [[Example:3]](#example-3) Shows content immediately with no loading state - up/down swiping is "game-changer" for intuitive, effortless navigation
+| App | Feedback approach |
+| --- | --- |
+| **Twitter/X** | Shows "Sending..." state, confirms when tweet is live [[Example:1]](#example-1) |
+| **Instagram** | Upload progress bar, "Posted" confirmation; 2024 algorithm now heavily weights "shares per reach" as key engagement signal, showing Instagram prioritizes reliable delivery confirmation [[Example:2]](#example-2) |
+| **Discord** | Message appears with "Sending..." then checkmark when delivered |
+| **Slack** | Pending indicator, retry on failure |
+| **TikTok** | Shows content immediately with no loading state - up/down swiping is "game-changer" for intuitive, effortless navigation [[Example:3]](#example-3) |
 
 **What users need:**
 
@@ -859,6 +876,30 @@ Test different approaches:
 ---
 
 **See [References & Bibliography](/docs/research/references) for full citation details.**
+
+---
+
+## Frequently Asked Questions
+
+### Why do I lose follows when switching Nostr clients?
+
+Kind 3 contact list events replace the entire list, so a race condition wipes your follows when a client publishes a stale list before it finishes syncing. Use a read-before-write pattern: fetch the latest contact list, lock against concurrent edits, and detect conflicts before publishing.
+
+### Should I use optimistic UI for Nostr posts and likes?
+
+Yes for actions that nearly always succeed — likes, follows, posts — but always pair it with validation and rollback. Show the change immediately, send the event in the background, and revert with an error toast if relays don't accept it. Never fake optimistic UI that skips the network request entirely.
+
+### How many relays should I publish a post to before showing success?
+
+Publish to the user's write relays plus common high-traffic relays, and wait for confirmation from at least three relays before marking the post published. Show partial success such as posted to 2 of 4 relays, and retry the failed relays in the background.
+
+### What makes a good error message for a failed Nostr action?
+
+A good error message explains what happened in plain language, suggests what the user can do next, and offers an easy retry — without exposing technical jargon. Tell the user their post could not be sent and prompt them to check their connection and try again, rather than showing a vague network error.
+
+### How reliable do Nostr core interactions need to be?
+
+With retention trending toward zero and only about 17,000 daily active users that have stayed flat for 18 months, core interactions must be over 99 percent reliable to rebuild trust. Target above 99 percent success for posts reaching three or more relays, reactions persisting, and follows completing without data loss.
 
 ---
 

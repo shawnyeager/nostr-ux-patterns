@@ -3,7 +3,22 @@ title: "Pattern 2: Content Discovery & Feed Quality"
 date: 2025-11-07
 description: "How to solve the cold start problem in Nostr apps: smart default follows, discovery feeds, decentralized trending content, and search that works."
 weight: 2
+faqs:
+  - q: "How do I fix an empty feed for new Nostr users?"
+    a: "Solve the cold start with smart default follows or starter packs so new accounts land on a populated feed. Auto-follow 10-20 high-quality accounts based on stated interests, and never show a blank timeline that asks users to find people themselves."
+  - q: "Should my Nostr client use an algorithmic feed or a chronological one?"
+    a: "Offer both. Chronological feeds give control but require manual curation and leave content undiscovered, while algorithmic discovery feeds solve cold start and surface relevant posts. Default new users into a discovery feed and let them switch to a Following tab."
+  - q: "How can I build trending content without a central server?"
+    a: "Calculate trending client-side from recent engagement across your relay set — reactions, replies, zaps, and velocity over a 24-hour window. Zaps are a strong, Sybil-resistant quality signal because they cost real money, making most-zapped posts a reliable trending feed."
+  - q: "Does search work on Nostr, and how should I implement it?"
+    a: "Search is hard in a decentralized architecture but workable with a hybrid approach: local search over cached content, relay-based search where relays support it, and specialized search relays like nostr.band. Search people, posts, and hashtags as separate, scoped interfaces."
+  - q: "How do I send notifications on Nostr without a central push server?"
+    a: "Use client polling, a push notification relay, a NIP-46 signer that forwards notifications, or the Unified Push protocol. Prioritize direct engagement like replies, mentions, and zaps, and batch low-priority alerts to avoid notification fatigue."
 ---
+
+{{< callout type="info" >}}
+**In short:** Nostr's cold start problem — empty feeds after signup — drives early abandonment. Fix it with smart default follows or starter packs, an algorithmic discovery feed alongside chronological, decentralized trending built on zaps and web of trust, and search that actually works. Never leave a new user staring at a blank feed.
+{{< /callout >}}
 
 ## Problem Statement
 
@@ -62,11 +77,13 @@ These principles apply to any social application, regardless of underlying archi
 
 **Mainstream solutions:**
 
-- **TikTok:** Algorithm-first, no following required. For You Page shows trending content immediately. Users with zero followers can reach large audiences if content aligns with viewer interests. [[Example:4]](#example-4)
-- **Instagram:** Browse mode with trending content, then signup wall. Multiple specialized algorithms: Feed (connections), Reels (entertainment + viral potential for newcomers), Explore (discovery). [[Example:5]](#example-5)
-- **Twitter/X:** Suggests accounts during signup, shows "For You" algorithmic feed by default [[Example:5]](#example-5)
-- **Bluesky:** Starter packs allow users to follow up to 150 people + 3 custom feeds with one click, solving empty feed problem. [[Example:6]](#example-6)
-- **Mastodon:** Local/Federated timeline provides instant content discovery [[Example:7]](#example-7)
+| Platform | Cold-start solution |
+| --- | --- |
+| **TikTok** | Algorithm-first, no following required. For You Page shows trending content immediately. Users with zero followers can reach large audiences if content aligns with viewer interests. [[Example:4]](#example-4) |
+| **Instagram** | Browse mode with trending content, then signup wall. Multiple specialized algorithms: Feed (connections), Reels (entertainment + viral potential for newcomers), Explore (discovery). [[Example:5]](#example-5) |
+| **Twitter/X** | Suggests accounts during signup, shows "For You" algorithmic feed by default [[Example:5]](#example-5) |
+| **Bluesky** | Starter packs allow users to follow up to 150 people + 3 custom feeds with one click, solving empty feed problem. [[Example:6]](#example-6) |
+| **Mastodon** | Local/Federated timeline provides instant content discovery [[Example:7]](#example-7) |
 
 **Academic research identifies cold start strategies:** Using social network information from existing platforms, collaborative filtering based on similar user behavior, hybrid models, incorporating user demographics and stated preferences, community detection to identify similar users. [[Research:5]](#research-5)
 
@@ -920,6 +937,30 @@ Challenge: Nostr has no central push notification server.
 ---
 
 **See [References & Bibliography](/docs/research/references) for full citation details.**
+
+---
+
+## Frequently Asked Questions
+
+### How do I fix an empty feed for new Nostr users?
+
+Solve the cold start with smart default follows or starter packs so new accounts land on a populated feed. Auto-follow 10-20 high-quality accounts based on stated interests, and never show a blank timeline that asks users to find people themselves.
+
+### Should my Nostr client use an algorithmic feed or a chronological one?
+
+Offer both. Chronological feeds give control but require manual curation and leave content undiscovered, while algorithmic discovery feeds solve cold start and surface relevant posts. Default new users into a discovery feed and let them switch to a Following tab.
+
+### How can I build trending content without a central server?
+
+Calculate trending client-side from recent engagement across your relay set — reactions, replies, zaps, and velocity over a 24-hour window. Zaps are a strong, Sybil-resistant quality signal because they cost real money, making most-zapped posts a reliable trending feed.
+
+### Does search work on Nostr, and how should I implement it?
+
+Search is hard in a decentralized architecture but workable with a hybrid approach: local search over cached content, relay-based search where relays support it, and specialized search relays like nostr.band. Search people, posts, and hashtags as separate, scoped interfaces.
+
+### How do I send notifications on Nostr without a central push server?
+
+Use client polling, a push notification relay, a NIP-46 signer that forwards notifications, or the Unified Push protocol. Prioritize direct engagement like replies, mentions, and zaps, and batch low-priority alerts to avoid notification fatigue.
 
 ---
 

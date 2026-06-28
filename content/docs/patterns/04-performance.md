@@ -3,7 +3,22 @@ title: "Pattern 4: Performance & Perceived Speed"
 date: 2025-11-07
 description: "How to make Nostr apps feel fast: skeleton screens, caching, perceived-performance techniques, and multi-relay query optimization."
 weight: 4
+faqs:
+  - q: "Why do Nostr apps feel slow even when they aren't objectively slower?"
+    a: "Because how fast an app feels matters more than benchmark speed. Nostr apps often lack loading state indicators, skeleton screens, and optimistic UI, and they expose multi-relay coordination to users as visible delays."
+  - q: "How fast should a button respond to a tap?"
+    a: "Within 100ms — that is the threshold where an interaction feels instantaneous. Even if processing continues, give immediate feedback: disable the button, show a spinner, or change its color."
+  - q: "Should I wait for all relays before showing the feed?"
+    a: "No. Waiting for all relays means the slowest one determines perceived speed, and a single dead relay can block the feed for up to 30 seconds. Show results as soon as any relay responds, and time out slow relays after 1 to 5 seconds."
+  - q: "Are skeleton screens better than spinners?"
+    a: "For most loads, yes. Users perceive skeleton screens as 30% faster than spinners for identical wait times. Use them for 2 to 10 second loads, reserve spinners for waits under 2 seconds, and use progress bars for waits over 10 seconds."
+  - q: "How should I cache Nostr data to improve performance?"
+    a: "Cache aggressively across layers — memory, storage via IndexedDB, service worker, and relay-level. Profiles (kind 0) and contact lists (kind 3) change infrequently and reuse well, so cache them with roughly a one-hour TTL, and use stale-while-revalidate for dynamic content."
 ---
+
+{{< callout type="info" >}}
+**In short:** Nostr apps don't need to be objectively fast — they need to feel fast. Respond to taps within 100ms, show skeleton screens for longer loads, render relay results as they arrive instead of waiting for the slowest, cache aggressively, and use optimistic UI for likes, follows, and posts.
+{{< /callout >}}
 
 ## Problem Statement
 
@@ -104,10 +119,12 @@ These principles apply to any application prioritizing performance and user expe
 
 **What to do for each:**
 
-- **0-100ms:** Show immediate UI change (button press, loading indicator)
-- **100ms-1s:** Use optimistic UI, show skeleton screens
-- **1-5s:** Progressive loading, show percentage/status, allow cancellation
-- **>5s:** Must be background operation with notification on completion
+| Response time | What to do |
+| --- | --- |
+| **0–100ms** | Show immediate UI change (button press, loading indicator) |
+| **100ms–1s** | Use optimistic UI, show skeleton screens |
+| **1–5s** | Progressive loading, show percentage/status, allow cancellation |
+| **>5s** | Must be background operation with notification on completion |
 
 ### 3. Skeleton Screens
 
@@ -1068,6 +1085,30 @@ Test different approaches:
 ---
 
 **See [References & Bibliography](/docs/research/references) for full citation details.**
+
+---
+
+## Frequently Asked Questions
+
+### Why do Nostr apps feel slow even when they aren't objectively slower?
+
+Because how fast an app feels matters more than benchmark speed. Nostr apps often lack loading state indicators, skeleton screens, and optimistic UI, and they expose multi-relay coordination to users as visible delays.
+
+### How fast should a button respond to a tap?
+
+Within 100ms — that is the threshold where an interaction feels instantaneous. Even if processing continues, give immediate feedback: disable the button, show a spinner, or change its color.
+
+### Should I wait for all relays before showing the feed?
+
+No. Waiting for all relays means the slowest one determines perceived speed, and a single dead relay can block the feed for up to 30 seconds. Show results as soon as any relay responds, and time out slow relays after 1 to 5 seconds.
+
+### Are skeleton screens better than spinners?
+
+For most loads, yes. Users perceive skeleton screens as 30% faster than spinners for identical wait times. Use them for 2 to 10 second loads, reserve spinners for waits under 2 seconds, and use progress bars for waits over 10 seconds.
+
+### How should I cache Nostr data to improve performance?
+
+Cache aggressively across layers — memory, storage via IndexedDB, service worker, and relay-level. Profiles (kind 0) and contact lists (kind 3) change infrequently and reuse well, so cache them with roughly a one-hour TTL, and use stale-while-revalidate for dynamic content.
 
 ---
 

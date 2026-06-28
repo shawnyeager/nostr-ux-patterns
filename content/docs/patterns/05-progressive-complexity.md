@@ -3,7 +3,22 @@ title: "Pattern 5: Progressive Complexity"
 date: 2025-11-08
 description: "How to manage complexity in Nostr apps: progressive disclosure, smart defaults, and hiding relay and signer setup from new users."
 weight: 5
+faqs:
+  - q: "Should new users choose their own relays?"
+    a: "No. The app should work perfectly with zero relay configuration — pick smart default relays automatically (2-3 well-connected, reliable ones based on the user's location) and defer relay management to advanced settings for the roughly 20% of power users who want it."
+  - q: "How do I hide NIP jargon from users?"
+    a: "Translate protocol terms into user benefits: say servers not relays, username not NIP-05, and post not kind:1. Hide NIP numbers completely, use human-readable error messages, and reference NIPs only in developer documentation."
+  - q: "When should I introduce signer apps (NIP-46)?"
+    a: "Never during onboarding. Store keys simply and securely in-app by default, then introduce remote signers only in advanced security settings — and only after a user has been active for a week or more."
+  - q: "How many settings should I show on one screen?"
+    a: "Keep basic settings under 10 items, hold advanced settings under 15 and collapsed by default, and hide developer or expert options entirely. More than 10-15 settings on a single screen overwhelms users."
+  - q: "What is the 80/20 rule for Nostr app design?"
+    a: "80% of users use only 20% of features, so design for that 80% first. Default to the features that deliver the most value, make power features discoverable rather than prominent, and keep complexity optional rather than mandatory."
 ---
+
+{{< callout type="info" >}}
+**In short:** Nostr apps overwhelm newcomers by exposing relays, key signers, and NIP jargon upfront. Apply the 80/20 rule: ship smart defaults that work with zero configuration, hide relay management and signer setup behind advanced settings, and reveal power-user features progressively as users grow. Complexity should be optional, not mandatory.
+{{< /callout >}}
 
 ## Problem Statement
 
@@ -317,16 +332,13 @@ Great UX isn't about hiding features---it's about organizing them so users can f
 **What 80% of users need:**
 
 - App works perfectly with zero relay configuration
-- Smart default relays chosen based on:
-  - Geographic location (latency)
-  - Reliability metrics
-  - Community recommendations
+- Smart default relays chosen based on geographic location (latency), reliability metrics, and community recommendations
 - No relay UI during onboarding
 
 **What 20% of power users need:**
 
-- Relay health indicators (uptime, latency, event coverage)
 - Custom relay management
+- Relay health indicators (uptime, latency, event coverage)
 - Read/write relay separation
 - Relay analytics and debugging tools
 
@@ -1910,6 +1922,30 @@ signer app to manage your keys.
 ---
 
 **See [References & Bibliography](/docs/research/references) for full citation details.**
+
+---
+
+## Frequently Asked Questions
+
+### Should new users choose their own relays?
+
+No. The app should work perfectly with zero relay configuration — pick smart default relays automatically (2-3 well-connected, reliable ones based on the user's location) and defer relay management to advanced settings for the roughly 20% of power users who want it.
+
+### How do I hide NIP jargon from users?
+
+Translate protocol terms into user benefits: say servers not relays, username not NIP-05, and post not kind:1. Hide NIP numbers completely, use human-readable error messages, and reference NIPs only in developer documentation.
+
+### When should I introduce signer apps (NIP-46)?
+
+Never during onboarding. Store keys simply and securely in-app by default, then introduce remote signers only in advanced security settings — and only after a user has been active for a week or more.
+
+### How many settings should I show on one screen?
+
+Keep basic settings under 10 items, hold advanced settings under 15 and collapsed by default, and hide developer or expert options entirely. More than 10-15 settings on a single screen overwhelms users.
+
+### What is the 80/20 rule for Nostr app design?
+
+80% of users use only 20% of features, so design for that 80% first. Default to the features that deliver the most value, make power features discoverable rather than prominent, and keep complexity optional rather than mandatory.
 
 ---
 

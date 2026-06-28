@@ -3,7 +3,22 @@ title: "Pattern 6: Cross-Client Consistency & Data Integrity"
 date: 2025-11-08
 description: "How to prevent data loss across Nostr clients: multi-relay write strategies, Kind:3 race conditions, sync state visibility, and conflict resolution."
 weight: 6
+faqs:
+  - q: "How do I stop users from losing their follows when they switch Nostr clients?"
+    a: "Block follow and unfollow actions until the kind:3 contact list has fully synced from a majority of relays, then validate before publishing — for example, warn the user before replacing 130 follows with 1. Most catastrophic follow loss comes from publishing a stale contact list."
+  - q: "Why do my follows reset to zero in a new client?"
+    a: "Kind:3 is a replaceable event that must contain every pubkey you follow, so if you follow someone before the client finishes fetching your existing list, it publishes a new event with only that one follow and overwrites all the others."
+  - q: "How many relays should I publish events to?"
+    a: "Publish to at least five relays for redundancy, monitor their health, and retry failed publishes so content survives when relays go offline. Only 639 relays are online globally and 20% have faced significant downtime, so single-relay storage is fragile."
+  - q: "Should I use optimistic UI for follows and posts?"
+    a: "Yes, but validate it. Show the action immediately, then confirm publishing reached a majority of relays — for example 3 of 5 — and roll back with a retry option if it did not. Fire-and-forget optimism creates a false sense of completion and silent data loss."
+  - q: "How should I handle sync conflicts between clients?"
+    a: "Detect conflicts during sync and surface them rather than silently picking one version. Show a resolution UI that lets users keep the local version, the remote version, or merge both, and display sync state so they always know what is synced, syncing, or failed."
 ---
+
+{{< callout type="info" >}}
+**In short:** Cross-client data loss is Nostr's most severe UX failure — follows vanish, profiles revert, and posts disappear when relays go down. Prevent it by blocking follow edits until kind:3 fully syncs, publishing to five or more relays with retry, and showing sync state so users always know what is saved.
+{{< /callout >}}
 
 ## Problem Statement
 
@@ -139,10 +154,12 @@ These principles apply to any distributed system managing user data across multi
 
 **Common strategies:** [[Research:81]](#research-81) [[Research:82]](#research-82)
 
-1. **Last Write Wins (LWW)**: Simple timestamp-based resolution
-2. **CRDTs (Conflict-free Replicated Data Types)**: For complex data structures
-3. **Manual resolution**: UI for users to choose which version to keep
-4. **Version vectors**: Track updates across nodes for conflict detection [[Research:82]](#research-82)
+| Strategy | How it works |
+| --- | --- |
+| **Last Write Wins (LWW)** | Simple timestamp-based resolution |
+| **CRDTs (Conflict-free Replicated Data Types)** | For complex data structures |
+| **Manual resolution** | UI for users to choose which version to keep |
+| **Version vectors** | Track updates across nodes for conflict detection [[Research:82]](#research-82) |
 
 **Best practices:** [[Research:83]](#research-83)
 
@@ -1063,6 +1080,30 @@ User's posts disappear with no explanation
 ---
 
 **See [References & Bibliography](/docs/research/references) for full citation details.**
+
+---
+
+## Frequently Asked Questions
+
+### How do I stop users from losing their follows when they switch Nostr clients?
+
+Block follow and unfollow actions until the kind:3 contact list has fully synced from a majority of relays, then validate before publishing — for example, warn the user before replacing 130 follows with 1. Most catastrophic follow loss comes from publishing a stale contact list.
+
+### Why do my follows reset to zero in a new client?
+
+Kind:3 is a replaceable event that must contain every pubkey you follow, so if you follow someone before the client finishes fetching your existing list, it publishes a new event with only that one follow and overwrites all the others.
+
+### How many relays should I publish events to?
+
+Publish to at least five relays for redundancy, monitor their health, and retry failed publishes so content survives when relays go offline. Only 639 relays are online globally and 20% have faced significant downtime, so single-relay storage is fragile.
+
+### Should I use optimistic UI for follows and posts?
+
+Yes, but validate it. Show the action immediately, then confirm publishing reached a majority of relays — for example 3 of 5 — and roll back with a retry option if it did not. Fire-and-forget optimism creates a false sense of completion and silent data loss.
+
+### How should I handle sync conflicts between clients?
+
+Detect conflicts during sync and surface them rather than silently picking one version. Show a resolution UI that lets users keep the local version, the remote version, or merge both, and display sync state so they always know what is synced, syncing, or failed.
 
 ---
 
